@@ -30,9 +30,9 @@ const Header = () => {
                 </div>
                 <div className="flex bg-[#BA253D] rounded-full items-center  space-x-1 w-28 h-10 cursor-pointer">
                     <div className="relative w-10 h-10 ">
-                        <Image src='/profile_avatar_full.jpg' layout="fill" objectFit="contain" className="rounded-full w-10 h-10"/>
-                        <span className="ml-12 h-10 w-10 relative top-2 right-0 text-white font-bold">Afam</span>
+                        <Image src='/profile_avatar_full.jpg' layout="fill" objectFit="contain" className="rounded-full w-10 h-10"/>    
                     </div>
+                    <span className="ml-12 h-10 w-10 relative top-2 right-0 text-white font-bold">Afam</span>
                 </div>
           </div>
       </div>

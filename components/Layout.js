@@ -6,10 +6,10 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <div className="grid">
+      <div className="flex flex-row">
          <LeftSideBar/>
-         <main className="grid-cols-8">{children}</main>
-         <RightSideBar className="grid-cols-1"/>
+         <main className="basis-9/12 col-span-8">{children}</main>
+         <RightSideBar />
       </div>
      
       
