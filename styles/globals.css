@@ -1,3 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .icon-bg {
+    @apply w-10 h-10  rounded-full bg-[#BA253D] flex items-center justify-center cursor-pointer;
+  }
+}
+
 html,
 body {
   padding: 0;
@@ -13,4 +23,7 @@ a {
 
 * {
   box-sizing: border-box;
+
 }
+
+
