@@ -6,7 +6,7 @@ import {AiFillBell} from 'react-icons/ai'
 
 const Header = () => {
   return (
-    <div className="shadow-sm border-b fixed bg-[#B30D28] w-full">
+    <div className="shadow-sm border-b  bg-[#B30D28] w-full">
       <div className="flex max-w-7xl mx-5 xl:mx-auto p-2 h-[60px] items-center justify-between">
         <div className="flex items-center space-x-2">
             <MdMenu  className="text-white h-6 w-8 cursor-pointer"/>
