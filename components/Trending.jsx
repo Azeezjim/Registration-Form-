@@ -1,6 +1,6 @@
 const Trending = ({creators}) => {
   return (
-    <div className="side-container">
+    <div className="side-container items-start">
       <div className="flex items-center justify-center  space-x-1">
         <p className="text-start font-bold">Trending !</p>
       </div>

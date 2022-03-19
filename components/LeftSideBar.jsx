@@ -3,7 +3,7 @@ import { MdSmartDisplay } from "react-icons/md";
 
 const LeftSideBar = () => {
   return (
-    <div className="basis-2/12 pt-4  border-solid border-black-50  h-screen border-r-[1px]">
+    <aside className="basis-2/12  pt-24 border-solid border-black-50  h-screen border-r-[1px] sticky top-0">
       <div className="flex flex-col space-y-4  justify-center">
         <div className="side-nav-button">
           <div className="side-icon">
@@ -97,7 +97,7 @@ const LeftSideBar = () => {
           <span className="font-bold">Groups</span>
         </div>
       </div>
-    </div>
+    </aside>
   );
 };
 

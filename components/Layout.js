@@ -6,9 +6,9 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <div className="flex flex-row">
+      <div className="flex">
          <LeftSideBar/>
-         <main className="basis-9/12">{children}</main>
+         <main className="basis-9/12 mt-16">{children}</main>
          <RightSideBar />
       </div>
      

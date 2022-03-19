@@ -3,7 +3,7 @@ import { RiVipCrownFill } from "react-icons/ri";
 
 const TopCreators = ({creators}) => {
     return (
-        <div className="side-container">
+        <div className="side-container items-start">
         <div className="flex items-center justify-center  space-x-1">
           <div className="flex rounded-full bg-orange-400 items-center justify-center w-6 h-6">
             <RiVipCrownFill className=" text-white"/>
