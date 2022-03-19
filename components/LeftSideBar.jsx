@@ -84,7 +84,6 @@ const LeftSideBar = () => {
               width="16"
               height="16"
               fill="#fff"
-              class=""
               viewBox="0 0 16 16"
               className="h-6 w-6 text-white"
             >
