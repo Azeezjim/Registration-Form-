@@ -7,7 +7,7 @@ const Trending = ({creators}) => {
       <div className="flex flex-col">
             {
                 creators.map((creator) => (
-                    <a className="hover:underline text-blue-600 font-semibold" href="#">{`#${creator.username}`}</a>
+                    <a className="hover:underline text-blue-600 font-semibold" href="#" key={creator.username}>{`#${creator.username}`}</a>
                 ))
             }
       </div>
