@@ -4,7 +4,7 @@ import { BsThreeDots, BsHeart, BsChat, BsHexagon } from "react-icons/bs";
 const NewsFeedCard = () => {
   return (
     <div>
-      <div className="rounded-2xl border shadow-md sm:w-[400px] bg-coolGray-900 text-coolGray-100">
+      <div className="rounded-2xl border shadow-md sm:w-[500px] bg-coolGray-900 text-coolGray-100">
         <div className="flex items-center justify-between p-3 border-b">
           <div className="flex items-center space-x-2">
             <img
