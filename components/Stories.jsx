@@ -25,7 +25,7 @@ const Stories = () => {
       <div
         onScroll={onScroll}
         ref={storiesRef}
-        className="flex space-x-4 overflow-x-scroll max-w-4xl bg-white border-gray-200 py-4 px-2 scroll-smooth scrollbar-hide rounded-lg"
+        className="flex space-x-4 overflow-x-scroll max-w-[950px] bg-white border-gray-200 py-4 px-2 scroll-smooth scrollbar-hide rounded-lg"
       >
         <Story
           username={"Create new story"}
