@@ -4,7 +4,7 @@ import { BsPlusCircleFill } from "react-icons/bs";
 const Story = ({ username, img, isYou }) => {
   if (isYou) {
     return (
-      <div className="flex flex-col items-center space-x-1 ">
+      <div className="flex flex-col items-center space-x-1 cursor-pointer">
         <div className=" relative bg-gradient-to-tr from-yellow-400 to-playRed p-1 rounded-full">
           <div className="bg-white h-[100px] w-[100px] rounded-full p-1 transform transition hover:-rotate-6">
             <Image
@@ -24,7 +24,7 @@ const Story = ({ username, img, isYou }) => {
     );
   } else {
     return (
-      <div className="flex flex-col items-center space-x-1">
+      <div className="flex flex-col items-center space-x-1 cursor-pointer">
         <div className="bg-gradient-to-tr from-yellow-400 to-playRed p-1 rounded-full">
           <div className="bg-white h-[100px] w-[100px] rounded-full p-1 transform transition hover:-rotate-6">
             <Image

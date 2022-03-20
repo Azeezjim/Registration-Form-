@@ -1,6 +1,6 @@
-const Comments = () => {
+const Comments = ({comments}) => {
     return (
-        <div>
+        <div className="flex flex-col space-x-4 items-center">
             
         </div>
     )

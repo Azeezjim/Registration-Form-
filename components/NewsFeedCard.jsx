@@ -7,23 +7,23 @@ import PopoverContainer from "@material-tailwind/react/PopoverContainer";
 import PopoverHeader from "@material-tailwind/react/PopoverHeader";
 import PopoverBody from "@material-tailwind/react/PopoverBody";
 
-const NewsFeedCard = () => {
+const NewsFeedCard = ({image, user, likeCount,commentCount, description, popularComments, time}) => {
   const optionsButtonRef = useRef();
   const [comments, setComments] = useState([]);
   const [showComments, setShowComments] = useState(false);
   return (
     <div>
-      <div className="rounded-2xl border shadow-md sm:w-[500px] bg-coolGray-900 text-coolGray-100">
+      <div className="rounded-2xl border shadow-md sm:w-[600px] bg-coolGray-900 text-coolGray-100">
         <div className="flex items-center justify-between px-4 p-3 border-b">
           <div className="flex items-center space-x-2">
             <img
-              src="https://stackdiary.com/140x100.png"
+              src={user.image}
               alt=""
               className="object-cover object-center w-10 h-10 rounded-full shadow-sm bg-coolGray-500 border-coolGray-700"
             />
             <div className="flex space-x-1">
               <h2 className="text-sm font-semibold leading-none">
-                Afam Nwaoboli
+                {user.username}
               </h2>
               <FaCheckCircle className="w-4 h-4 text-playRed" />
 
@@ -34,7 +34,7 @@ const NewsFeedCard = () => {
           </div>
           <div className="flex space-x-1">
             <span className="text-sm text-gray-600 font-light leading-none">
-              Nov 23
+              {time}
             </span>
 
             <button
@@ -63,18 +63,18 @@ const NewsFeedCard = () => {
             </Popover>
           </div>
         </div>
-        <div className="p-2 text-xs ">
+        <div className="p-2 text-sm ">
           <ReadMoreReact
             min={100}
             max={200}
             readMoreText="Read more..."
             text={
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugareiciendis, ut id saepe at, dolores, hic quaerat doloribus voluptatem officiis quo et! Repellendus vitae et, ipsum aliquam cu"
+              description
             }
           />
         </div>
         <img
-          src="https://stackdiary.com/140x100.png"
+          src={image}
           alt=""
           className="object-cover object-center w-full h-90 bg-coolGray-500"
         />
@@ -86,7 +86,7 @@ const NewsFeedCard = () => {
               className="flex items-center justify-center space-x-1"
             >
               <BsHeart className="w-5 h-5 fill-current" />
-              <span className="text-xs">2,128</span>
+              <span className="text-xs">{likeCount}</span>
             </button>
             <button
               type="button"
@@ -94,7 +94,7 @@ const NewsFeedCard = () => {
               className="flex items-center justify-center space-x-1"
             >
               <BsChat className="h-5 w-5 fill-current" />
-              <span className="text-xs">396</span>
+              <span className="text-xs">{commentCount}</span>
             </button>
             <button
               type="button"
@@ -120,14 +120,23 @@ const NewsFeedCard = () => {
             </button>
           </div>
           <div className="">
-            { showComments ?
-              <p onClick={()=>setShowComments(false)} className="w-full py-1 bg-transparent border-none rounded text-sm pl-4 text-playRed cursor-pointer">
-                Hide Comments
-              </p>:
-              <p onClick={()=>setShowComments(false)}  className="w-full py-1 bg-transparent border-none rounded text-sm pl-4 text-playRed cursor-pointer">
-                View 396 Comments
+            {showComments ? (
+              <div className="border-t border-gray-600 mt-4">
+                <p
+                  onClick={() => setShowComments(false)}
+                  className="w-full py-1 bg-transparent border-none rounded text-sm pl-4 text-playRed cursor-pointer"
+                >
+                  Hide Comments
+                </p>
+              </div>
+            ) : (
+              <p
+                onClick={() => setShowComments(true)}
+                className="w-full py-1 bg-transparent border-none rounded text-sm pl-4 text-playRed cursor-pointer"
+              >
+                View {commentCount} Comments
               </p>
-            }
+            )}
           </div>
         </div>
       </div>

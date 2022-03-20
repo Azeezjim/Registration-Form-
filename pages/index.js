@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
       <main className='flex flex-col p-5 space-y-2'>
           <Stories/>
-          <div className="flex p-5 space-x-10">
+          <div className="flex p-5 space-x-10 relative">
             <NewsFeed/>
             <NewsFeedSideBar/>
           </div>
