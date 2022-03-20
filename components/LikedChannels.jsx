@@ -5,7 +5,7 @@ const LikedChannels = () => {
   return (
     <div className="side-container">
       <p className="text-start font-bold">Channels you may like</p>
-      <div className="flex flex-col items-center pb-4">
+      <div className="flex flex-col space-y-2 items-center pb-4">
         <div className="flex space-x-2  justify-center items-center mb-2">
           <Button text="POPULAR" active={true} />
           <Button text="NEWEST" active={false} />

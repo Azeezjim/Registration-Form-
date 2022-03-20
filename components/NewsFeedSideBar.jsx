@@ -3,6 +3,7 @@ import { data } from "./data.js";
 import TopCreators from "./TopCreators.jsx";
 import Trending from "./Trending.jsx";
 import LikedChannels from "./LikedChannels.jsx";
+import LikedGroups from "./LikedGroups.jsx";
 
 const NewsFeedSideBar = () => {
 const [creators, setCreators] = useState(data?.stories.slice(0,6));
@@ -11,6 +12,7 @@ const [creators, setCreators] = useState(data?.stories.slice(0,6));
         <TopCreators creators={creators}/>
         <Trending creators={creators}/>
         <LikedChannels/>
+        <LikedGroups/>
     </div>
   );
 };

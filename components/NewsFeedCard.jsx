@@ -6,12 +6,12 @@ const NewsFeedCard = () => {
   return (
     <div>
       <div className="rounded-2xl border shadow-md sm:w-[500px] bg-coolGray-900 text-coolGray-100">
-        <div className="flex items-center justify-between p-3 border-b">
+        <div className="flex items-center justify-between px-4 p-3 border-b">
           <div className="flex items-center space-x-2">
             <img
               src="https://stackdiary.com/140x100.png"
               alt=""
-              className="object-cover object-center w-8 h-8 rounded-full shadow-sm bg-coolGray-500 border-coolGray-700"
+              className="object-cover object-center w-10 h-10 rounded-full shadow-sm bg-coolGray-500 border-coolGray-700"
             />
             <div className="flex space-x-1">
               <h2 className="text-sm font-semibold leading-none">
