@@ -6,7 +6,10 @@ import NewsFeedSideBar from '../components/NewsFeedSideBar';
 
 
 
+
+
 export default function Home() {
+
   return (
     <div>
       <Head>

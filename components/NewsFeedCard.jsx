@@ -1,8 +1,14 @@
 import { FaCheckCircle } from "react-icons/fa";
 import { BsThreeDots, BsHeart, BsChat, BsHexagon } from "react-icons/bs";
-
+import ReadMoreReact from "read-more-react";
+import { useRef } from "react";
+import Popover from "@material-tailwind/react/Popover";
+import PopoverContainer from "@material-tailwind/react/PopoverContainer";
+import PopoverHeader from "@material-tailwind/react/PopoverHeader";
+import PopoverBody from "@material-tailwind/react/PopoverBody";
 
 const NewsFeedCard = () => {
+  const optionsButtonRef = useRef();
   return (
     <div>
       <div className="rounded-2xl border shadow-md sm:w-[500px] bg-coolGray-900 text-coolGray-100">
@@ -28,25 +34,44 @@ const NewsFeedCard = () => {
             <span className="text-sm text-gray-600 font-light leading-none">
               Nov 23
             </span>
-            <button title="Open options" type="button">
-              <BsThreeDots />
+
+            <button  ref={optionsButtonRef} title="Open options" type="button">
+              <BsThreeDots className="w-5" />
             </button>
+            <Popover placement="bottom" ref={optionsButtonRef}>
+              <PopoverContainer>
+                <PopoverBody>
+                  <div className="flex flex-col w-40 items-center py-2 justify-center space-y-1">
+                    <div className="hover:bg-gray-100 hover:text-red-500 w-full border-b h-8 p-2 rounded-md cursor-pointer flex items-center justify-start">
+                      <p className="font-bold text-xs">Copy link to post</p>
+                    </div>
+                    <div className="hover:bg-gray-100 hover:text-red-500 w-full h-8 p-2 rounded-md cursor-pointer flex items-center justify-start">
+                      <p className="font-bold text-xs">Report</p>
+                    </div>
+                    <div className="hover:bg-gray-100 hover:text-red-500 w-full h-8 p-2 rounded-md cursor-pointer flex items-center justify-start">
+                      <p className="font-bold text-xs">Add to blocklists.</p>
+                    </div>
+                    
+                  </div>
+                </PopoverBody>
+              </PopoverContainer>
+            </Popover>
           </div>
         </div>
         <div className="p-2 text-xs ">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-            reiciendis, ut id saepe at, dolores, hic quaerat doloribus
-            voluptatem officiis quo et! Repellendus vitae et, ipsum aliquam cum
-            magnam cupiditate totam sed qui alias? Provident repellendus sequi
-            molestiae facere, alias deleniti nisi. Blanditiis numquam nemo ex,
-            corporis dolorem corrupti voluptatibus.
-          </p>
+          <ReadMoreReact
+            min={100}
+            max={200}
+            readMoreText="Read more..."
+            text={
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugareiciendis, ut id saepe at, dolores, hic quaerat doloribus voluptatem officiis quo et! Repellendus vitae et, ipsum aliquam cu"
+            }
+          />
         </div>
         <img
           src="https://stackdiary.com/140x100.png"
           alt=""
-          className="object-cover object-center w-full h-72 bg-coolGray-500"
+          className="object-cover object-center w-full h-90 bg-coolGray-500"
         />
         <div className="p-3">
           <div className="flex items-center justify-between px-2">
@@ -90,10 +115,9 @@ const NewsFeedCard = () => {
             </button>
           </div>
           <div className="space-y-3">
-      
-            <p
-              className="w-full py-1 bg-transparent border-none rounded text-sm pl-4 text-playRed">View 396 Comments</p>
-            
+            <p className="w-full py-1 bg-transparent border-none rounded text-sm pl-4 text-playRed">
+              View 396 Comments
+            </p>
           </div>
         </div>
       </div>

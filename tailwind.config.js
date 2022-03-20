@@ -2,6 +2,7 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    './node_modules/tw-elements/dist/js/**/*.js'
   ],
   theme: {
     extend: {
@@ -12,6 +13,7 @@ module.exports = {
   },
   plugins: [
     require('tailwind-scroll-behavior')(),
-    require('tailwind-scrollbar-hide')
+    require('tailwind-scrollbar-hide'),
+    require('tw-elements/dist/plugin')
   ],
 }

@@ -10,21 +10,26 @@
   .side-icon {
     @apply bg-[#CD0929] rounded-full flex items-center w-10 h-10 pl-2;
   }
-  .side-nav-button{
+  .side-nav-button {
     @apply flex items-center space-x-1 w-full ml-4 mr-20 cursor-pointer;
   }
-  .side-container{
+  .side-container {
     @apply flex flex-col space-y-2 justify-center bg-white border shadow-lg rounded-lg max-w-4xl p-2;
   }
-}
 
+
+}
+.read-more-button {
+  color: red;
+  cursor: pointer;
+}
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
 }
 
 a {
@@ -34,7 +39,4 @@ a {
 
 * {
   box-sizing: border-box;
-
 }
-
-
