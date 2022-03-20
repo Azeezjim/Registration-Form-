@@ -1,7 +1,7 @@
 import { FaCheckCircle } from "react-icons/fa";
 import { BsThreeDots, BsHeart, BsChat, BsHexagon } from "react-icons/bs";
 import ReadMoreReact from "read-more-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Popover from "@material-tailwind/react/Popover";
 import PopoverContainer from "@material-tailwind/react/PopoverContainer";
 import PopoverHeader from "@material-tailwind/react/PopoverHeader";
@@ -9,6 +9,8 @@ import PopoverBody from "@material-tailwind/react/PopoverBody";
 
 const NewsFeedCard = () => {
   const optionsButtonRef = useRef();
+  const [comments, setComments] = useState([]);
+  const [showComments, setShowComments] = useState(false);
   return (
     <div>
       <div className="rounded-2xl border shadow-md sm:w-[500px] bg-coolGray-900 text-coolGray-100">
@@ -35,8 +37,12 @@ const NewsFeedCard = () => {
               Nov 23
             </span>
 
-            <button  ref={optionsButtonRef} title="Open options" type="button">
-              <BsThreeDots className="w-5" />
+            <button
+              ref={optionsButtonRef}
+              title="Open options"
+              className="focus:shadow-none focus:outline-none"
+            >
+              <BsThreeDots className="w-6" />
             </button>
             <Popover placement="bottom" ref={optionsButtonRef}>
               <PopoverContainer>
@@ -51,7 +57,6 @@ const NewsFeedCard = () => {
                     <div className="hover:bg-gray-100 hover:text-red-500 w-full h-8 p-2 rounded-md cursor-pointer flex items-center justify-start">
                       <p className="font-bold text-xs">Add to blocklists.</p>
                     </div>
-                    
                   </div>
                 </PopoverBody>
               </PopoverContainer>
@@ -114,10 +119,15 @@ const NewsFeedCard = () => {
               </svg>
             </button>
           </div>
-          <div className="space-y-3">
-            <p className="w-full py-1 bg-transparent border-none rounded text-sm pl-4 text-playRed">
-              View 396 Comments
-            </p>
+          <div className="">
+            { showComments ?
+              <p onClick={()=>setShowComments(false)} className="w-full py-1 bg-transparent border-none rounded text-sm pl-4 text-playRed cursor-pointer">
+                Hide Comments
+              </p>:
+              <p onClick={()=>setShowComments(false)}  className="w-full py-1 bg-transparent border-none rounded text-sm pl-4 text-playRed cursor-pointer">
+                View 396 Comments
+              </p>
+            }
           </div>
         </div>
       </div>
