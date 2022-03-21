@@ -152,7 +152,7 @@ const NewsFeedCard = ({
                 <form className="bg-gray-100 flex items-center p-1 rounded-2xl flex-1">
                   <textarea
                     type="text"
-                    maxlength = "1280"
+                    maxLength = "1280"
                     className="bg-gray-100 scrollbar-hide flex-1 border-none focus:ring-0 outline-none text-xs resize-none overflow-auto h-auto min-h-[36px]"
                     placeholder="Add a comment"
                   ></textarea>
