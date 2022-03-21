@@ -12,8 +12,8 @@ import { AiFillBell } from "react-icons/ai";
 const Header = () => {
   return (
     <div className="shadow-sm border-b  bg-[#B30D28] w-full fixed z-40">
-      <div className="flex max-w-7xl mx-5 xl:mx-auto p-2 h-[60px] items-center justify-between">
-        <div className="flex w-full justify-between lg:justify-start items-center space-x-2">
+      <div className="flex max-w-7xl mx-auto p-2 h-[70px] sm:h-[60px] items-center justify-between">
+        <div className="flex w-full justify-between lg:justify-start items-center space-x-2 ">
           <div className="flex items-center justify-center">
             <MdMenu className="text-white h-6 w-8 cursor-pointer" />
             <div className="relative w-32 h-10 lg:inline-grid cursor-pointer">
@@ -30,8 +30,8 @@ const Header = () => {
               id=""
             />
           </div>
-          <div className="lg:hidden rounded-full bg-gray-400 flex items-center justify-center p-1">
-            <MdOutlineSearch className="h-7 w-7" />
+          <div className="lg:hidden rounded-full bg-[#C51834] flex items-center justify-center p-1">
+            <MdOutlineSearch className="h-6 w-6 text-white" />
           </div>
         </div>
         <div className="items-center space-x-2 hidden lg:flex  ">
