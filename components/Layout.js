@@ -8,7 +8,7 @@ export default function Layout({ children }) {
       <Header />
       <div className="flex">
          <LeftSideBar/>
-         <main className="basis-9/12 mt-16">{children}</main>
+         <main >{children}</main>
          <RightSideBar />
       </div>
      
