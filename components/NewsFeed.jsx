@@ -4,7 +4,7 @@ import NewsFeedCard from "./NewsFeedCard";
 const NewsFeed = () => {
   const [feeds, setFeeds] = useState(data?.feed);
   return (
-    <div className="flex flex-col space-y-4">
+    <div className="flex flex-col space-y-4 mb-5">
       {feeds.map((feed, index) => (
         <NewsFeedCard
           image={feed.photos[0]}

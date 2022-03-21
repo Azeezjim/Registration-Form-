@@ -16,6 +16,12 @@
   .side-container {
     @apply flex flex-col space-y-2 justify-center bg-white border shadow-lg rounded-lg max-w-4xl p-2;
   }
+  .news-feed-card-icon{
+    @apply w-5 h-5 fill-current font-extrabold focus:outline-none focus:shadow-none active:outline-none ;
+  }
+  .commentBtn{
+    @apply h-10 w-7 text-playRed cursor-pointer;
+  }
 
 
 }

@@ -13,5 +13,6 @@ module.exports = {
   plugins: [
     require('tailwind-scroll-behavior')(),
     require('tailwind-scrollbar-hide'),
+    require('@tailwindcss/forms'),
   ],
 }
