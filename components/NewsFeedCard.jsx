@@ -13,27 +13,27 @@ const NewsFeedCard = ({image, user, likeCount,commentCount, description, popular
   const [showComments, setShowComments] = useState(false);
   return (
     <div>
-      <div className="rounded-2xl border shadow-md sm:w-[600px] bg-coolGray-900 text-coolGray-100">
-        <div className="flex items-center justify-between px-4 p-3 border-b">
-          <div className="flex items-center space-x-2">
+      <div className="sm:rounded-2xl border shadow-md w-screen lg:w-[600px] bg-coolGray-900 text-coolGray-100">
+        <div className="flex items-center justify-between p-1 sm:px-4 sm:p-3 border-b">
+          <div className="flex items-center space-x-1 sm:space-x-2">
             <img
               src={user.image}
               alt=""
-              className="object-cover object-center w-10 h-10 rounded-full shadow-sm bg-coolGray-500 border-coolGray-700"
+              className="object-cover object-center w-14 h-14  rounded-full shadow-sm bg-coolGray-500 border-coolGray-700"
             />
-            <div className="flex space-x-1">
-              <h2 className="text-sm font-semibold leading-none">
+            <div className="flex space-x-1 text-lg sm:text-sm items-center justify-center">
+              <h2 className=" font-semibold leading-none">
                 {user.username}
               </h2>
               <FaCheckCircle className="w-4 h-4 text-playRed" />
 
-              <span className="inline-block text-xs leading-none text-coolGray-400">
+              <span className="inline-block  text-xs sm:text-xs leading-none text-coolGray-400">
                 @afamdman
               </span>
             </div>
           </div>
-          <div className="flex space-x-1">
-            <span className="text-sm text-gray-600 font-light leading-none">
+          <div className="flex items-center justify-center space-x-1">
+            <span className="text-xs sm:text-sm text-gray-600 font-light leading-none">
               {time}
             </span>
 
@@ -42,7 +42,7 @@ const NewsFeedCard = ({image, user, likeCount,commentCount, description, popular
               title="Open options"
               className="focus:shadow-none focus:outline-none"
             >
-              <BsThreeDots className="w-6" />
+              <BsThreeDots className=" w-6 h-5 sm:w-6" />
             </button>
             <Popover placement="bottom" ref={optionsButtonRef}>
               <PopoverContainer>
@@ -63,7 +63,7 @@ const NewsFeedCard = ({image, user, likeCount,commentCount, description, popular
             </Popover>
           </div>
         </div>
-        <div className="p-2 text-lg sm:text-sm ">
+        <div className=" p-1 sm:p-2 text-lg">
           <ReadMoreReact
             min={100}
             max={200}
@@ -76,7 +76,7 @@ const NewsFeedCard = ({image, user, likeCount,commentCount, description, popular
         <img
           src={image}
           alt=""
-          className="object-cover object-center w-full h-90 bg-coolGray-500"
+          className=" object-contain  w-full  md:h-90 bg-coolGray-500"
         />
         <div className="p-3">
           <div className="flex items-center justify-between px-2">

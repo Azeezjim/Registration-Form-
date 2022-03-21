@@ -21,7 +21,7 @@ const Stories = () => {
     }
   };
   return (
-    <div className="relative w-max">
+    <div className="hidden relative w-screen sm:w-max">
       <div
         onScroll={onScroll}
         ref={storiesRef}
