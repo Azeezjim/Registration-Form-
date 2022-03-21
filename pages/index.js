@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
       <main className=''>
           <Stories/>
-          <div className="sm:flex justify-center p-0 sm:p-5 space-x-0 sm:space-x-10 ">
+          <div className="sm:flex justify-center sm:pt-5 sm:p-5 space-x-0 sm:space-x-10 ">
             <NewsFeed/>
             <NewsFeedSideBar/>
           </div>
