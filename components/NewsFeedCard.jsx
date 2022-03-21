@@ -6,7 +6,7 @@ import {
   BsChat,
   BsHexagon,
 } from "react-icons/bs";
-import {HiOutlineEmojiHappy, HiPaperAirplane} from 'react-icons/hi'
+import { HiOutlineEmojiHappy, HiPaperAirplane } from "react-icons/hi";
 import ReadMoreReact from "read-more-react";
 import { useRef, useState } from "react";
 import Popover from "@material-tailwind/react/Popover";
@@ -15,6 +15,7 @@ import PopoverHeader from "@material-tailwind/react/PopoverHeader";
 import PopoverBody from "@material-tailwind/react/PopoverBody";
 import Comments from "./Comments";
 import Image from "next/image";
+
 
 const NewsFeedCard = ({
   image,
@@ -142,13 +143,22 @@ const NewsFeedCard = ({
               <Comments comments={popularComments} />
               <div className="flex items-center mt-2">
                 <div className="w-12 h-12 relative rounded-full">
-                  <Image src={"/profile_avatar_full.jpg"} className="rounded-full" layout="fill" />
+                  <Image
+                    src={"/profile_avatar_full.jpg"}
+                    className="rounded-full"
+                    layout="fill"
+                  />
                 </div>
-                <form className="bg-gray-100 flex items-center relative rounded-2xl flex-1">
-                  <input type="text" className="bg-gray-100 flex-1 border-none focus:ring-0 outline-none" placeholder="Add a comment"/>
-                  <div className="flex space-x-1 items-center justify-center absolute right-1">
-                    <HiOutlineEmojiHappy className="commentBtn"/>
-                    <HiPaperAirplane className="commentBtn rotate-90"/>
+                <form className="bg-gray-100 flex items-center p-1 rounded-2xl flex-1">
+                  <textarea
+                    type="text"
+                    maxlength = "1280"
+                    className="bg-gray-100 scrollbar-hide flex-1 border-none focus:ring-0 outline-none text-xs resize-none overflow-auto h-auto min-h-[36px]"
+                    placeholder="Add a comment"
+                  ></textarea>
+                  <div className="flex space-x-1 items-center justify-center ">
+                    <HiOutlineEmojiHappy className="commentBtn" />
+                    <HiPaperAirplane className="commentBtn rotate-90" />
                   </div>
                 </form>
               </div>

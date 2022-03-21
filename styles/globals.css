@@ -20,7 +20,7 @@
     @apply w-5 h-5 fill-current font-extrabold focus:outline-none focus:shadow-none active:outline-none ;
   }
   .commentBtn{
-    @apply h-10 w-7 text-playRed cursor-pointer;
+    @apply h-8 w-7 text-playRed cursor-pointer;
   }
 
 
