@@ -8,6 +8,7 @@ import {
 import { BsPlusSquare } from "react-icons/bs";
 import { SiGooglechat } from "react-icons/si";
 import { AiFillBell } from "react-icons/ai";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -17,7 +18,9 @@ const Header = () => {
           <div className="flex items-center justify-center">
             <MdMenu className="text-white h-6 w-8 cursor-pointer" />
             <div className="relative w-32 h-10 lg:inline-grid cursor-pointer">
-              <Image src="/logo.png" objectFit="contain" layout="fill" />
+              <Link href='/'>
+                <Image src="/logo.png" objectFit="contain" layout="fill" />
+              </Link>
             </div>
           </div>
           <div className="hidden sm:flex relative mt-1 p-1 pl-2 rounded-full sm:text-sm  bg-[#C51834]   items-center">
