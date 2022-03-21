@@ -63,7 +63,7 @@ const NewsFeedCard = ({image, user, likeCount,commentCount, description, popular
             </Popover>
           </div>
         </div>
-        <div className="p-2 text-sm ">
+        <div className="p-2 text-lg sm:text-sm ">
           <ReadMoreReact
             min={100}
             max={200}
