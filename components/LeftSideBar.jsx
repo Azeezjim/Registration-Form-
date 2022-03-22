@@ -3,7 +3,7 @@ import { MdSmartDisplay } from "react-icons/md";
 
 const LeftSideBar = () => {
   return (
-    <aside className="hidden lg:block basis-2/12  pt-20 border-solid border-black-50  h-screen border-r-[1px] sticky top-0">
+    <aside className="hidden  sm:block basis-2/8  pt-20 border-solid border-black-50  h-screen border-r-[1px] sticky top-0">
       <div className="flex flex-col space-y-4  justify-center">
         <div className="side-nav-button">
           <div className="side-icon">

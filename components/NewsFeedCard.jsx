@@ -30,8 +30,8 @@ const NewsFeedCard = ({
   const [comments, setComments] = useState([]);
   const [showComments, setShowComments] = useState(false);
   return (
-    <div className="sm:rounded-2xl  sm:border shadow-md w-full border bprder-red-500 basis-2/3 bg-coolGray-900 tex">
-      <div className="flex items-center justify-between p-1 px-2 sm:px-4 sm:p-3 border-b">
+    <div className="sm:rounded-2xl bg-white sm:border shadow-md w-full border bprder-red-500 basis-2/3 bg-coolGray-900 tex">
+      <div className="flex items-center justify-between p-1 px-2 sm:px-4 sm:p-4 border-b">
         <div className="flex items-center space-x-1 sm:space-x-2">
           <img
             src={user.image}
@@ -90,7 +90,7 @@ const NewsFeedCard = ({
         <img src={image} className="w-full  object-cover bg-gray-500" />
       </div>
 
-      <div className="p-3">
+      <div className="p-3 px-7">
         <div className="flex items-center justify-between px-2">
           <button
             type="button"

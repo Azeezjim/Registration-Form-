@@ -1,12 +1,15 @@
-import '../styles/globals.css'
 import "@material-tailwind/react/tailwind.css";
-import Layout from '../components/Layout'
+import '../styles/globals.css';
+import Layout from '../components/Layout';
+import {SessionProvider} from "next-auth/react";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: {session, ...pageProps} }) {
   return (
-    <Layout>
+    <SessionProvider session={session} refetchInterval={5 * 60}>
+       <Layout>
       <Component {...pageProps} />
     </Layout>
+    </SessionProvider>   
   )
   
     
