@@ -17,8 +17,8 @@ import { IoNewspaperSharp } from "react-icons/io5";
 const Login = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
-  const [loginError, setLoginError] = useState('');
-  const [email,setEmail] = useState('')
+  const [loginError, setLoginError] = useState("");
+  const [email, setEmail] = useState("");
   const router = useRouter();
 
   const userLogin = async () => {
@@ -32,15 +32,14 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if(router.query.error){
-      setLoginError(router.query.error)
-      setEmail(router.query.email)
+    if (router.query.error) {
+      setLoginError(router.query.error);
+      setEmail(router.query.email);
     }
   }, [router]);
-   
-  
+
   return (
-    <div className="pt-[75px] ">
+    <div className="pt-[60px] ">
       <div className="relative p-2 bg-cover w-full md:max-w-7xl mx-auto rounded-3xl h-[500px] bg-[url('/banner-mobile.jpg')] bg-playRed/40 lg:bg-playRed/50 bg-blend-darken ">
         <div className="col-container">
           <div className="w-40 h-10 lg:h-14 relative">
@@ -48,10 +47,10 @@ const Login = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  text-white text-center pt-5 lg:pt-16 px-3 ">
-          <div className="lg:col-span-2 col-container space-y-1.5 xs:space-y-4 lg:space-y-0 lg:-mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-0 xs:gap-y-1 xx:gap-y-[30px] ss:gap-y-[55px] text-white text-center pt-5 lg:pt-16 px-3 ">
+          <div className="lg:col-span-2 col-container space-y-1.5 xs:space-y-3 lg:space-y-0 lg:-mt-20">
             <div className="col-container">
-              <h1 className="text-4xl lg:text-5xl font-semibold lg:font-bold">
+              <h1 className="text-3xl lg:text-5xl font-semibold lg:font-bold">
                 Create Original Content
               </h1>
               <p className="text-lg lg:text-2xl font-semibold ">
@@ -59,19 +58,20 @@ const Login = () => {
               </p>
             </div>
 
-            <div className="lg:hidden w-60 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer">
+            <div className="md:hidden  w-60 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer">
               <span className="font-semibold">Register</span>
             </div>
-
-            <h1 className="text-4xl font-semibold lg:font-bold">
-              JOIN CREATE EARN
-            </h1>
-            <p className="text-xs md:text-lg font-semibold">
-              Playjor is an exclusive content and communication tool for all
-              influncers like youtubers, fitness trainers, models, content
-              creators, public figures and social media influencers, who can
-              connect and share their content
-            </p>
+            <div>
+              <h1 className="text-4xl font-semibold lg:font-bold">
+                JOIN CREATE EARN
+              </h1>
+              <p className="text-sm leading-5 md:text-lg font-semibold">
+                Playjor is an exclusive content and communication tool for all
+                influncers like youtubers, fitness trainers, models, content
+                creators, public figures and social media influencers, who can
+                connect and share their content
+              </p>
+            </div>
           </div>
 
           <div className="flex mt-6 sm:mt-20 md:mt-0 flex-col space-y-2 items items-center justify-center">
@@ -79,15 +79,13 @@ const Login = () => {
               <FaUserCircle className="w-8 h-8 text-lightPlayRed" />
               <input
                 placeholder="Email"
-                className="flex-1 bg-white border-none focus:ring-0 outline-none text-xs"
+                className="flex-1 bg-white rounded-full border-none focus:ring-0 outline-none text-xs"
                 type="email"
                 name="email"
                 id="email"
                 ref={emailRef}
               />
-              <p className="text-red">
-                {loginError}
-              </p>
+              <p className="text-red">{loginError}</p>
             </div>
             <div className="inputBox text-gray-900 relative">
               <IoIosLock className="w-8 h-8 text-lightPlayRed" />
@@ -101,13 +99,11 @@ const Login = () => {
               />
               <FaQuestionCircle className="w-5 h-5 absolute right-3 text-lightPlayRed" />
             </div>
-            <div onClick={userLogin} className="bg-lightPlayRed inputBox cursor-pointer">
-              <p
-                className="text-white text-lg font-semibold "
-                
-              >
-                Login
-              </p>
+            <div
+              onClick={userLogin}
+              className="bg-lightPlayRed inputBox cursor-pointer"
+            >
+              <p className="text-white text-lg font-semibold ">Login</p>
             </div>
             <div className=" flex flex-col space-y-3 items-center py-14">
               <p className="text-playRed lg:text-white text-sm text-center  font-semibold shadow-sm">

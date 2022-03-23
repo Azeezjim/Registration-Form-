@@ -62,7 +62,7 @@ export default NextAuth({
 
           const user = await res.data.data;
           
-          console.log(user);
+         
           // If no error and we have user data, return it
 
           if (res.data.success && user) {
