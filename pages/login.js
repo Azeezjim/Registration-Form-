@@ -107,7 +107,7 @@ const Login = () => {
         </div>
       </div>
       <div className="max-w-xs sm:max-w-sm mx-auto flex flex-col space-y-6">
-        <div className="login-card ">
+        <div className="login-card bg-blend-normal">
           <h2 className="text-textPlayRed text-center font-bold text-2xl">
             Create a free profile on Playjor! create your content, invite your
             fans to subscribe and earn money from your content!
