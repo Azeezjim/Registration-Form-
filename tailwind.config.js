@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'playRed' : '#BA253D'
+        'playRed' : '#BA253D',
+        'lightPlayRed' : '#FF1636'
       }
     },
   },

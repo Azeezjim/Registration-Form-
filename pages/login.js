@@ -1,7 +1,8 @@
 import { getProviders, signIn } from "next-auth/react";
 import { useRef } from "react";
 import Image from "next/image";
-import { FaUserCircle, FaQuestionCircle } from "react-icons/fa";
+import { FaUserCircle, FaQuestionCircle, FaFacebookF, FaTwitter } from "react-icons/fa";
+import {FcGoogle} from "react-icons/fc"
 import { IoIosLock } from "react-icons/io";
 
 const Login = () => {
@@ -30,7 +31,7 @@ const Login = () => {
               for your passionate fans and get paid for it
             </p>
           </div>
-          <div className="w-60 h-10 rounded-3xl flex items-center justify-center bg-playRed cursor-pointer">
+          <div className="w-60 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer">
             <span className="font-semibold">Register</span>
           </div>
           <h1 className="text-4xl font-semibold">JOIN CREATE EARN</h1>
@@ -42,7 +43,7 @@ const Login = () => {
           </p>
           <div className="flex flex-col space-y-2 items items-center justify-center">
             <div className="inputBox text-gray-900">
-              <FaUserCircle className="w-8 h-8 text-playRed" />
+              <FaUserCircle className="w-8 h-8 text-lightPlayRed" />
               <input
                 placeholder="Email"
                 className="flex-1 bg-white border-none focus:ring-0 outline-none text-xs"
@@ -53,16 +54,16 @@ const Login = () => {
               />
             </div>
             <div className="inputBox text-gray-900 relative">
-              <IoIosLock className="w-8 h-8 text-playRed" />
+              <IoIosLock className="w-8 h-8 text-lightPlayRed" />
               <input
                 placeholder="Password"
-                className="flex-1 bg-white border-none focus:ring-0 outline-none text-xs"
+                className="flex-1 rounded-full bg-white border-none focus:ring-0 outline-none text-xs"
                 type="password"
                 name="Password"
                 id="Password"
                 ref={passwordRef}
               />
-              <FaQuestionCircle className="w-5 h-5 absolute right-3 text-playRed"/>
+              <FaQuestionCircle className="w-5 h-5 absolute right-3 text-lightPlayRed"/>
             </div>
           </div>
         </div>
@@ -72,11 +73,31 @@ const Login = () => {
           </div>
         </div>
       </div>
-
+      <div className="flex-col flex items-center mt-1">
+        <div className="bg-lightPlayRed inputBox ">
+          <p className="text-white text-lg font-semibold" onClick={userLogin}>Login</p>
+        </div>
+        <div className="flex flex-col space-y-3 items-center mt-4 justify-around">
+          <p className="text-playRed text-sm text-center  font-semibold shadow-sm">
+            Or login with
+          </p>
+          <div className="flex items-center justify-around space-x-3">
+            <div className="social-login-buttons">
+              <FaFacebookF className="w-8 h-8 text-blue-700"/>
+            </div>
+            <div className="social-login-buttons">
+              <FaTwitter className="w-8 h-8 text-[#1DA1F2]"/>
+            </div>
+            <div className="social-login-buttons">
+              <FcGoogle className="w-8 h-8"/>
+            </div>
+          </div>
+        </div>
+      </div>
       
 
       
-      <button onClick={userLogin}>Login</button>
+      
     </div>
   );
 };

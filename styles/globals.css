@@ -23,7 +23,10 @@
     @apply h-8 w-7 text-playRed cursor-pointer;
   }
   .inputBox{
-    @apply w-72 h-12 flex items-center justify-around p-2 bg-white rounded-full
+    @apply w-[275px] h-12 flex items-center justify-around p-2 bg-white rounded-full
+  }
+  .social-login-buttons{
+    @apply flex items-center justify-center rounded-full shadow-2xl w-12 h-12 border  bg-gradient-to-br from-slate-300 to-white ring-1 border-gray-500
   }
 }
 .read-more-button {
