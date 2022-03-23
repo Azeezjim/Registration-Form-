@@ -4,7 +4,7 @@ import GoogleProvider from "next-auth/providers/google";
 import TwitterProvider from "next-auth/providers/twitter";
 import CredentialsProvider from "next-auth/providers/credentials";
 var axios = require('axios');
-var FormData = require('form-data');
+
 
 export default NextAuth({
   // Configure one or more authentication providers
