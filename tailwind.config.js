@@ -12,7 +12,7 @@ module.exports = {
         'bgtext' : '#EDE7E7',
       },
       screens: {
-        'xs': '375px'
+        'xs': '359px'
       }
     },
   },

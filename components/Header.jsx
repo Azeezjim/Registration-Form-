@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useSession, signIn, signOut } from "next-auth/react";
 import {
   MdMenu,
   MdOutlineClose,
@@ -8,19 +9,23 @@ import {
 import { BsPlusSquare } from "react-icons/bs";
 import { SiGooglechat } from "react-icons/si";
 import { AiFillBell } from "react-icons/ai";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
+  const { data: session } = useSession();
+
   return (
-    <div className="shadow-sm border-b  bg-[#B30D28] w-full fixed z-40">
-      <div className="flex max-w-7xl sm:mx-auto p-2 h-[70px] sm:h-[60px] items-center justify-between mx-4">
-        <div className="flex w-full justify-between lg:justify-start items-center space-x-2 ">
+    <div className="bg-[#B30D28] w-full fixed z-40 shadow-sm border-b">
+      <div className="flex max-w-7xl p-2  items-center justify-between  mx-auto ">
+        <div className="flex  justify-between lg:justify-start items-center space-x-2 ">
           <div className="flex items-center justify-center">
             <MdMenu className="text-white h-6 w-8 cursor-pointer" />
-            <div className="relative w-32 h-10 lg:inline-grid cursor-pointer">
-              <Link href='/'>
-                <Image src="/logo.png" objectFit="contain" layout="fill" />
-              </Link>
+            <div
+              className="relative w-32 h-10 lg:inline-grid cursor-pointer"
+              onClick={() => router.push("/")}
+            >
+              <Image src="/logo.png" objectFit="contain" layout="fill" />
             </div>
           </div>
           <div className="hidden sm:flex relative mt-1 p-1 pl-2 rounded-full sm:text-sm  bg-[#C51834]   items-center">
@@ -33,9 +38,9 @@ const Header = () => {
               id=""
             />
           </div>
-          <div className="lg:hidden rounded-full bg-[#C51834] flex items-center justify-center p-1">
-            <MdOutlineSearch className="h-6 w-6 text-white" />
-          </div>
+        </div>
+        <div className="lg:hidden rounded-full bg-[#C51834] flex items-center justify-center p-1">
+          <MdOutlineSearch className="h-8 w-8 text-white" />
         </div>
         <div className="items-center space-x-2 hidden lg:flex  ">
           <div className="icon-bg">
@@ -47,18 +52,21 @@ const Header = () => {
           <div className="icon-bg">
             <AiFillBell className="h-5 w-5 text-white" />
           </div>
-          <div className="flex bg-[#BA253D] rounded-full items-center  space-x-1 w-28 h-10 cursor-pointer">
-            <div className="relative w-10 h-10 ">
-              <Image
-                src="/profile_avatar_full.jpg"
-                layout="fill"
-                objectFit="contain"
-                className="rounded-full w-10 h-10"
-              />
-            </div>
-            <span className="ml-12 h-10 w-10 relative top-2 right-0 text-white font-bold">
-              Afam
-            </span>
+          <div
+            onClick={() => signOut({ callbackUrl: "/login" })}
+            className="row-container rounded-full bg-[#BA253D] space-x-1 pr-2 cursor-pointer"
+          >
+            <Image
+              src={session ? session.user.image : "/profile_avatar_full.jpg"}
+              width={45}
+              height={45}
+              objectFit="contain"
+              className="rounded-full"
+            />
+
+            <p className=" text-xs font-semibold text-white">
+              {session?.user.name}
+            </p>
           </div>
         </div>
       </div>

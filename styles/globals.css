@@ -44,14 +44,14 @@
 }
 .slant-header {
   text-align: center;
-  padding: 10px 0 10px 0;
+  padding: 0 0 10px 0;
   background: #fff;
 }
 
 /* angled div */
 .slanted-div {
   position: relative;
-  padding: 50px 0;
+  padding: 20px 0 50px 0;
   overflow: visible;
   z-index: 1;
 }
@@ -66,7 +66,7 @@
   z-index: -1;
   top: 0;
   transform-origin: left top;
-  transform: skewY(-3deg);
+  transform: skewY(-6deg);
 }
 
 .slanted-div:after {

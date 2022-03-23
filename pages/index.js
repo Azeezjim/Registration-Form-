@@ -5,6 +5,8 @@ import NewsFeed from "../components/NewsFeed";
 import NewsFeedSideBar from "../components/NewsFeedSideBar";
 import LeftSideBar from "../components/LeftSideBar";
 import RightSideBar from "../components/RightSideBar";
+import { getSession } from "next-auth/react";
+
 
 export default function Home() {
   return (
@@ -27,4 +29,19 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps({ req, res }) {
+  const session = await getSession({ req });
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    }
+  }
+  return {
+    props: {},
+  };
 }

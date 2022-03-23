@@ -1,20 +1,25 @@
 import { getProviders, signIn } from "next-auth/react";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
+
 import {
   FaUserCircle,
   FaQuestionCircle,
   FaFacebookF,
   FaTwitter,
-  FaCompass
+  FaCompass,
 } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { IoIosLock } from "react-icons/io";
-import {IoNewspaperSharp} from "react-icons/io5"
+import { IoNewspaperSharp } from "react-icons/io5";
 
 const Login = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
+  const [loginError, setLoginError] = useState('');
+  const [email,setEmail] = useState('')
+  const router = useRouter();
 
   const userLogin = async () => {
     var email = emailRef.current.value;
@@ -25,30 +30,51 @@ const Login = () => {
       password: password,
     });
   };
+
+  useEffect(() => {
+    if(router.query.error){
+      setLoginError(router.query.error)
+      setEmail(router.query.email)
+    }
+  }, [router]);
+   
+  
   return (
-    <div className="pt-[75px]">
-      <div className="bg-cover w-full  rounded-3xl h-[500px] bg-[url('/banner-mobile.jpg')] bg-playRed/40 bg-blend-darken relative">
-        <div className="flex-col flex items-center space-y-4 justify-between text-white text-center pt-5 px-3 ">
-          <div className="w-40 h-10 relative">
+    <div className="pt-[75px] ">
+      <div className="relative p-2 bg-cover w-full md:max-w-7xl mx-auto rounded-3xl h-[500px] bg-[url('/banner-mobile.jpg')] bg-playRed/40 lg:bg-playRed/50 bg-blend-darken ">
+        <div className="col-container">
+          <div className="w-40 h-10 lg:h-14 relative">
             <Image src={"/logo-mobile.png"} layout="fill" objectFit="contain" />
           </div>
-          <div>
-            <h1 className="text-3xl font-bold">Create Original Content</h1>
-            <p className="text-lg font-semibold">
-              for your passionate fans and get paid for it
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  text-white text-center pt-5 lg:pt-16 px-3 ">
+          <div className="lg:col-span-2 col-container space-y-1.5 xs:space-y-4 lg:space-y-0 lg:-mt-20">
+            <div className="col-container">
+              <h1 className="text-4xl lg:text-5xl font-semibold lg:font-bold">
+                Create Original Content
+              </h1>
+              <p className="text-lg lg:text-2xl font-semibold ">
+                for your passionate fans and get paid for it
+              </p>
+            </div>
+
+            <div className="lg:hidden w-60 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer">
+              <span className="font-semibold">Register</span>
+            </div>
+
+            <h1 className="text-4xl font-semibold lg:font-bold">
+              JOIN CREATE EARN
+            </h1>
+            <p className="text-xs md:text-lg font-semibold">
+              Playjor is an exclusive content and communication tool for all
+              influncers like youtubers, fitness trainers, models, content
+              creators, public figures and social media influencers, who can
+              connect and share their content
             </p>
           </div>
-          <div className="w-60 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer">
-            <span className="font-semibold">Register</span>
-          </div>
-          <h1 className="text-4xl font-semibold">JOIN CREATE EARN</h1>
-          <p className="text-xs">
-            Playjor is an exclusive content and communication tool for all
-            influncers like youtubers, fitness trainers, models, content
-            creators, public figures and social media influencers, who can
-            connect and share their content
-          </p>
-          <div className="flex flex-col space-y-2 items items-center justify-center">
+
+          <div className="flex mt-6 sm:mt-20 md:mt-0 flex-col space-y-2 items items-center justify-center">
             <div className="inputBox text-gray-900">
               <FaUserCircle className="w-8 h-8 text-lightPlayRed" />
               <input
@@ -59,6 +85,9 @@ const Login = () => {
                 id="email"
                 ref={emailRef}
               />
+              <p className="text-red">
+                {loginError}
+              </p>
             </div>
             <div className="inputBox text-gray-900 relative">
               <IoIosLock className="w-8 h-8 text-lightPlayRed" />
@@ -72,10 +101,34 @@ const Login = () => {
               />
               <FaQuestionCircle className="w-5 h-5 absolute right-3 text-lightPlayRed" />
             </div>
+            <div onClick={userLogin} className="bg-lightPlayRed inputBox cursor-pointer">
+              <p
+                className="text-white text-lg font-semibold "
+                
+              >
+                Login
+              </p>
+            </div>
+            <div className=" flex flex-col space-y-3 items-center py-14">
+              <p className="text-playRed lg:text-white text-sm text-center  font-semibold shadow-sm">
+                Or login with
+              </p>
+              <div className="flex items-center justify-around space-x-4">
+                <div className="social-login-buttons">
+                  <FaFacebookF className="w-8 h-8 text-blue-700" />
+                </div>
+                <div className="social-login-buttons">
+                  <FaTwitter className="w-8 h-8 text-[#1DA1F2] " />
+                </div>
+                <div className="social-login-buttons">
+                  <FcGoogle className="w-8 h-8" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="pl-2 py-1 pr-0.5 bg-white rounded-full absolute -bottom-6 sm:-bottom-4 -left-4">
-          <div className="relative w-14 h-14 xs:w-[70px] xs:h-[70px]  ">
+        <div className="pl-2 py-1 pr-0.5 bg-white rounded-full absolute -bottom-6 sm:-bottom-4 lg:-bottom-6 lg:-left-6 -left-4">
+          <div className="relative md:w-40 md:h-40 w-[60px] h-[60px]     ">
             <Image
               src={"/playjor-icon.png"}
               layout="fill"
@@ -85,36 +138,14 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="flex-col flex items-center mt-1">
-        <div className="bg-lightPlayRed inputBox ">
-          <p className="text-white text-lg font-semibold" onClick={userLogin}>
-            Login
-          </p>
-        </div>
-        <div className="flex flex-col space-y-3 items-center my-6 justify-around">
-          <p className="text-playRed text-sm text-center  font-semibold shadow-sm">
-            Or login with
-          </p>
-          <div className="flex items-center justify-around space-x-4">
-            <div className="social-login-buttons">
-              <FaFacebookF className="w-8 h-8 text-blue-700" />
-            </div>
-            <div className="social-login-buttons">
-              <FaTwitter className="w-8 h-8 text-[#1DA1F2] " />
-            </div>
-            <div className="social-login-buttons">
-              <FcGoogle className="w-8 h-8" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="max-w-xs sm:max-w-sm mx-auto flex flex-col space-y-6">
-        <div className="login-card bg-blend-normal">
-          <h2 className="text-textPlayRed text-center font-bold text-2xl">
-            Create a free profile on Playjor! create your content, invite your
+
+      <div className="mt-60 md:mt-10 max-w-xs sm:max-w-sm md:max-w-5xl lg:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-0  place-content-center">
+        <div className="md:rounded-r-none login-card lg:col-span-2 ">
+          <h1 className="text-textPlayRed text-center md:text-left font-bold text-2xl lg:text-4xl ">
+            Create a free profile on Playjor!, create your content, invite your
             fans to subscribe and earn money from your content!
-          </h2>
-          <p className="text-sm text-gray-800 text-center mt-4">
+          </h1>
+          <p className="text-sm md:text-lg font-semibold text-gray-800 text-center md:text-left mt-4">
             Simply create a profile post exclusive images, video and tutorials
             and invite your social media fans to subscribe to view.
             <p>
@@ -124,24 +155,34 @@ const Login = () => {
             </p>
           </p>
         </div>
-        <div className="login-card ">
-          <div className="relative w-40 h-40 ">
+        <div className="md:rounded-l-none login-card ">
+          <div className="relative md:hidden w-40 h-40 md:w-60 md:h-60">
             <Image
               src={"/playjor-icon.png"}
               layout="fill"
               objectFit="contain"
-              className="p-1 rounded-full "
+              className="p-1 rounded-full"
             />
           </div>
-          <h1 className="text-6xl leading-none tracking-wide text-center text-playRed font-bold">
+          <div className="relative hidden md:flex w-40 h-40 md:w-60 md:h-60">
+            <Image
+              src={"/playjor-logo-icon.png"}
+              layout="fill"
+              objectFit="contain"
+              className="p-1 rounded-full"
+            />
+          </div>
+          <h1 className="flex md:hidden text-6xl leading-none tracking-wide text-center text-playRed font-bold">
             Playjor
           </h1>
         </div>
-        <div className="login-card">
+      </div>
+      <div className="mt-6 max-w-xs sm:max-w-sm md:max-w-5xl lg:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="login-card z-10">
           <h1 className="font-semibold text-3xl text-lightPlayRed uppercase ">
             create
           </h1>
-          <div className="relative w-32 h-28 my-5">
+          <div className="relative w-44 h-36 my-5">
             <Image src={"/icon-6.png"} layout="fill" objectFit="contain" />
           </div>
           <div className="text-center flex flex-col items-center justify-center space-y-4">
@@ -154,7 +195,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <div className="login-card">
+        <div className="login-card z-10">
           <h1 className="font-semibold text-3xl text-lightPlayRed uppercase ">
             channels
           </h1>
@@ -176,11 +217,11 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <div className="login-card">
+        <div className="login-card z-10">
           <h1 className="font-semibold text-3xl text-lightPlayRed uppercase ">
             create
           </h1>
-          <div className="relative w-44 h-36  my-5">
+          <div className="relative w-44 h-28  my-5">
             <Image
               src={"/case-study-4.png"}
               layout="fill"
@@ -199,29 +240,28 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="slant-header">
-      </div>
+      <div className="slant-header"></div>
       <section className="bg-lightPlayRed  slanted-div ">
         <div className="flex flex-col space-y-8">
-            <h1 className="font-semibold text-3xl text-white  ">Discover Playjor.com</h1>
-            <div className="row-container space-x-10">
-             <div className="col-container space-y-2">
-             <div className="row-container p-4 bg-white rounded-full">
-                  <FaCompass className="h-10 w-10 text-lightPlayRed"/>
+          <h1 className="font-semibold text-3xl text-white  ">
+            Discover Playjor.com
+          </h1>
+          <div className="row-container space-x-10">
+            <div className="col-container space-y-2">
+              <div className="row-container p-4 bg-white rounded-full">
+                <FaCompass className="h-10 w-10 text-lightPlayRed" />
               </div>
               <p className="text-center text-white text-2xl font-bold">
                 Explore
-                </p>
-             </div>
-             <div className="col-container space-y-2">
-              <div className="row-container p-4 bg-white rounded-full">
-                    <IoNewspaperSharp className="h-10 w-10 text-lightPlayRed"/>
-                </div>
-                <p className="text-center text-white text-2xl font-bold">
-                Blog
-                </p>
-             </div>
+              </p>
             </div>
+            <div className="col-container space-y-2">
+              <div className="row-container p-4 bg-white rounded-full">
+                <IoNewspaperSharp className="h-10 w-10 text-lightPlayRed" />
+              </div>
+              <p className="text-center text-white text-2xl font-bold">Blog</p>
+            </div>
+          </div>
         </div>
       </section>
 

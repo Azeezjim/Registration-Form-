@@ -3,8 +3,8 @@ import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
 import TwitterProvider from "next-auth/providers/twitter";
 import CredentialsProvider from "next-auth/providers/credentials";
-var axios = require('axios');
-
+var axios = require("axios");
+var FormData = require("form-data");
 
 export default NextAuth({
   // Configure one or more authentication providers
@@ -40,54 +40,65 @@ export default NextAuth({
         // e.g. return { id: 1, name: 'J Smith', email: 'jsmith@example.com' }
         // You can also use the `req` object to obtain additional parameters
         // (i.e., the request IP address)
-       
-        
+
         var data = new FormData();
-        data.append('email', credentials.email);
-        data.append('password', credentials.password);
-        data.append('login_by', 'manual');
-        data.append('device_token', '123456');
-        data.append('device_type', 'web');
-        
+        data.append("email", credentials.email);
+        data.append("password", credentials.password);
+        data.append("login_by", "manual");
+        data.append("device_token", "123456");
+        data.append("device_type", "web");
+
         var config = {
-          method: 'post',
-          url: 'https://cms.onlyally.com/api/user/login',
-          headers: { 
-            ...data.getHeaders()
+          method: "post",
+          url: "https://cms.onlyally.com/api/user/login",
+          headers: {
+            ...data.getHeaders(),
           },
-          data : data
+          data: data,
         };
-        
-       const res = await axios(config)
-       
 
-        const user = await res.data.data;
+        try {
+          const res = await axios(config);
 
-        // If no error and we have user data, return it
+          const user = await res.data.data;
+          
+          console.log(user);
+          // If no error and we have user data, return it
 
-        if (res.data.success && user) {
-          return user;
+          if (res.data.success && user) {
+            return user;
+          }
+        } catch (e) {
+          const errorMessage = e.response.data.message;
+          throw new Error(errorMessage + "&email" + credentials.email);
         }
-        // Return null if user data could not be retrieved
-        return null;
+        // // Return null if user data could not be retrieved
+        // return null;
       },
     }),
   ],
-  secret: 'jhsggsjfjsdgf7ueshgfsjfhgj',
-  //   callbacks: {
-  //     async signIn({ user, account, profile, email, credentials }) {
-  //       return true
-  //     },
-  //     async redirect({ url, baseUrl }) {
-  //       return baseUrl
-  //     },
-  //     async session({ session, user, token }) {
-  //       return session
-  //     },
-  //     async jwt({ token, user, account, profile, isNewUser }) {
-  //       return token
-  //     }
-  // },
+  secret: "jhsggsjfjsdgf7ueshgfsjfhgj",
+  callbacks: {
+    // async signIn({ user, account, profile, email, credentials }) {
+    //   return true
+    // },
+    // async redirect({ url, baseUrl }) {
+    //   return baseUrl
+    // },
+
+    async jwt({token, user}) {
+      if (user) {
+        token.accessToken = user.token;
+        token.user = user;
+      }
+      return token;
+    },
+    async session({ session, token}) {
+      session.accessToken = token.accessToken;
+      session.user.image = token.user?.picture
+      return session;
+    },
+  },
   pages: {
     signIn: "/login",
     signOut: "/logout",
