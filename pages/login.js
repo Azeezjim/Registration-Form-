@@ -201,7 +201,7 @@ const Login = () => {
       </div>
       <div className="slant-header">
       </div>
-      <section class="bg-lightPlayRed  slanted-div ">
+      <section className="bg-lightPlayRed  slanted-div ">
         <div className="flex flex-col space-y-8">
             <h1 className="font-semibold text-4xl text-white  ">Discover Playjor.com</h1>
             <div className="row-container space-x-10">
