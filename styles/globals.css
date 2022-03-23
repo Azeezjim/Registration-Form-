@@ -31,10 +31,89 @@
   .login-card{
     @apply flex flex-col bg-bgtext items-center justify-center p-4  rounded-2xl;
   }
+  .row-container{
+    @apply flex items-center justify-center;
+  }
+  .col-container{
+    @apply flex flex-col items-center justify-center
+  }
 }
 .read-more-button {
   color: red;
   cursor: pointer;
+}
+.slant-header {
+  text-align: center;
+  padding: 10px 0 40px 0;
+  background: #fff;
+}
+
+/* angled div */
+.slanted-div {
+  position: relative;
+  padding: 200px 0;
+  overflow: visible;
+  z-index: 1;
+}
+
+/* where the magic happens */
+.slanted-div:before, .slanted-div:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  transform-origin: left top;
+  transform: skewY(-3deg);
+}
+
+.slanted-div:after {
+  bottom: 0;
+  transform-origin: left bottom;
+  transform: skewY(3deg);
+}
+
+/* displays the content inside, as these settings in the parent breaks the effect */
+.slanted-div div {
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
+.slant-footer {
+  text-align: center;
+  padding: 100px 0 50px 0;
+  background: #fff;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* responsive */
+@media only screen
+and (max-width : 720px) {
+  
+  .slant-header {
+    padding: 30px 30px 50px 30px;
+  }
+
+  .slanted-div {
+    padding: 100px 0;
+  }
+  
+  .slant-footer {
+    padding: 65px 0 50px 0;
+  }
+    
+  h1 {
+    font-size: 1.5em;
+  }
+
 }
 html,
 body {

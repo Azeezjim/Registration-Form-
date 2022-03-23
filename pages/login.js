@@ -6,9 +6,11 @@ import {
   FaQuestionCircle,
   FaFacebookF,
   FaTwitter,
+  FaCompass
 } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { IoIosLock } from "react-icons/io";
+import {IoNewspaperSharp} from "react-icons/io5"
 
 const Login = () => {
   const emailRef = useRef("");
@@ -98,7 +100,7 @@ const Login = () => {
               <FaFacebookF className="w-8 h-8 text-blue-700" />
             </div>
             <div className="social-login-buttons">
-              <FaTwitter className="w-8 h-8 text-[#1DA1F2]" />
+              <FaTwitter className="w-8 h-8 text-[#1DA1F2] " />
             </div>
             <div className="social-login-buttons">
               <FcGoogle className="w-8 h-8" />
@@ -116,8 +118,9 @@ const Login = () => {
             Simply create a profile post exclusive images, video and tutorials
             and invite your social media fans to subscribe to view.
             <p>
-              You set the monthly membership &#40; subs &#41; rate, so you&apos;re always in
-              control of how much your fans pay. and how much you earn.
+              You set the monthly membership &#40; subs &#41; rate, so
+              you&apos;re always in control of how much your fans pay. and how
+              much you earn.
             </p>
           </p>
         </div>
@@ -143,11 +146,12 @@ const Login = () => {
           </div>
           <div className="text-center flex flex-col items-center justify-center space-y-4">
             <p className="text-xl font-semibold text-slate-700 leading-tight">
-              Create exclusive, unique, original, picture, audio, video content your fans {"can't"} find anywhere else but here.
+              Create exclusive, unique, original, picture, audio, video content
+              your fans {"can't"} find anywhere else but here.
             </p>
             <div className="w-40 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer">
-            <span className="font-bold text-white">Create account</span>
-          </div>
+              <span className="font-bold text-white">Create account</span>
+            </div>
           </div>
         </div>
         <div className="login-card">
@@ -155,15 +159,21 @@ const Login = () => {
             channels
           </h1>
           <div className="relative w-44 h-36 my-5">
-            <Image src={"/banner-thumb-1.png"} layout="fill" objectFit="contain" />
+            <Image
+              src={"/banner-thumb-1.png"}
+              layout="fill"
+              objectFit="contain"
+            />
           </div>
           <div className="text-center flex flex-col items-center justify-center space-y-4">
             <p className="text-xl font-semibold text-slate-700 leading-tight">
-             Share your content in your private channel. Where your fans pay your own chosen subscription fee, weekly, monthly or one time payment.
+              Share your content in your private channel. Where your fans pay
+              your own chosen subscription fee, weekly, monthly or one time
+              payment.
             </p>
             <div className="w-40 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer">
-            <span className="font-bold text-white">Create account</span>
-          </div>
+              <span className="font-bold text-white">Create account</span>
+            </div>
           </div>
         </div>
         <div className="login-card">
@@ -171,18 +181,51 @@ const Login = () => {
             create
           </h1>
           <div className="relative w-44 h-36  my-5">
-            <Image src={"/case-study-4.png"} layout="fill" objectFit="contain" />
+            <Image
+              src={"/case-study-4.png"}
+              layout="fill"
+              objectFit="contain"
+            />
           </div>
           <div className="text-center flex flex-col items-center justify-center space-y-4">
             <p className="text-xl font-semibold text-slate-700 leading-tight">
-              Create a fan group where your fans can share their own content with other fans, earn from the m,onthly fees fans pay to join your exclusive group.
+              Create a fan group where your fans can share their own content
+              with other fans, earn from the m,onthly fees fans pay to join your
+              exclusive group.
             </p>
             <div className="w-40 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer">
-            <span className="font-bold text-white">Create account</span>
-          </div>
+              <span className="font-bold text-white">Create account</span>
+            </div>
           </div>
         </div>
       </div>
+      <div className="slant-header">
+      </div>
+      <section class="bg-lightPlayRed  slanted-div ">
+        <div className="flex flex-col space-y-4">
+            <h1 className="font-semibold text-4xl text-white  ">Discover Playjor.com</h1>
+            <div className="row-container space-x-10">
+             <div className="col-container space-y-2">
+             <div className="row-container p-6 bg-white rounded-full">
+                  <FaCompass className="h-14 w-14 text-lightPlayRed"/>
+              </div>
+              <p className="text-center text-white text-3xl font-bold">
+                Explore
+                </p>
+             </div>
+             <div className="col-container space-y-2">
+              <div className="row-container p-6 bg-white rounded-full">
+                    <IoNewspaperSharp className="h-14 w-14 text-lightPlayRed"/>
+                </div>
+                <p className="text-center text-white text-3xl font-bold">
+                Blog
+                </p>
+             </div>
+            </div>
+        </div>
+      </section>
+
+      <div className="text-playRed slant-footer">&copy;2019</div>
     </div>
   );
 };
