@@ -9,7 +9,10 @@ module.exports = {
         'playRed' : '#BA253D',
         'lightPlayRed' : '#FF1636',
         'textPlayRed' : '#CF0A08',
-        'bgtext' : '#EDE7E7'
+        'bgtext' : '#EDE7E7',
+      },
+      screens: {
+        'xs': '375px'
       }
     },
   },

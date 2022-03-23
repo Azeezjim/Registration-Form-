@@ -25,7 +25,7 @@ const Login = () => {
   };
   return (
     <div className="pt-[75px]">
-      <div className="bg-cover w-full  rounded-3xl h-[500px] bg-[url('/banner-mobile.jpg')] bg-playRed/40 bg-blend-darken">
+      <div className="bg-cover w-full  rounded-3xl h-[500px] bg-[url('/banner-mobile.jpg')] bg-playRed/40 bg-blend-darken relative">
         <div className="flex-col flex items-center space-y-4 justify-between text-white text-center pt-5 px-3 ">
           <div className="w-40 h-10 relative">
             <Image src={"/logo-mobile.png"} layout="fill" objectFit="contain" />
@@ -72,8 +72,8 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <div className="pl-2 py-1 pr-0.5 bg-white rounded-full absolute -left-4">
-          <div className="relative w-16 h-16 ">
+        <div className="pl-2 py-1 pr-0.5 bg-white rounded-full absolute -bottom-6 sm:-bottom-4 -left-4">
+          <div className="relative w-14 h-14 xs:w-[70px] xs:h-[70px]  ">
             <Image
               src={"/playjor-icon.png"}
               layout="fill"
