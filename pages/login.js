@@ -40,17 +40,17 @@ const Login = () => {
 
   return (
     <div className="pt-[60px] ">
-      <div className="relative p-2 bg-cover w-full md:max-w-7xl mx-auto rounded-3xl h-[500px] bg-[url('/banner-mobile.jpg')] bg-playRed/40 lg:bg-playRed/50 bg-blend-darken ">
+      <div className="relative p-1 bg-cover w-full md:max-w-7xl mx-auto rounded-3xl h-[500px] bg-[url('/banner-mobile.jpg')] bg-playRed/40 lg:bg-playRed/50 bg-blend-darken ">
         <div className="col-container">
           <div className="w-40 h-10 lg:h-14 relative">
             <Image src={"/logo-mobile.png"} layout="fill" objectFit="contain" />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-0 xs:gap-y-1 xx:gap-y-[30px] ss:gap-y-[55px] text-white text-center pt-5 lg:pt-16 px-3 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-2 xs:gap-y-3  ss:gap-y-[55px] text-white text-center pt-5 lg:pt-16 px-3 ">
           <div className="lg:col-span-2 col-container space-y-1.5 xs:space-y-3 lg:space-y-0 lg:-mt-20">
-            <div className="col-container">
-              <h1 className="text-3xl lg:text-5xl font-semibold lg:font-bold">
+            <div className="">
+              <h1 className="text-2xl ss:text-3xl lg:text-5xl font-bold lg:font-bold">
                 Create Original Content
               </h1>
               <p className="text-lg lg:text-2xl font-semibold ">
@@ -62,10 +62,10 @@ const Login = () => {
               <span className="font-semibold">Register</span>
             </div>
             <div>
-              <h1 className="text-4xl font-semibold lg:font-bold">
+              <h1 className="text-3xl md:text-4xl font-semibold lg:font-bold">
                 JOIN CREATE EARN
               </h1>
-              <p className="text-sm leading-5 md:text-lg font-semibold">
+              <p className="text-sm leading-1 ss:leading-5 md:text-lg font-semibold mt-2 ss:mt-0">
                 Playjor is an exclusive content and communication tool for all
                 influncers like youtubers, fitness trainers, models, content
                 creators, public figures and social media influencers, who can
