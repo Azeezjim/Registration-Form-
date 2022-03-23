@@ -116,7 +116,7 @@ const Login = () => {
             Simply create a profile post exclusive images, video and tutorials
             and invite your social media fans to subscribe to view.
             <p>
-              You set the monthly membership  {"(subs)"} rate, so you're always in
+              You set the monthly membership &#40; subs &#41; rate, so you're always in
               control of how much your fans pay. and how much you earn.
             </p>
           </p>
