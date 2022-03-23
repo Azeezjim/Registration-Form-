@@ -40,7 +40,7 @@ const Login = () => {
 
   return (
     <div className="pt-[60px] ">
-      <div className="relative p-1 bg-cover w-full md:max-w-7xl mx-auto rounded-3xl h-[500px] bg-[url('/banner-mobile.jpg')] bg-playRed/40 lg:bg-playRed/50 bg-blend-darken ">
+      <div className="relative p-1 bg-cover px-1 w-full md:max-w-7xl mx-auto rounded-3xl h-[500px] bg-[url('/banner-mobile.jpg')] bg-playRed/40 lg:bg-playRed/50 bg-blend-darken ">
         <div className="col-container">
           <div className="w-40 h-10 lg:h-14 relative">
             <Image src={"/logo-mobile.png"} layout="fill" objectFit="contain" />
