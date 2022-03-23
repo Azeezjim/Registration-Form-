@@ -51,7 +51,7 @@
 /* angled div */
 .slanted-div {
   position: relative;
-  padding: 200px 0;
+  padding: 100px 0;
   overflow: visible;
   z-index: 1;
 }
@@ -103,7 +103,7 @@ and (max-width : 720px) {
   }
 
   .slanted-div {
-    padding: 100px 0;
+    padding: 50px 0;
   }
   
   .slant-footer {

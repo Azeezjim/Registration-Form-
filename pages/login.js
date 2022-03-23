@@ -202,22 +202,22 @@ const Login = () => {
       <div className="slant-header">
       </div>
       <section class="bg-lightPlayRed  slanted-div ">
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-8">
             <h1 className="font-semibold text-4xl text-white  ">Discover Playjor.com</h1>
             <div className="row-container space-x-10">
              <div className="col-container space-y-2">
-             <div className="row-container p-6 bg-white rounded-full">
-                  <FaCompass className="h-14 w-14 text-lightPlayRed"/>
+             <div className="row-container p-4 bg-white rounded-full">
+                  <FaCompass className="h-10 w-10 text-lightPlayRed"/>
               </div>
-              <p className="text-center text-white text-3xl font-bold">
+              <p className="text-center text-white text-2xl font-bold">
                 Explore
                 </p>
              </div>
              <div className="col-container space-y-2">
-              <div className="row-container p-6 bg-white rounded-full">
-                    <IoNewspaperSharp className="h-14 w-14 text-lightPlayRed"/>
+              <div className="row-container p-4 bg-white rounded-full">
+                    <IoNewspaperSharp className="h-10 w-10 text-lightPlayRed"/>
                 </div>
-                <p className="text-center text-white text-3xl font-bold">
+                <p className="text-center text-white text-2xl font-bold">
                 Blog
                 </p>
              </div>
