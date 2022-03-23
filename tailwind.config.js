@@ -7,7 +7,9 @@ module.exports = {
     extend: {
       colors: {
         'playRed' : '#BA253D',
-        'lightPlayRed' : '#FF1636'
+        'lightPlayRed' : '#FF1636',
+        'textPlayRed' : '#CF0A08',
+        'bgtext' : '#EDE7E7'
       }
     },
   },

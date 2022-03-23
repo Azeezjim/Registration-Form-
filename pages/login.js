@@ -1,8 +1,13 @@
 import { getProviders, signIn } from "next-auth/react";
 import { useRef } from "react";
 import Image from "next/image";
-import { FaUserCircle, FaQuestionCircle, FaFacebookF, FaTwitter } from "react-icons/fa";
-import {FcGoogle} from "react-icons/fc"
+import {
+  FaUserCircle,
+  FaQuestionCircle,
+  FaFacebookF,
+  FaTwitter,
+} from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 import { IoIosLock } from "react-icons/io";
 
 const Login = () => {
@@ -63,41 +68,121 @@ const Login = () => {
                 id="Password"
                 ref={passwordRef}
               />
-              <FaQuestionCircle className="w-5 h-5 absolute right-3 text-lightPlayRed"/>
+              <FaQuestionCircle className="w-5 h-5 absolute right-3 text-lightPlayRed" />
             </div>
           </div>
         </div>
         <div className="pl-2 py-1 pr-0.5 bg-white rounded-full absolute -left-4">
           <div className="relative w-16 h-16 ">
-          <Image src={'/playjor-icon.png'} layout="fill" objectFit="contain" className="p-1 rounded-full "/>
+            <Image
+              src={"/playjor-icon.png"}
+              layout="fill"
+              objectFit="contain"
+              className="p-1 rounded-full "
+            />
           </div>
         </div>
       </div>
       <div className="flex-col flex items-center mt-1">
         <div className="bg-lightPlayRed inputBox ">
-          <p className="text-white text-lg font-semibold" onClick={userLogin}>Login</p>
+          <p className="text-white text-lg font-semibold" onClick={userLogin}>
+            Login
+          </p>
         </div>
         <div className="flex flex-col space-y-3 items-center my-6 justify-around">
           <p className="text-playRed text-sm text-center  font-semibold shadow-sm">
             Or login with
           </p>
-          <div className="flex items-center justify-around space-x-3">
+          <div className="flex items-center justify-around space-x-4">
             <div className="social-login-buttons">
-              <FaFacebookF className="w-8 h-8 text-blue-700"/>
+              <FaFacebookF className="w-8 h-8 text-blue-700" />
             </div>
             <div className="social-login-buttons">
-              <FaTwitter className="w-8 h-8 text-[#1DA1F2]"/>
+              <FaTwitter className="w-8 h-8 text-[#1DA1F2]" />
             </div>
             <div className="social-login-buttons">
-              <FcGoogle className="w-8 h-8"/>
+              <FcGoogle className="w-8 h-8" />
             </div>
           </div>
         </div>
       </div>
-      
-
-      
-      
+      <div className="max-w-xs sm:max-w-sm mx-auto flex flex-col space-y-6">
+        <div className="login-card ">
+          <h2 className="text-textPlayRed text-center font-bold text-2xl">
+            Create a free profile on Playjor! create your content, invite your
+            fans to subscribe and earn money from your content!
+          </h2>
+          <p className="text-sm text-gray-800 text-center mt-4">
+            Simply create a profile post exclusive images, video and tutorials
+            and invite your social media fans to subscribe to view.
+            <p>
+              You set the monthly membership (subs) rate, so you're always in
+              control of how much your fans pay. and how much you earn.
+            </p>
+          </p>
+        </div>
+        <div className="login-card ">
+          <div className="relative w-40 h-40 ">
+            <Image
+              src={"/playjor-icon.png"}
+              layout="fill"
+              objectFit="contain"
+              className="p-1 rounded-full "
+            />
+          </div>
+          <h1 className="text-6xl leading-none tracking-wide text-center text-playRed font-bold">
+            Playjor
+          </h1>
+        </div>
+        <div className="login-card">
+          <h1 className="font-semibold text-3xl text-lightPlayRed uppercase ">
+            create
+          </h1>
+          <div className="relative w-32 h-28 my-5">
+            <Image src={"/icon-6.png"} layout="fill" objectFit="contain" />
+          </div>
+          <div className="text-center flex flex-col items-center justify-center space-y-4">
+            <p className="text-xl font-semibold text-slate-700 leading-tight">
+              Create exclusive, unique, original, picture, audio, video content your fans can't find anywhere else but here.
+            </p>
+            <div className="w-40 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer">
+            <span className="font-bold text-white">Create account</span>
+          </div>
+          </div>
+        </div>
+        <div className="login-card">
+          <h1 className="font-semibold text-3xl text-lightPlayRed uppercase ">
+            channels
+          </h1>
+          <div className="relative w-44 h-36 my-5">
+            <Image src={"/banner-thumb-1.png"} layout="fill" objectFit="contain" />
+          </div>
+          <div className="text-center flex flex-col items-center justify-center space-y-4">
+            <p className="text-xl font-semibold text-slate-700 leading-tight">
+             Share your content in your private channel. Where your fans pay your own chosen subscription fee, weekly, monthly or one time payment.
+            </p>
+            <div className="w-40 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer">
+            <span className="font-bold text-white">Create account</span>
+          </div>
+          </div>
+        </div>
+        <div className="login-card">
+          <h1 className="font-semibold text-3xl text-lightPlayRed uppercase ">
+            create
+          </h1>
+          <div className="relative w-44 h-36  my-5">
+            <Image src={"/case-study-4.png"} layout="fill" objectFit="contain" />
+          </div>
+          <div className="text-center flex flex-col items-center justify-center space-y-4">
+            <p className="text-xl font-semibold text-slate-700 leading-tight">
+              Create a fan group where your fans can share their own content with other fans, earn from the m,onthly fees fans pay to join your exclusive group.
+            </p>
+            <div className="w-40 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer">
+            <span className="font-bold text-white">Create account</span>
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

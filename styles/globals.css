@@ -28,6 +28,9 @@
   .social-login-buttons{
     @apply flex items-center justify-center rounded-full shadow-2xl w-12 h-12 border  bg-gradient-to-br from-slate-300 to-white ring-1 border-gray-500
   }
+  .login-card{
+    @apply flex flex-col bg-bgtext items-center justify-center p-4  rounded-2xl;
+  }
 }
 .read-more-button {
   color: red;
