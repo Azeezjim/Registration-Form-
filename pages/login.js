@@ -67,7 +67,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <div className="pl-2 py-1 pr- bg-white rounded-full absolute -left-4">
+        <div className="pl-2 py-1 pr-0.5 bg-white rounded-full absolute -left-4">
           <div className="relative w-16 h-16 ">
           <Image src={'/playjor-icon.png'} layout="fill" objectFit="contain" className="p-1 rounded-full "/>
           </div>
@@ -77,7 +77,7 @@ const Login = () => {
         <div className="bg-lightPlayRed inputBox ">
           <p className="text-white text-lg font-semibold" onClick={userLogin}>Login</p>
         </div>
-        <div className="flex flex-col space-y-3 items-center mt-4 justify-around">
+        <div className="flex flex-col space-y-3 items-center my-6 justify-around">
           <p className="text-playRed text-sm text-center  font-semibold shadow-sm">
             Or login with
           </p>
