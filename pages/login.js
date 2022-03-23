@@ -203,7 +203,7 @@ const Login = () => {
       </div>
       <section className="bg-lightPlayRed  slanted-div ">
         <div className="flex flex-col space-y-8">
-            <h1 className="font-semibold text-4xl text-white  ">Discover Playjor.com</h1>
+            <h1 className="font-semibold text-3xl text-white  ">Discover Playjor.com</h1>
             <div className="row-container space-x-10">
              <div className="col-container space-y-2">
              <div className="row-container p-4 bg-white rounded-full">
