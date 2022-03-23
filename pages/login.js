@@ -116,7 +116,7 @@ const Login = () => {
             Simply create a profile post exclusive images, video and tutorials
             and invite your social media fans to subscribe to view.
             <p>
-              You set the monthly membership  &#40; subs &#41; rate, so you're always in
+              You set the monthly membership  {"(subs)"} rate, so you're always in
               control of how much your fans pay. and how much you earn.
             </p>
           </p>
@@ -143,7 +143,7 @@ const Login = () => {
           </div>
           <div className="text-center flex flex-col items-center justify-center space-y-4">
             <p className="text-xl font-semibold text-slate-700 leading-tight">
-              Create exclusive, unique, original, picture, audio, video content your fans can&apos;t find anywhere else but here.
+              Create exclusive, unique, original, picture, audio, video content your fans {"can't"} find anywhere else but here.
             </p>
             <div className="w-40 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer">
             <span className="font-bold text-white">Create account</span>
