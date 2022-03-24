@@ -38,6 +38,26 @@
     @apply flex flex-col items-center justify-center
   }
 }
+
+.tag_auth_effect {
+  position: absolute;
+  right: -450px;
+  top: -161px;
+  width: 909px;
+  height: 721px;
+  opacity: 0.06;
+
+}
+
+.tag_auth_effect_bottom {
+  position: fixed;
+  left: -120px;
+  bottom: -60px;
+  height: 500px;
+  width: 700px;
+  opacity: 0.04;
+}
+
 .read-more-button {
   color: red;
   cursor: pointer;

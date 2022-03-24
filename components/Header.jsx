@@ -15,6 +15,32 @@ const Header = () => {
   const router = useRouter();
   const { data: session } = useSession();
 
+  if (!session)
+    return (
+      <div className="w-full bg-transparent fixed top-0 z-40">
+        <div className="max-w-6xl mx-auto px-1 md:px-0 flex items-center justify-between">
+          <div className="relative w-32 h-16 cursor-pointer">
+            <Image src="/logo.png" objectFit="contain" layout="fill" />
+          </div>
+
+          <div>
+            {router.pathname === "/login" ? (
+              <div
+                onClick={() => router.push("/register")}
+                className="  w-40 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer"
+              >
+                <span className="font-semibold text-white">Register</span>
+              </div>
+            ) : (
+              <div onClick={()=>router.push('/login')} className="w-40 h-10 rounded-3xl flex items-center justify-center bg-lightPlayRed cursor-pointer">
+                <span className="font-semibold text-white">Login</span>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+
   return (
     <div className="bg-[#B30D28] w-full fixed z-40 shadow-sm border-b">
       <div className="flex max-w-7xl p-2  items-center justify-between  mx-auto ">

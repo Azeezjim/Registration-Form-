@@ -1,11 +1,14 @@
 import { TiVideo } from "react-icons/ti";
 import { MdSmartDisplay } from "react-icons/md";
+import {useRouter} from 'next/router';
+import {FiPlus} from 'react-icons/fi'
 
 const LeftSideBar = () => {
+  const router = useRouter();
   return (
-    <aside className="hidden  sm:block basis-2/8  pt-20 border-solid border-black-50  h-screen border-r-[1px] sticky top-0">
-      <div className="flex flex-col space-y-4  justify-center">
-        <div className="side-nav-button">
+    <aside className="hidden  sm:block basis-2/12   pt-20 border-solid border-black-50  h-screen border-r-[1px] sticky top-0">
+      <div className="flex flex-col space-y-4 ">
+        <div className="side-nav-button" onClick={()=>router.push('/')}>
           <div className="side-icon">
             <svg
               width="24"
@@ -25,7 +28,7 @@ const LeftSideBar = () => {
           </div>
           <span className="font-bold">News Feed</span>
         </div>
-        <div className="side-nav-button">
+        <div className="side-nav-button" onClick={()=>router.push('/explore')}>
           <div className="side-icon">
             <svg
               width="24"
@@ -94,8 +97,13 @@ const LeftSideBar = () => {
               ></path>
             </svg>
           </div>
-          <span className="font-bold">Groups</span>
+          <span className="font-bold">Playhub</span>
         </div>
+        {
+         router.pathname !== '/' ? <div className="justify-start p-1 pl-2 space-x-4 cursor-pointer row-container  w-40 h-10 ml-5 text-white   bg-lightPlayRed rounded-full">
+            <FiPlus className="h-6 w-6"/> <p className="text-lg font-medium">Create</p>
+         </div>: ''
+        }
       </div>
     </aside>
   );

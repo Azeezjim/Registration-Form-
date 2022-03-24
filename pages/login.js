@@ -39,8 +39,8 @@ const Login = () => {
   }, [router]);
 
   return (
-    <div className="pt-[60px] ">
-      <div className="relative p-1 bg-cover mx-1 w-full md:max-w-7xl rounded-3xl h-[500px] bg-[url('/banner-mobile.jpg')] bg-playRed/40 lg:bg-playRed/50 bg-blend-darken ">
+    <div className="pt-[70px] ">
+      <div className="relative p-1 bg-cover  md:mx-auto w-full md:max-w-7xl rounded-3xl h-[500px] bg-[url('/banner-mobile.jpg')] bg-playRed/40 lg:bg-playRed/50 bg-blend-darken ">
         <div className="col-container">
           <div className="w-40 h-10 lg:h-14 relative">
             <Image src={"/logo-mobile.png"} layout="fill" objectFit="contain" />
@@ -261,7 +261,7 @@ const Login = () => {
         </div>
       </section>
 
-      <div className="text-playRed slant-footer">&copy;2019</div>
+      <div className="text-playRed text-lg slant-footer">&copy;2022</div>
     </div>
   );
 };
