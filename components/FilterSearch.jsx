@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from "react";
 import RangeSlider from "./RangeSlider";
 import { FaCheckCircle } from "react-icons/fa";
-import { MdLocationOn } from "react-icons/md";
-import {BsFillEyeFill} from "react-icons/bs"
+import { MdLocationOn , MdImage} from "react-icons/md";
+import { BsFillEyeFill } from "react-icons/bs";
 import Dropdown from "./Dropdown";
 
 const FilterSearch = () => {
@@ -16,14 +16,29 @@ const FilterSearch = () => {
     { id: 1, value: "Online" },
     { id: 2, value: "Offline" },
   ];
+  const allGenderVals = [
+    { id: 0, value: "All" },
+    { id: 1, value: "Female" },
+    { id: 2, value: "Male" },
+  ];
+  const allAvatarVals = [
+    { id: 0, value: "All" },
+    { id: 1, value: "Yes" },
+    { id: 2, value: "No" },
+  ];
 
   const allAgeVals = [
     { id: 0, value: "Yes" },
     { id: 1, value: "No" },
   ];
 
+  
+
   const [selectedVerified, setSelectedVerified] = useState(0);
-  const [selectedAge, setSelectedAge] = useState(0);
+  const [selectedStatus, setSelectedStatus] = useState(0);
+  const [selectedGender, setSelectedGender] = useState(0);
+  const [selectedAvatar, setSelectedAvatar] = useState(0);
+  const [selectedAge, setSelectedAge] = useState(1);
 
   const inputRef = useRef();
   const inputWidth = () => {
@@ -37,13 +52,13 @@ const FilterSearch = () => {
   };
   return (
     <div className="container">
-      <div className="p-5 bg-white rounded-xl shadow-md outline-none">
+      <div className="p-5 my-6  bg-white rounded-xl shadow-md outline-none">
         <div className="row-container mt-3 mx-0 mb-6 break-words filter-search">
           <input
             ref={inputRef}
             onChange={inputWidth}
             type="text"
-            className="text-center text-lg w-[175px] !max-w-[600px] break-words overflow-visible m-0 !outline-none focus:ring-0 outline-offset-0"
+            className="text-center placeholder:text-gray-400 placeholder:font-semibold placeholder:text-4xl px-2 w-[175px] !max-w-[700px] break-words overflow-visible m-0 !outline-none focus:ring-0 outline-offset-0"
             name="query"
             id="query"
             placeholder="Keyword"
@@ -67,7 +82,7 @@ const FilterSearch = () => {
             </svg>
           </button>
         </div>
-        <div className="justify-between  row-container flex-wrap mt-4 -mx-[7px]">
+        <div className="row-container flex-wrap mt-4 space-x-3">
           <div className="search-filter-dropdown">
             <MdLocationOn className="absolute m-0 w-4 h-4 align-middle overflow-hidden left-2 top-2 text-lightPlayRed" />
             <select
@@ -337,16 +352,16 @@ const FilterSearch = () => {
             <Dropdown name={"Age"}>
               {allAgeVals.map((val, index) => (
                 <div key={val.id}>
-                  <label className="inline-flex items-center " >
+                  <label className="inline-flex items-center ">
                     <input
                       type="checkbox"
                       className="form-checkbox h-4 w-4 ring-0 text-lightPlayRed focus:ring-0 focus:outline-0 outline-none"
                       checked={index === selectedAge}
                       onChange={() => setSelectedAge(val.id)}
                     />
-                    <span className="ml-2 text-xs">{val.value}</span>
+                    <span className="ml-2 text-sm">{val.value}</span>
                   </label>
-                  <div className={index === 1 ? "hidden" : ""} >
+                  <div className={index === 1 ? "hidden" : ""}>
                     {selectedAge === 0 && (
                       <RangeSlider
                         key={index}
@@ -376,7 +391,7 @@ const FilterSearch = () => {
                       setSelectedVerified(val.id);
                     }}
                   />
-                  <span className="ml-2 text-xs">{val.value}</span>
+                  <span className="ml-2 text-sm">{val.value}</span>
                 </label>
               ))}
             </Dropdown>
@@ -389,30 +404,59 @@ const FilterSearch = () => {
                   <input
                     type="checkbox"
                     className="form-checkbox h-4 w-4 ring-0 text-lightPlayRed focus:ring-0 focus:outline-0 outline-none"
-                    checked={index === selectedVerified}
+                    checked={index === selectedStatus}
                     onChange={() => {
-                      setSelectedVerified(val.id);
+                      setSelectedStatus(val.id);
                     }}
                   />
-                  <span className="ml-2 text-xs">{val.value}</span>
+                  <span className="ml-2 text-sm">{val.value}</span>
                 </label>
               ))}
             </Dropdown>
           </div>
           <div className="filter-dropdown">
-            <FaCheckCircle className="dropdown-icon" />
-            <Dropdown name={"Verified"}>
-              {allVerifiedVals.map((val, index) => (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className="dropdown-icon"
+            >
+              <path
+                fill="currentColor"
+                d="M9,11.75A1.25,1.25 0 0,0 7.75,13A1.25,1.25 0 0,0 9,14.25A1.25,1.25 0 0,0 10.25,13A1.25,1.25 0 0,0 9,11.75M15,11.75A1.25,1.25 0 0,0 13.75,13A1.25,1.25 0 0,0 15,14.25A1.25,1.25 0 0,0 16.25,13A1.25,1.25 0 0,0 15,11.75M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,11.71 4,11.42 4.05,11.14C6.41,10.09 8.28,8.16 9.26,5.77C11.07,8.33 14.05,10 17.42,10C18.2,10 18.95,9.91 19.67,9.74C19.88,10.45 20,11.21 20,12C20,16.41 16.41,20 12,20Z"
+              ></path>
+            </svg>
+            <Dropdown name={"Gender"}>
+              {allGenderVals.map((val, index) => (
                 <label className="inline-flex items-center " key={index}>
                   <input
                     type="checkbox"
                     className="form-checkbox h-4 w-4 ring-0 text-lightPlayRed focus:ring-0 focus:outline-0 outline-none"
-                    checked={index === selectedVerified}
+                    checked={index === selectedGender}
                     onChange={() => {
-                      setSelectedVerified(val.id);
+                      setSelectedGender(val.id);
                     }}
                   />
-                  <span className="ml-2 text-xs">{val.value}</span>
+                  <span className="ml-2 text-sm">{val.value}</span>
+                </label>
+              ))}
+            </Dropdown>
+          </div>
+          <div className="filter-dropdown">
+            <MdImage className="dropdown-icon" />
+            <Dropdown name={"Avatar"}>
+              {allAvatarVals.map((val, index) => (
+                <label className="inline-flex items-center " key={index}>
+                  <input
+                    type="checkbox"
+                    className="form-checkbox h-4 w-4 ring-0 text-lightPlayRed focus:ring-0 focus:outline-0 outline-none"
+                    checked={index === selectedAvatar}
+                    onChange={() => {
+                      setSelectedAvatar(val.id);
+                    }}
+                  />
+                  <span className="ml-2 text-sm">{val.value}</span>
                 </label>
               ))}
             </Dropdown>

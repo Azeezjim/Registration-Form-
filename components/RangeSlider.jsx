@@ -37,7 +37,7 @@ const RangeSlider = ({ initialMin, initialMax, min, max, step, priceCap }) => {
   }, [minValue, maxValue, max, step]);
 
   return (
-    <div className="grid relative place-items-center ">
+    <div className="grid relative place-items-center pt-1  ">
       <div className="flex flex-col w-full bg-transparent  ">
         {/* <div className="flex justify-between items-center my-6 ">
           <div className="rounded-md">

@@ -84,8 +84,8 @@ const Header = () => {
           >
             <Image
               src={session ? session.user.image : "/profile_avatar_full.jpg"}
-              width={45}
-              height={45}
+              width={35}
+              height={35}
               objectFit="contain"
               className="rounded-full"
             />

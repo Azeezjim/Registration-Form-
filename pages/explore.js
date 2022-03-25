@@ -4,7 +4,7 @@ import FilterSearch from "../components/FilterSearch";
 const explore = () => {
   return (
     <SideNavLayout>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl px-5 mx-auto">
         <FilterSearch />
       </div>
     </SideNavLayout>
