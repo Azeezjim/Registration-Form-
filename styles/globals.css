@@ -54,6 +54,9 @@
 
     /* @apply w-6 h-6 appearance-none pointer-events-auto; */
   }
+  .dropdown-icon{
+    @apply w-4 h-4 text-lightPlayRed;
+  }
 }
 
 /* search filter */

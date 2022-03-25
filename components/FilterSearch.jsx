@@ -1,19 +1,31 @@
 import { useRef, useState, useEffect } from "react";
 import RangeSlider from "./RangeSlider";
-import { BiCaretDown } from "react-icons/bi";
+import { FaCheckCircle } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
+import {BsFillEyeFill} from "react-icons/bs"
 import Dropdown from "./Dropdown";
 
 const FilterSearch = () => {
-  const [minValue, set_minValue] = useState(10);
-  const [maxValue, set_maxValue] = useState(70);
-  const handleInput = (e) => {
-    set_minValue(e.minValue);
-    set_maxValue(e.maxValue);
-  };
+  const allVerifiedVals = [
+    { id: 0, value: "All" },
+    { id: 1, value: "Verified" },
+    { id: 2, value: "Unverified" },
+  ];
+  const allStatusVals = [
+    { id: 0, value: "All" },
+    { id: 1, value: "Online" },
+    { id: 2, value: "Offline" },
+  ];
+
+  const allAgeVals = [
+    { id: 0, value: "Yes" },
+    { id: 1, value: "No" },
+  ];
+
+  const [selectedVerified, setSelectedVerified] = useState(0);
+  const [selectedAge, setSelectedAge] = useState(0);
 
   const inputRef = useRef();
-
   const inputWidth = () => {
     var inputVal = inputRef.current;
 
@@ -315,7 +327,7 @@ const FilterSearch = () => {
               width="24"
               height="24"
               viewBox="0 0 24 24"
-              className="h-4 w-4 text-lightPlayRed"
+              className="dropdown-icon"
             >
               <path
                 fill="currentColor"
@@ -323,30 +335,86 @@ const FilterSearch = () => {
               ></path>
             </svg>
             <Dropdown name={"Age"}>
-              <label class="inline-flex items-center ">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-4 w-4 ring-0 text-lightPlayRed focus:ring-0 focus:outline-0 outline-none"
-                  defaultChecked
-                />
-                <span class="ml-2 text-xs">Yes</span>
-              </label>
-              <RangeSlider
-                initialMin={1000}
-                initialMax={5000}
-                min={1000}
-                max={7000}
-                step={100}
-                priceCap={500}
-              />
-              <label class="inline-flex items-center ">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-4 w-4 ring-0 text-lightPlayRed focus:ring-0 focus:outline-0 outline-none"
-                  defaultChecked
-                />
-                <span class="ml-2 text-xs">No</span>
-              </label>
+              {allAgeVals.map((val, index) => (
+                <div key={val.id}>
+                  <label className="inline-flex items-center " >
+                    <input
+                      type="checkbox"
+                      className="form-checkbox h-4 w-4 ring-0 text-lightPlayRed focus:ring-0 focus:outline-0 outline-none"
+                      checked={index === selectedAge}
+                      onChange={() => setSelectedAge(val.id)}
+                    />
+                    <span className="ml-2 text-xs">{val.value}</span>
+                  </label>
+                  <div className={index === 1 ? "hidden" : ""} >
+                    {selectedAge === 0 && (
+                      <RangeSlider
+                        key={index}
+                        initialMin={1800}
+                        initialMax={5000}
+                        min={1000}
+                        max={7000}
+                        step={100}
+                        priceCap={500}
+                      />
+                    )}
+                  </div>
+                </div>
+              ))}
+            </Dropdown>
+          </div>
+          <div className="filter-dropdown">
+            <FaCheckCircle className="dropdown-icon" />
+            <Dropdown name={"Verified"}>
+              {allVerifiedVals.map((val, index) => (
+                <label className="inline-flex items-center " key={index}>
+                  <input
+                    type="checkbox"
+                    className="form-checkbox h-4 w-4 ring-0 text-lightPlayRed focus:ring-0 focus:outline-0 outline-none"
+                    checked={index === selectedVerified}
+                    onChange={() => {
+                      setSelectedVerified(val.id);
+                    }}
+                  />
+                  <span className="ml-2 text-xs">{val.value}</span>
+                </label>
+              ))}
+            </Dropdown>
+          </div>
+          <div className="filter-dropdown">
+            <BsFillEyeFill className="dropdown-icon" />
+            <Dropdown name={"Status"}>
+              {allStatusVals.map((val, index) => (
+                <label className="inline-flex items-center " key={index}>
+                  <input
+                    type="checkbox"
+                    className="form-checkbox h-4 w-4 ring-0 text-lightPlayRed focus:ring-0 focus:outline-0 outline-none"
+                    checked={index === selectedVerified}
+                    onChange={() => {
+                      setSelectedVerified(val.id);
+                    }}
+                  />
+                  <span className="ml-2 text-xs">{val.value}</span>
+                </label>
+              ))}
+            </Dropdown>
+          </div>
+          <div className="filter-dropdown">
+            <FaCheckCircle className="dropdown-icon" />
+            <Dropdown name={"Verified"}>
+              {allVerifiedVals.map((val, index) => (
+                <label className="inline-flex items-center " key={index}>
+                  <input
+                    type="checkbox"
+                    className="form-checkbox h-4 w-4 ring-0 text-lightPlayRed focus:ring-0 focus:outline-0 outline-none"
+                    checked={index === selectedVerified}
+                    onChange={() => {
+                      setSelectedVerified(val.id);
+                    }}
+                  />
+                  <span className="ml-2 text-xs">{val.value}</span>
+                </label>
+              ))}
             </Dropdown>
           </div>
         </div>

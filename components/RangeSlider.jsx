@@ -37,11 +37,8 @@ const RangeSlider = ({ initialMin, initialMax, min, max, step, priceCap }) => {
   }, [minValue, maxValue, max, step]);
 
   return (
-    <div className="grid place-items-center ">
+    <div className="grid relative place-items-center ">
       <div className="flex flex-col w-full bg-transparent  ">
-        
-      
-
         {/* <div className="flex justify-between items-center my-6 ">
           <div className="rounded-md">
             <span className="p-2 font-semibold"> Min</span>
@@ -66,10 +63,7 @@ const RangeSlider = ({ initialMin, initialMax, min, max, step, priceCap }) => {
 
         <div className="mb-4">
           <div className="slider relative h-1  bg-gray-300">
-            <div
-              className="progress absolute h-1  "
-              ref={progressRef}
-            ></div>
+            <div className="progress absolute h-1  " ref={progressRef}></div>
           </div>
 
           <div className="range-input relative  ">
@@ -94,7 +88,11 @@ const RangeSlider = ({ initialMin, initialMax, min, max, step, priceCap }) => {
             />
           </div>
         </div>
-        {minValue /100}-{maxValue / 100}
+        <div className="bg-gray-100 rounded-full absolute -top-8 right-1 w-14 h-6 row-container ">
+          <span className="text-center text-xs text-gray-500">
+            {minValue / 100}-{maxValue / 100}
+            </span>
+        </div>
       </div>
     </div>
   );
