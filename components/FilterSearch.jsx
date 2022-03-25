@@ -205,13 +205,13 @@ const FilterSearch = () => {
               <option value="111">Kenya</option>
               <option value="112">Kiribati</option>
               <option value="113">
-                Korea, Democratic People's Republic of
+                Korea, Democratic People&apos;s Republic of
               </option>
               <option value="114">Korea, Republic of</option>
               <option value="115">Kosovo</option>
               <option value="116">Kuwait</option>
               <option value="117">Kyrgyzstan</option>
-              <option value="118">Lao People's Democratic Republic</option>
+              <option value="118">Lao People&apos;s Democratic Republic</option>
               <option value="119">Latvia</option>
               <option value="120">Lebanon</option>
               <option value="121">Lesotho</option>
