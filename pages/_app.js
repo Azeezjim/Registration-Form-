@@ -1,4 +1,3 @@
-import "@material-tailwind/react/tailwind.css";
 import '../styles/globals.css';
 import Layout from '../components/Layout';
 import {SessionProvider} from "next-auth/react";

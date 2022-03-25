@@ -16,29 +16,97 @@
   .side-container {
     @apply flex flex-col space-y-2 justify-center bg-white border shadow-lg rounded-lg max-w-4xl p-2;
   }
-  .news-feed-card-icon{
-    @apply w-5 h-5 fill-current font-extrabold focus:outline-none focus:shadow-none active:outline-none ;
+  .news-feed-card-icon {
+    @apply w-5 h-5 fill-current font-extrabold focus:outline-none focus:shadow-none active:outline-none;
   }
-  .commentBtn{
+  .commentBtn {
     @apply h-8 w-7 text-playRed cursor-pointer;
   }
-  .inputBox{
-    @apply w-[275px] h-12 flex items-center justify-around p-2 bg-white rounded-full
+  .inputBox {
+    @apply w-[275px] h-12 flex items-center justify-around p-2 bg-white rounded-full;
   }
-  .social-login-buttons{
-    @apply flex items-center justify-center rounded-full shadow-2xl w-12 h-12 border  bg-gradient-to-br from-slate-300 to-white ring-1 border-gray-500
+  .social-login-buttons {
+    @apply flex items-center justify-center rounded-full shadow-2xl w-12 h-12 border  bg-gradient-to-br from-slate-300 to-white ring-1 border-gray-500;
   }
-  .login-card{
+  .login-card {
     @apply flex flex-col bg-bgtext items-center justify-center p-4  rounded-2xl;
   }
-  .row-container{
+  .row-container {
     @apply flex items-center justify-center;
   }
-  .col-container{
-    @apply flex flex-col items-center justify-center
+  .col-container {
+    @apply flex flex-col items-center justify-center;
+  }
+  .search-filter-dropdown {
+    @apply border rounded-full relative leading-7 tracking-wide font-medium;
+  }
+  .filter-dropdown {
+    @apply search-filter-dropdown px-2  h-[32px] row-container;
+  }
+  /* Price Range */
+  input[type="range"]::-webkit-slider-thumb {
+    pointer-events: auto;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    @apply bg-lightPlayRed;
+
+    /* @apply w-6 h-6 appearance-none pointer-events-auto; */
   }
 }
 
+/* search filter */
+.filter-search input {
+  font-family: "TT Commons", Roboto, sans-serif;
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 1.1;
+  border: 0;
+  padding: 0;
+  color: black;
+  height: 45px;
+  transition: width 0.15s linear;
+  background: transparent;
+  word-break: break-word;
+  word-wrap: break-word;
+  writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+}
+.filter-btn {
+  position: relative;
+  user-select: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 14px;
+  font-weight: 500;
+  overflow: hidden;
+  box-shadow: none;
+  margin: -4px 0 0 10px;
+  border-radius: 50%;
+  height: 45px;
+  min-width: 45px;
+  line-height: 45px;
+  padding: 0 3px;
+  cursor: pointer;
+}
+
+/* search filter end */
 .tag_auth_effect {
   position: absolute;
   right: -450px;
@@ -46,7 +114,6 @@
   width: 909px;
   height: 721px;
   opacity: 0.06;
-
 }
 
 .tag_auth_effect_bottom {
@@ -77,8 +144,9 @@
 }
 
 /* where the magic happens */
-.slanted-div:before, .slanted-div:after {
-  content: '';
+.slanted-div:before,
+.slanted-div:after {
+  content: "";
   width: 100%;
   height: 100%;
   position: absolute;
@@ -115,9 +183,7 @@ h1 {
 }
 
 /* responsive */
-@media only screen
-and (max-width : 720px) {
-  
+@media only screen and (max-width: 720px) {
   .slant-header {
     padding: 30px 30px 50px 30px;
   }
@@ -125,15 +191,14 @@ and (max-width : 720px) {
   .slanted-div {
     padding: 50px 0;
   }
-  
+
   .slant-footer {
     padding: 65px 0 50px 0;
   }
-    
+
   h1 {
     font-size: 1.5em;
   }
-
 }
 html,
 body {

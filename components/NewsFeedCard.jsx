@@ -1,4 +1,4 @@
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaChevronDown } from "react-icons/fa";
 import {
   BsThreeDots,
   BsHeart,
@@ -9,13 +9,10 @@ import {
 import { HiOutlineEmojiHappy, HiPaperAirplane } from "react-icons/hi";
 import ReadMoreReact from "read-more-react";
 import { useRef, useState } from "react";
-import Popover from "@material-tailwind/react/Popover";
-import PopoverContainer from "@material-tailwind/react/PopoverContainer";
-import PopoverHeader from "@material-tailwind/react/PopoverHeader";
-import PopoverBody from "@material-tailwind/react/PopoverBody";
+import { Popover, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 import Comments from "./Comments";
 import Image from "next/image";
-
 
 const NewsFeedCard = ({
   image,
@@ -26,7 +23,6 @@ const NewsFeedCard = ({
   popularComments,
   time,
 }) => {
-  const optionsButtonRef = useRef();
   const [comments, setComments] = useState([]);
   const [showComments, setShowComments] = useState(false);
   return (
@@ -47,34 +43,49 @@ const NewsFeedCard = ({
             </span>
           </div>
         </div>
-        <div className="flex items-center justify-center space-x-1">
+        <div className="row-container space-x-1 p-1">
           <span className="text-xs sm:text-sm text-gray-600 font-light leading-none">
             {time}
           </span>
-
-          <button
-            ref={optionsButtonRef}
-            title="Open options"
-            className="focus:shadow-none focus:outline-none"
-          >
-            <BsThreeDots className=" w-6 h-6 lg:w-6" />
-          </button>
-          <Popover placement="bottom" ref={optionsButtonRef}>
-            <PopoverContainer>
-              <PopoverBody>
-                <div className="flex flex-col w-40 items-center py-2 justify-center space-y-1">
-                  <div className="hover:bg-gray-100 hover:text-red-500 w-full border-b h-8 p-2 rounded-md cursor-pointer flex items-center justify-start">
-                    <p className="font-bold text-xs">Copy link to post</p>
-                  </div>
-                  <div className="hover:bg-gray-100 hover:text-red-500 w-full h-8 p-2 rounded-md cursor-pointer flex items-center justify-start">
-                    <p className="font-bold text-xs">Report</p>
-                  </div>
-                  <div className="hover:bg-gray-100 hover:text-red-500 w-full h-8 p-2 rounded-md cursor-pointer flex items-center justify-start">
-                    <p className="font-bold text-xs">Add to blocklists.</p>
-                  </div>
-                </div>
-              </PopoverBody>
-            </PopoverContainer>
+          <Popover className="relative">
+            {({ open }) => (
+              <>
+                <Popover.Button
+                  className={`
+                ${open ? "" : "text-opacity-90"}
+                group  hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                >
+                  <BsThreeDots className="text-3xl" />
+                </Popover.Button>
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-200"
+                  enterFrom="opacity-0 translate-y-1"
+                  enterTo="opacity-100 translate-y-0"
+                  leave="transition ease-in duration-150"
+                  leaveFrom="opacity-100 translate-y-0"
+                  leaveTo="opacity-0 translate-y-1"
+                >
+                  <Popover.Panel className="absolute z-10 w-[20vw] max-w-xs px-4 mt-3 transform shadow-md -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
+                    <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                      <div className="relative grid gap-2 bg-white p-7 lg:grid-cols-1">
+                        <div className="hover:bg-gray-100 hover:text-red-500  border-b h-8 p-2 rounded-md cursor-pointer flex items-center justify-start">
+                          <p className="font-bold text-xs">Copy link to post</p>
+                        </div>
+                        <div className="hover:bg-gray-100 hover:text-red-500  h-8 p-2 rounded-md cursor-pointer flex items-center justify-start">
+                          <p className="font-bold text-xs">Report</p>
+                        </div>
+                        <div className="hover:bg-gray-100 hover:text-red-500  h-8 p-2 rounded-md cursor-pointer flex items-center justify-start">
+                          <p className="font-bold text-xs">
+                            Add to blocklists.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popover.Panel>
+                </Transition>
+              </>
+            )}
           </Popover>
         </div>
       </div>
@@ -152,7 +163,7 @@ const NewsFeedCard = ({
                 <form className="bg-gray-100 flex items-center p-1 rounded-2xl flex-1">
                   <textarea
                     type="text"
-                    maxLength = "1280"
+                    maxLength="1280"
                     className="bg-gray-100 scrollbar-hide flex-1 border-none focus:ring-0 outline-none text-xs resize-none overflow-auto h-auto min-h-[36px]"
                     placeholder="Add a comment"
                   ></textarea>
