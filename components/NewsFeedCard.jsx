@@ -66,9 +66,9 @@ const NewsFeedCard = ({
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-1"
                 >
-                  <Popover.Panel className="absolute z-10 w-[20vw] max-w-xs px-4 mt-3 transform shadow-md -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
+                  <Popover.Panel className="absolute z-10 w-[200px] lg:w-[20vw]  px-4 mt-3 transform shadow-md -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
                     <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                      <div className="relative grid gap-2 bg-white p-7 lg:grid-cols-1">
+                      <div className="relative grid gap-y-2 bg-white p-1 grid-cols-1">
                         <div className="hover:bg-gray-100 hover:text-red-500  border-b h-8 p-2 rounded-md cursor-pointer flex items-center justify-start">
                           <p className="font-bold text-xs">Copy link to post</p>
                         </div>

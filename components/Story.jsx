@@ -4,34 +4,36 @@ import { BsPlusCircleFill } from "react-icons/bs";
 const Story = ({ username, img, isYou }) => {
   if (isYou) {
     return (
-      <div className="flex flex-col items-center space-x-1 cursor-pointer">
-        <div className=" relative bg-gradient-to-tr from-yellow-400 to-playRed p-1 rounded-full">
-          <div className="bg-white h-[100px] w-[100px] rounded-full p-1 transform transition hover:-rotate-6">
-            <Image
-              className="h-24 w-24 rounded-full "
-              width={96}
-              height={96}
-              src={img}
-              alt={username}
-            />
+      <div className="col-container cursor-pointer">
+        <div className="relative bg-gradient-to-tr from-yellow-400 to-playRed p-0.5 rounded-full">
+          <div className="bg-white p-0.5 rounded-full transform transition hover:-rotate-6">
+            <div className="h-20 w-20 relative rounded-full">
+              <Image
+                className="rounded-full"
+                layout="fill"
+                objectFit="fill"
+                src={img}
+                alt={username}
+              />
+            </div>
           </div>
           <BsPlusCircleFill className="text-playRed bg-white rounded-full h-6 w-6 absolute right-2 bottom-1" />
         </div>
-        <p className="text-sm font-semi-bold  truncate text-center">
+        <p className="text-sm font-semibold truncate text-center">
           {username}
         </p>
       </div>
     );
   } else {
     return (
-      <div className="flex flex-col items-center cursor-pointer">
-        <div className="bg-gradient-to-tr from-yellow-400 to-playRed p-1 rounded-full">
-          <div className="bg-white p-1 rounded-full transform transition hover:-rotate-6">
-            <div className="relative h-24 w-24  flex-shrink-0">
+      <div className="col-container cursor-pointer">
+        <div className="bg-gradient-to-tr from-yellow-400 to-playRed p-0.5 rounded-full">
+          <div className="bg-white p-0.5 rounded-full transform transition hover:-rotate-6">
+            <div className="h-20 w-20 relative rounded-full">
               <Image
                 className="rounded-full"
                 layout="fill"
-                objectFit="contain"
+                objectFit="fill"
                 src={img}
                 alt={username}
               />
