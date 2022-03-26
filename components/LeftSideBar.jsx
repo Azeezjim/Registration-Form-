@@ -6,7 +6,7 @@ import {FiPlus} from 'react-icons/fi'
 const LeftSideBar = () => {
   const router = useRouter();
   return (
-    <aside className="hidden  sm:block basis-2/12   pt-20 border-solid border-black-50  h-screen border-r-[1px] sticky top-0">
+    <aside className="hidden  lg:block col-span-2  pt-20 border-solid border-black-50  h-screen border-r-[1px] sticky top-0">
       <div className="flex flex-col space-y-4 ">
         <div className="side-nav-button" onClick={()=>router.push('/')}>
           <div className="side-icon">

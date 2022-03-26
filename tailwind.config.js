@@ -22,5 +22,6 @@ module.exports = {
     require('tailwind-scroll-behavior')(),
     require('tailwind-scrollbar-hide'),
     require('@tailwindcss/forms'),
+    require('tailwind-scrollbar'),
   ],
 }

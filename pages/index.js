@@ -16,9 +16,9 @@ export default function Home({ user }) {
         
       </Head>
       <SideNavLayout>
-        <main className="basis-9/12 scrollbar-hide">
+        <main className=" p-0.5 lg:p-5">
           <Stories />
-          <div className="sm:flex justify-center sm:pt-5 sm:p-5 space-x-0 sm:space-x-10 ">
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
             <NewsFeed />
             <NewsFeedSideBar />
           </div>

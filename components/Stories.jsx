@@ -24,11 +24,12 @@ const Stories = () => {
     }
   };
   return (
-    <div className="relative flex items-center justify-center mt-4">
+    <div className=" mb-5">
       <div
         onScroll={onScroll}
         ref={storiesRef}
-        className="flex shadow-lg space-x-2 flex-shrink-0 items-center overflow-x-scroll max-w-2xl sm:max-w-4xl bg-white border-gray-200 py-4 px-2 scroll-smooth sm:scrollbar-hide rounded-lg"
+        className="flex space-x-2 p-6 bg-white border-gray-200 
+        border rounded-sm overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-300 hover:scrollbar-thumb-black scroll-smooth scrollbar-track-white"
       >
         <Story
           username={"Create new story"}
@@ -43,7 +44,7 @@ const Stories = () => {
           />
         ))}
       </div>
-      <div className="hidden lg:flex lg:absolute top-0 p-4 w-full h-full  justify-between z-10 items-center">
+      {/* <div className="hidden lg:flex lg:absolute top-0 p-4 w-full h-full  justify-between z-10 items-center">
         <button
           onClick={() => {
             storiesRef.current.scrollLeft -= 300;
@@ -66,7 +67,7 @@ const Stories = () => {
             }`}
           />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
