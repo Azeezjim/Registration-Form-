@@ -18,8 +18,8 @@ const Header = () => {
   if (!session)
     return (
       <div className="w-full bg-transparent fixed top-0 z-40">
-        <div className="max-w-6xl mx-auto px-1 md:px-0 flex items-center justify-between">
-          <div className="relative w-32 h-16 cursor-pointer">
+        <div className="max-w-7xl mx-auto px-1 md:px-0 flex items-center justify-between">
+          <div className="relative  cursor-pointer">
             <Image src="/logo.png" objectFit="contain" layout="fill" />
           </div>
 
