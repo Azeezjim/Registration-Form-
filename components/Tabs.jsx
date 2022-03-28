@@ -53,18 +53,18 @@ export default function Tabs() {
           </Tab.Panel>
           {/* users tab */}
           <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
-            <div className="flex justify-start items-center space-x-3 mb-14 mt-8">
-              <div className="row-container cursor-pointer h-10 w-auto  bg-gray-100 rounded-lg py-1 px-2 shadow-lg text-lightPlayRed">
-                <p className="text-sm font-medium">Business &#38; funds</p>
+            <div className="flex justify-start items-center space-x-4 md:space-x-3 mb-8 md:mb-14 mt-8">
+              <div className="row-container cursor-pointer h-10 w-20 md:w-auto  bg-gray-100 rounded-lg py-1 px-2 shadow-lg text-lightPlayRed">
+                <p className="text-xs lg:text-sm font-medium">Business &#38; funds</p>
               </div>
-              <div className="row-container cursor-pointer h-10 w-auto  bg-gray-100 rounded-lg py-1 px-2 shadow-lg text-lightPlayRed">
-                <p className="text-sm font-medium">Celebrity</p>
+              <div className="row-container cursor-pointer h-10 w-14 md:w-auto  bg-gray-100 rounded-lg py-1 px-2 shadow-lg text-lightPlayRed">
+                <p className="text-xs lg:text-sm font-medium">Celebrity</p>
               </div>
-              <div className="row-container cursor-pointer h-10 w-auto  bg-gray-100 rounded-lg py-1 px-2 shadow-lg text-lightPlayRed">
-                <p className="text-sm font-medium">Cooking</p>
+              <div className="row-container cursor-pointer h-10 w-14 md:w-auto  bg-gray-100 rounded-lg py-1 px-2 shadow-lg text-lightPlayRed">
+                <p className="text-xs lg:text-sm font-medium">Cooking</p>
               </div>
-              <div className="row-container cursor-pointer h-10 w-auto  bg-gray-100 rounded-lg py-1 px-2 shadow-lg text-lightPlayRed">
-                <p className="text-sm font-medium">Gaming</p>
+              <div className="row-container cursor-pointer h-10 w-14 md:-auto  bg-gray-100 rounded-lg py-1 px-2 shadow-lg text-lightPlayRed">
+                <p className="text-xs lg:text-sm font-medium">Gaming</p>
               </div>
              
             </div>
