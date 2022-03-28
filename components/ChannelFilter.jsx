@@ -6,7 +6,7 @@ import {BsTagFill} from "react-icons/bs"
 
 const ChannelFilter = () => {
   return (
-    <div className="flex items-center justify-start space-x-5 px-5 pt-2 pb-5 border-b w-full">
+    <div className="flex items-center justify-start space-x-5 px-5 pt-2 pb-5 first:pt-0 last:pb-0 last:border-b-0 border-b w-full">
       <div className=" w-[90px] h-[90px] relative cursor-pointer">
         <Image
           src="/profile_avatar_full.jpg"
@@ -28,7 +28,7 @@ const ChannelFilter = () => {
             <p className="text-sm text-gray-600">Entertainment</p>
           </div>
         </div>
-        <Button extraClasses="h-[35px] w-28" textClass="text-gray-600 text-sm font-semibold" text="Subscribe"/>
+        <Button extraClasses="h-[35px] w-28" textClass="text-sm font-semibold" active={true} text="Subscribe"/>
       </div>
     </div>
   );
