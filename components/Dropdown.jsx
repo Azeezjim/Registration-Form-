@@ -12,7 +12,7 @@ export default function Dropdown({ children, name }) {
                 ${open ? "" : "text-opacity-90"}
                 inline-flex justify-center pr-2 pl-1  text-xs font-semibold   rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
-            <div className="flex justify-between w-[380px] lg:w-auto items-center">
+            <div className="flex justify-between w-[250px] lg:w-auto items-center">
               <span>{name}</span>
               <BiCaretDown className="w-4 h-4 ml-auto lg:ml-1 lg:-mr-1" aria-hidden="true" />
             </div>

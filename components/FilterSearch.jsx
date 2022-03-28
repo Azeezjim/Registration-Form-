@@ -51,7 +51,7 @@ const FilterSearch = () => {
     }
   };
   return (
-    <>
+   
       <div className="p-5 my-6  bg-white rounded-xl shadow-md outline-none">
         <div className="row-container mt-3 mx-0 mb-6 break-words filter-search">
           <input
@@ -463,7 +463,7 @@ const FilterSearch = () => {
           </div>
         </div>
       </div>
-    </>
+  
   );
 };
 
