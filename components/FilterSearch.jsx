@@ -51,14 +51,14 @@ const FilterSearch = () => {
     }
   };
   return (
-    <div className="">
+    <>
       <div className="p-5 my-6  bg-white rounded-xl shadow-md outline-none">
         <div className="row-container mt-3 mx-0 mb-6 break-words filter-search">
           <input
             ref={inputRef}
             onChange={inputWidth}
             type="text"
-            className="text-center placeholder:text-gray-400 placeholder:font-semibold placeholder:text-4xl px-2 w-[175px] !max-w-[700px] break-words overflow-visible m-0 !outline-none focus:ring-0 outline-offset-0"
+            className="text-center placeholder:text-gray-400 placeholder:font-semibold placeholder:text-2xl lg:placeholder:text-4xl px-2 w-[175px] !max-w-[300px] lg:!max-w-[700px]  break-words overflow-visible m-0 !outline-none focus:ring-0 outline-offset-0"
             name="query"
             id="query"
             placeholder="Keyword"
@@ -82,14 +82,14 @@ const FilterSearch = () => {
             </svg>
           </button>
         </div>
-        <div className="lg:row-container flex-wrap  mt-4 space-x-3">
-          <div className="search-filter-dropdown">
+        <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 items-center justify-center  mt-4 lg:space-x-3">
+          <div className="search-filter-dropdown ">
             <MdLocationOn className="absolute m-0 w-4 h-4 align-middle overflow-hidden left-2 top-2 text-lightPlayRed" />
             <select
               defaultValue={0}
               name="country"
               id="country"
-              className="w-[125px] h-[32px] text-xs outline-none focus:outline-none focus:ring-0 pr-[25px] pl-[5px] border-0 ring-0 rounded-full cursor-pointer indent-[27px] bg-transparent font-medium"
+              className="w-full lg:w-[125px] h-[32px] text-xs outline-none focus:outline-none focus:ring-0 lg:pr-[25px] lg:pl-[5px] border-0 ring-0 rounded-full cursor-pointer indent-[27px] bg-transparent font-medium"
             >
               <option value="all">All Country</option>
               <option value="0">Select Country</option>
@@ -463,7 +463,7 @@ const FilterSearch = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

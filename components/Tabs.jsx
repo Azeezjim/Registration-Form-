@@ -3,17 +3,18 @@ import { Tab } from "@headlessui/react";
 import UserCard from "./UserCard";
 import { FaChevronDown } from "react-icons/fa";
 import ChannelFilter from "./ChannelFilter";
+import GroupCard from "./GroupCard";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Tabs() {
-  let [categories] = useState(["Post","Users", "Channels", "Groups"]);
+  let [categories] = useState(["Post", "Users", "Channels", "Groups"]);
 
   return (
     <Tab.Group>
-      <div className="bg-white rounded-xl p-1 mb-80">
+      <div className="bg-white rounded-xl p-1 mb-60">
         <Tab.List className="row-container p-1 space-x-1 ">
           <div className="bg-[#ecf0f5]  rounded-full px-1 py-0.5">
             {categories.map((category, index) => (
@@ -35,7 +36,7 @@ export default function Tabs() {
           </div>
         </Tab.List>
         <Tab.Panels className="mt-2">
-        <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
+          <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
             <div className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {[...Array(10)].map((_, index) => (
                 <UserCard key={index} />
@@ -46,12 +47,27 @@ export default function Tabs() {
                 <FaChevronDown className="h-3 w-3 text-lightPlayRed" />
               </div>
               <p className="text-lightPlayRed font-medium text-sm cursor-pointer">
-                Load more Users
+                Load more Posts
               </p>
             </div>
           </Tab.Panel>
           {/* users tab */}
           <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
+            <div className="flex justify-start items-center space-x-3 mb-14 mt-8">
+              <div className="row-container cursor-pointer h-10 w-auto  bg-gray-100 rounded-lg py-1 px-2 shadow-lg text-lightPlayRed">
+                <p className="text-sm font-medium">Business &#38; funds</p>
+              </div>
+              <div className="row-container cursor-pointer h-10 w-auto  bg-gray-100 rounded-lg py-1 px-2 shadow-lg text-lightPlayRed">
+                <p className="text-sm font-medium">Celebrity</p>
+              </div>
+              <div className="row-container cursor-pointer h-10 w-auto  bg-gray-100 rounded-lg py-1 px-2 shadow-lg text-lightPlayRed">
+                <p className="text-sm font-medium">Cooking</p>
+              </div>
+              <div className="row-container cursor-pointer h-10 w-auto  bg-gray-100 rounded-lg py-1 px-2 shadow-lg text-lightPlayRed">
+                <p className="text-sm font-medium">Gaming</p>
+              </div>
+             
+            </div>
             <div className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {[...Array(10)].map((_, index) => (
                 <UserCard key={index} />
@@ -68,7 +84,7 @@ export default function Tabs() {
           </Tab.Panel>
           {/* channels tab */}
           <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
-            <div className="grid grid-cols-1 md:grid-cols-2  w-full gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-x-20 gap-y-4">
               {[...Array(10)].map((_, index) => (
                 <ChannelFilter key={index} />
               ))}
@@ -85,10 +101,22 @@ export default function Tabs() {
           <Tab.Panel
             className={classNames(
               "bg-white rounded-xl p-3",
-              "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
+             
             )}
           >
-            <UserCard />
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-5">
+              {[...Array(9)].map((_, index) => (
+                <GroupCard key={index} filter={true}/>
+              ))}
+            </div>
+            <div className="w-full row-container space-x-1 py-5">
+              <div className="!bg-white border !w-8 !h-8 shadow hover:shadow-2xl icon-bg">
+                <FaChevronDown className="h-3 w-3 text-lightPlayRed" />
+              </div>
+              <p className="text-lightPlayRed font-medium text-sm cursor-pointer">
+                Load more Groups
+              </p>
+            </div>
           </Tab.Panel>
         </Tab.Panels>
       </div>
