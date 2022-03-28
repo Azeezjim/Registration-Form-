@@ -25,11 +25,11 @@ const UserCard = () => {
         </div>
       </div>
       <div className="col-container pb-10 space-y-4">
-        <div class="relative hover-trigger">
+        <div className="relative hover-trigger">
           <p className="text-center font-medium text-lg truncate text-[rgba(0,0,0,.9);] cursor-pointer">
             Akhano Doe
           </p>
-          <div class="absolute bg-white border border-grey-100 p-2 shadow-2xl rounded-lg hover-target z-10">
+          <div className="absolute bg-white border border-grey-100 p-2 shadow-2xl rounded-lg hover-target z-10">
             <UserCardPopup  name="Akhano Doe"/>
           </div>
         </div>

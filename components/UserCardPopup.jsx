@@ -24,7 +24,7 @@ const UserCardPopup = ({ name }) => {
         </div>
       </div>
 
-      <div className="flex flex-col items-start col-container space-y-1  pl-28 ">
+      <div className="flex flex-col items-start col-container space-y-0.5  pl-28 ">
         <p className="text-2xl font-medium">{name}</p>
         <div className=" row-container space-x-1 ">
           <AiOutlineEye />
