@@ -51,7 +51,7 @@ const FilterSearch = () => {
     }
   };
   return (
-    <div className="container">
+    <div className="">
       <div className="p-5 my-6  bg-white rounded-xl shadow-md outline-none">
         <div className="row-container mt-3 mx-0 mb-6 break-words filter-search">
           <input
@@ -82,7 +82,7 @@ const FilterSearch = () => {
             </svg>
           </button>
         </div>
-        <div className="row-container flex-wrap mt-4 space-x-3">
+        <div className="lg:row-container flex-wrap  mt-4 space-x-3">
           <div className="search-filter-dropdown">
             <MdLocationOn className="absolute m-0 w-4 h-4 align-middle overflow-hidden left-2 top-2 text-lightPlayRed" />
             <select

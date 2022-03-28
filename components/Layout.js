@@ -1,7 +1,9 @@
 import Header from "./Header";
+import {getSession} from "next-auth/react"
+import { wrapper } from "../store";
 
 
-export default function Layout({ children }) {
+function Layout({children}) {
   return (
     <>
       <Header />
@@ -9,3 +11,8 @@ export default function Layout({ children }) {
     </>
   );
 }
+
+
+
+export default Layout
+
