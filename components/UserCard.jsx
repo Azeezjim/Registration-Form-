@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "./Button";
 import UserCardPopup from "./UserCardPopup";
+import { IoMdPersonAdd } from "react-icons/io";
 
 const UserCard = () => {
   return (
@@ -20,7 +21,9 @@ const UserCard = () => {
             Akhano Doe
           </p>
         </div>
-        <Button text="Follow" extraClasses="h-[35px] w-16" active={true} />
+        <div className="bg-lightPlayRed w-10 h-10 rounded-md row-container cursor-pointer">
+          <IoMdPersonAdd className="text-white h-6 w-6"/>
+        </div>
       </div>
       <div className="hidden md:inline-block !p-0 !items-center side-container relative rounded-lg">
         <div className="relative w-full h-[90px] rounded-t-lg mb-16">

@@ -14,7 +14,7 @@ export default function Tabs() {
 
   return (
     <Tab.Group>
-      <div className="bg-white rounded-xl p-1 mb-60">
+      <div className="bg-white rounded-xl p-1 mb-10 md:mb-60">
         <Tab.List className="row-container p-1 space-x-1 ">
           <div className="bg-[#ecf0f5]  rounded-full px-1 py-0.5">
             {categories.map((category, index) => (
