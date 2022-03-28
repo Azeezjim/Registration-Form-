@@ -58,7 +58,7 @@ const FilterSearch = () => {
             ref={inputRef}
             onChange={inputWidth}
             type="text"
-            className="text-center placeholder:text-gray-400 placeholder:font-semibold placeholder:text-2xl lg:placeholder:text-4xl px-2 w-[175px] !max-w-[300px] lg:!max-w-[700px]  break-words overflow-visible m-0 !outline-none focus:ring-0 outline-offset-0"
+            className="text-center placeholder:text-gray-400 placeholder:font-semibold placeholder:text-2xl lg:placeholder:text-4xl px-2 w-[175px] text-lg md:text-3xl  !max-w-[250px] lg:!max-w-[700px]  break-words overflow-visible m-0 !outline-none focus:ring-0 outline-offset-0"
             name="query"
             id="query"
             placeholder="Keyword"
