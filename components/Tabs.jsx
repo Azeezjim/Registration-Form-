@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import UserCard from "./UserCard";
-import {FaChevronDown} from 'react-icons/fa';
+import { FaChevronDown } from "react-icons/fa";
 import ChannelFilter from "./ChannelFilter";
 
 function classNames(...classes) {
@@ -95,17 +95,26 @@ export default function Tabs() {
               <div className="!bg-white border !w-8 !h-8 shadow hover:shadow-2xl icon-bg">
                 <FaChevronDown className="h-3 w-3 text-lightPlayRed" />
               </div>
-              <p className="text-lightPlayRed font-medium text-sm cursor-pointer">Load more Users</p>
+              <p className="text-lightPlayRed font-medium text-sm cursor-pointer">
+                Load more Users
+              </p>
             </div>
           </Tab.Panel>
           {/* channels tab */}
-          <Tab.Panel
-            className={classNames(
-              "bg-white rounded-xl p-1",
-           
-            )}
-          >
-            <ChannelFilter/>
+          <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
+            <div className="flex flex-col  w-full space-y-2">
+              {[...Array(10)].map((_, index) => (
+                <ChannelFilter key={index} />
+              ))}
+            </div>
+            <div className="w-full row-container space-x-1 py-5">
+              <div className="!bg-white border !w-8 !h-8 shadow hover:shadow-2xl icon-bg">
+                <FaChevronDown className="h-3 w-3 text-lightPlayRed" />
+              </div>
+              <p className="text-lightPlayRed font-medium text-sm cursor-pointer">
+                Load more Channels
+              </p>
+            </div>
           </Tab.Panel>
           <Tab.Panel
             className={classNames(
