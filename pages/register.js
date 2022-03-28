@@ -1,6 +1,6 @@
 const register = () => {
   return (
-    <div className=" col-container ">
+    <div className=" col-container overflow-x-hidden">
       <svg viewBox="0 0 909 721" version="1.1" className="-z-10 xl:z-10 tag_auth_effect ">
         <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g transform="translate(-1744.000000, -1065.000000)" fill="#ff1536">

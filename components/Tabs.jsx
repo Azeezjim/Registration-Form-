@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import UserCard from "./UserCard";
+import {FaChevronDown} from 'react-icons/fa';
+import ChannelFilter from "./ChannelFilter";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -82,23 +84,28 @@ export default function Tabs() {
           </div>
         </Tab.List>
         <Tab.Panels className="mt-2">
+          {/* users tab */}
+          <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
+            <div className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {[...Array(10)].map((_, index) => (
+                <UserCard key={index} />
+              ))}
+            </div>
+            <div className="w-full row-container space-x-1 py-5">
+              <div className="!bg-white border !w-8 !h-8 shadow hover:shadow-2xl icon-bg">
+                <FaChevronDown className="h-3 w-3 text-lightPlayRed" />
+              </div>
+              <p className="text-lightPlayRed font-medium text-sm cursor-pointer">Load more Users</p>
+            </div>
+          </Tab.Panel>
+          {/* channels tab */}
           <Tab.Panel
             className={classNames(
               "bg-white rounded-xl p-1",
-              "focus:outline-none   grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4"
+           
             )}
           >
-            {[...Array(10)].map((_, index) => (
-              <UserCard key={index} />
-            ))}
-          </Tab.Panel>
-          <Tab.Panel
-            className={classNames(
-              "bg-white rounded-xl p-3",
-              "focus:outline-none"
-            )}
-          >
-            <UserCard />
+            <ChannelFilter/>
           </Tab.Panel>
           <Tab.Panel
             className={classNames(

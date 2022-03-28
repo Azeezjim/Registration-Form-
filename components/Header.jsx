@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { signIn, signOut } from "next-auth/react";
 import { useSelector } from "react-redux";
-
+import { useSession } from "next-auth/react";
 import {
   MdMenu,
   MdOutlineClose,
@@ -16,10 +16,11 @@ import { useRouter } from "next/router";
 const Header = () => {
   const router = useRouter();
   const user = useSelector((state) => state.user.user)
-  
+  const {data: session, status} = useSession()
 
 
-  if (!user)
+
+  if (!session)
     return (
       <div className="w-full bg-transparent fixed top-0 z-40">
         <div className="max-w-7xl mx-auto p-1 md:px-0 flex items-center justify-between">
@@ -87,7 +88,7 @@ const Header = () => {
             className="row-container rounded-full bg-[#BA253D] space-x-1 pr-2 cursor-pointer"
           >
             <Image
-              src={user.picture}
+              src={session.user.userDetails.picture}
               width={35}
               height={35}
               objectFit="contain"
@@ -95,7 +96,7 @@ const Header = () => {
             />
 
             <p className=" text-xs font-semibold text-white">
-              {user.name}
+              {session.user.userDetails.name}
             </p>
           </div>
         </div>
@@ -103,7 +104,6 @@ const Header = () => {
     </div>
   );
 };
-
 
 
 export default Header;

@@ -5,7 +5,7 @@ import { MdLocationOn } from "react-icons/md";
 
 const UserCardPopup = ({ name }) => {
   return (
-    <div className="flex flex-col w-[350px] space-y-1 rounded-t-lg ">
+    <div className="flex flex-col w-[320px] space-y-1 rounded-t-lg ">
       <div className="relative w-full">
         <img
           src="https://stackdiary.com/140x100.png"
@@ -39,8 +39,8 @@ const UserCardPopup = ({ name }) => {
           <p>Living in Nigeria</p>
         </div>
         <div className="row-container space-x-2">
-          <Button text="Follow" extraClasses="h-[35px] w-28" textClass="text-sm font-medium" active={true} />
-          <Button text="Message"  extraClasses="h-[35px] w-28" textClass="text-sm font-medium" />
+          <Button text="Follow" extraClasses="h-[35px] w-24" textClass="text-sm font-medium" active={true} />
+          <Button text="Message"  extraClasses="h-[35px] w-24" textClass="text-sm font-medium" />
         </div>
       </div>
     </div>
