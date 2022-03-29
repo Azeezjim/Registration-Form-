@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable @next/next/no-img-element */
-import LeftSideBar from "../../components/LeftSideBar";
+import ProfileNavBar from "../../components/ProfileNavBar";
 import { IoMdVideocam } from "react-icons/io";
 import { BiChevronDown } from "react-icons/bi";
 
@@ -8,7 +8,7 @@ export default function bookmarks() {
   const videos = ["Will Smith 1.mp4", "Will Smith 2.mp4"];
   return (
     <div className="flex ">
-      <LeftSideBar className="w-20" />
+      <ProfileNavBar className="w-20" />
       <div className="max-w-5xl px-1 mx-auto pt-20 mr-16 ml-6 shadow ">
         <div className=" bg-white p-2 shadow-md">
           <div className="py-1 space-y-2">
