@@ -1,6 +1,27 @@
 import Image from "next/image";
 import Button from "./Button.jsx";
-const GroupCard = () => {
+const GroupCard = ({ filter }) => {
+  if (filter) {
+    return (
+      <div className="flex flex-col w-full space-y-1 rounded-t-lg border shadow-md ">
+        <img
+          src="https://stackdiary.com/140x100.png"
+          alt=""
+          className="w-full h-24 rounded-t-lg"
+        />
+        <div className="p-2">
+          <div className="flex flex-col space-y-2 items-start pb-2">
+            <p className="font-bold text-lg">graphic</p>
+            <p className="font-medium text-sm text-gray-400">4 Members</p>
+          </div>
+
+          <div className="w-full row-container">
+            <Button text="JOIN" extraClasses="w-full h-8" active={true} />
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="flex flex-col w-full relative space-y-1 rounded-t-lg ">
       <img
@@ -18,7 +39,7 @@ const GroupCard = () => {
       </div>
       <div className="flex justify-between ml-20 items-center space-x-6">
         <p className="text-sm font-bold">thesidegist</p>
-        <Button text='JOIN' active={true}/>
+        <Button text="JOIN" active={true} />
       </div>
     </div>
   );

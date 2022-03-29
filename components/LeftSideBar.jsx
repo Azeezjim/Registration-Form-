@@ -1,7 +1,8 @@
 import { TiVideo } from "react-icons/ti";
 import { MdSmartDisplay } from "react-icons/md";
 import {useRouter} from 'next/router';
-import {FiPlus} from 'react-icons/fi'
+import {FiPlus} from 'react-icons/fi';
+import Link from 'next/link';
 
 const LeftSideBar = () => {
   const router = useRouter();
@@ -48,12 +49,15 @@ const LeftSideBar = () => {
           </div>
           <span className="font-bold">Explore</span>
         </div>
-        <div className="side-nav-button">
+        <Link href="/live">
+         <div className="side-nav-button">
           <div className="side-icon">
             <TiVideo className="text-white h-6 w-6" />
           </div>
           <span className="font-bold">Live</span>
         </div>
+        </Link>
+       
         <div className="side-nav-button">
           <div className="side-icon">
             <MdSmartDisplay className="text-white h-6 w-6" />

@@ -40,10 +40,10 @@
     @apply flex flex-col items-center justify-center;
   }
   .search-filter-dropdown {
-    @apply border rounded-full relative leading-7 tracking-wide font-medium;
+    @apply border rounded-full relative leading-7 tracking-wide font-medium  w-full md:w-auto;
   }
   .filter-dropdown {
-    @apply search-filter-dropdown px-2  h-[32px] row-container;
+    @apply search-filter-dropdown px-2  h-[32px] w-full md:w-auto flex  items-center justify-between  md:flex-row;
   }
   /* Price Range */
   input[type="range"]::-webkit-slider-thumb {
@@ -64,7 +64,6 @@
 /* search filter */
 .filter-search input {
   font-family: "TT Commons", Roboto, sans-serif;
-  font-size: 40px;
   font-weight: 600;
   line-height: 1.1;
   border: 0;
