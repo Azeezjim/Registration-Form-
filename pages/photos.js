@@ -38,14 +38,7 @@ export default function bookmarks() {
                 alt={image}
               />
             ))}
-            {/* <img src="images/person2.jpg" alt="person2" />
-          <img src="images/person5.jpg" alt="person5" />
-          <img src="images/person6.jpg" alt="person6" />
-          <img src="images/person7.jpg" alt="person7" />
-          <img src="images/person8.jpg" alt="person8" />
-          <img src="images/person2.jpg" alt="person2" />
-          <img src="images/person3.jpg" alt="person3" />
-          <img src="images/person8.jpg" alt="person8" /> */}
+          {/* <img src="/public/images/" alt=""> */}
           </div>
         </div>
       </div>
