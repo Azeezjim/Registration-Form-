@@ -4,7 +4,7 @@ import { FaRegEye } from "react-icons/fa";
 
 const LiveCard = () => {
   return (
-    <div className="first:ml-auto last:mr-auto w-[150px] h-[320px] rounded-t-xl overflow-hidden flex flex-col relative group cursor-pointer flex-shrink-0">
+    <div className="first:ml-auto last:mr-auto w-[150px] h-[320px] border rounded-xl shadow-md overflow-hidden flex flex-col relative group cursor-pointer flex-shrink-0">
       <div className="relative">
         <img
           className="w-full h-52 object-cover transition duration-300 ease-in-out transform group-hover:scale-105"
@@ -38,7 +38,7 @@ const LiveCard = () => {
         <div className="absolute inset-0 bg-black opacity-0 transition duration-300 ease-in-out group-hover:opacity-20"></div>
       </div>
 
-      <div className="w-full bg-white border p-2 h-1/3 shadow-lg rounded-b-xl">
+      <div className="w-full bg-white  p-2 h-1/3 rounded-b-xl">
         <div className="col-container space-y-1">
           <div className="flex items-center justify-between px-1 w-full bg-gray-50">
             <p className="font-bold text-sm">Akhano</p>
