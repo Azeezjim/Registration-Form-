@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
-import LeftSideBar from "../../components/LeftSideBar";
+import ProfileNavItem from "../../components/ProfileNavBar";
+// import LeftSideBar from "../../components/LeftSideBar";
 import { MdPhotoSizeSelectActual } from "react-icons/md";
 
 export default function bookmarks() {
@@ -16,7 +17,8 @@ export default function bookmarks() {
   ];
   return (
     <div className="flex ">
-      <LeftSideBar className="w-20" />
+      {/* <LeftSideBar className="w-20" /> */}
+      <ProfileNavItem />
       <div className="max-w-5xl px-1 mx-auto pt-20 mr-16 ml-6 shadow ">
         <div className=" bg-white ">
           <div className="py-1 space-y-2">
