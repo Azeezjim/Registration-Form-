@@ -68,29 +68,29 @@ const getData = () => [
 ];
 
 const live = () => {
-  const columns = useMemo(
-    () => [
-      {
-        Header: "Name",
-        accessor: "name",
-      },
-      {
-        Header: "Title",
-        accessor: "title",
-      },
-      {
-        Header: "Status",
-        accessor: "status",
-      },
-      {
-        Header: "Role",
-        accessor: "role",
-      },
-    ],
-    []
-  );
+  // const columns = useMemo(
+  //   () => [
+  //     {
+  //       Header: "Name",
+  //       accessor: "name",
+  //     },
+  //     {
+  //       Header: "Title",
+  //       accessor: "title",
+  //     },
+  //     {
+  //       Header: "Status",
+  //       accessor: "status",
+  //     },
+  //     {
+  //       Header: "Role",
+  //       accessor: "role",
+  //     },
+  //   ],
+  //   []
+  // );
 
-  const data = useMemo(() => getData(), []);
+  // const data = useMemo(() => getData(), []);
   return (
     <SideNavLayout>
       <div className="max-w-4xl mx-auto my-8 bg-white p-5">
