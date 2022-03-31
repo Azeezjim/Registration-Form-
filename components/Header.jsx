@@ -66,7 +66,7 @@ const Header = () => {
               type="text"
               placeholder="Search for people, Channels, Groups and #hashtags"
               name=""
-              className="placeholder-[#E08B93] rounded -full placeholder:text-sm w-96 h-5 pl-1 py-4 bg-[#C51834] outline-0 border-0 focus:outline-none"
+              className="placeholder-[#E08B93] rounded-full placeholder:text-sm w-96 h-5 pl-1 py-4 bg-[#C51834] outline-0 border-0 focus:outline-none focus:ring-0 ring-0"
               id=""
             />
           </div>
