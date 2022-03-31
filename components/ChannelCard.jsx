@@ -2,7 +2,9 @@ import Image from "next/image";
 import Button from "./Button";
 import { BsHeartFill, BsEyeFill } from "react-icons/bs";
 
-const ChannelCard = ({ main }) => {
+import Link from "next/link";
+
+const ChannelCard = ({ main, channel}) => {
   if (main) {
     return (
       <div className="w-full  h-[230px]  border rounded-xl shadow-md overflow-hidden flex flex-col relative group cursor-pointer flex-shrink-0 ">
@@ -14,8 +16,7 @@ const ChannelCard = ({ main }) => {
             className="rounded-t-lg"
           />
           <div className="w-10 h-6 bg-[#D43D7D]/90 rounded-sm row-container p-1 absolute top-2 left-2">
-              <span className="text-xs text-white">Hot</span>
-
+            <span className="text-xs text-white">Hot</span>
           </div>
         </div>
         <div className="p-2">
@@ -46,27 +47,30 @@ const ChannelCard = ({ main }) => {
 
   return (
     <div className="first:ml-auto last:mr-auto w-56 h-[300px] mb-5 border rounded-xl shadow-md overflow-hidden flex flex-col relative group cursor-pointer flex-shrink-0 space-y-3">
+      <Link href={`/channels/${channel}`}>  
       <div className="relative w-full h-[90px] rounded-t-lg mb-16">
-        <Image
-          src={"https://picsum.photos/200/200?random=9"}
-          objectFit="cover"
-          layout="fill"
-          className="rounded-t-lg"
-        />
-        <div className="absolute -bottom-16 left-[50px]">
-          <div className="row-container bg-white p-1 rounded-3xl">
-            <div className="w-16 h-16 md:w-28 md:h-28 relative rounded-3xl">
-              <Image
-                src="https://picsum.photos/200/200?random=3"
-                alt="side-img"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-3xl"
-              />
+          <Image
+            src={"https://picsum.photos/200/200?random=9"}
+            objectFit="cover"
+            layout="fill"
+            className="rounded-t-lg"
+          />
+          <div className="absolute -bottom-16 left-[50px]">
+            <div className="row-container bg-white p-1 rounded-3xl">
+              <div className="w-16 h-16 md:w-28 md:h-28 relative rounded-3xl">
+                <Image
+                  src="https://picsum.photos/200/200?random=3"
+                  alt="side-img"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-3xl"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Link>
+
       <div className="col-container w-full ">
         <p className="font-semibold text-center text-lg">Fashionista</p>
         <div className="row-container space-x-1 ">

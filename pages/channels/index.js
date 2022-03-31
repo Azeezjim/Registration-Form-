@@ -1,7 +1,7 @@
-import SideNavLayout from "../components/SideNavLayout";
-import ChannelTabs from "../components/ChannelTabs";
-import ChannelCard from "../components/ChannelCard";
-import CreatorCard from "../components/CreatorCard";
+import SideNavLayout from "../../components/SideNavLayout";
+import ChannelTabs from "../../components/ChannelTabs";
+import ChannelCard from "../../components/ChannelCard";
+import CreatorCard from "../../components/CreatorCard";
 import { useSelector } from "react-redux";
 
 
