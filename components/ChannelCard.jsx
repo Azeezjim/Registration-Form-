@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const ChannelCard = () => {
     return (
-       <div className="w-40 h-80 bg-white rounded-xl">
+       <div className="w-52 h-80 bg-white rounded-xl">
            <div className="relative w-full h-[90px] rounded-t-lg mb-16">
           <Image
             src={"https://stackdiary.com/140x100.png"}
