@@ -5,10 +5,10 @@ import { BsHeartFill, BsEyeFill } from "react-icons/bs";
 const ChannelCard = ({ main }) => {
   if (main) {
     return (
-      <div className=" w-56 h-[230px]  border rounded-xl shadow-md overflow-hidden flex flex-col relative group cursor-pointer flex-shrink-0 ">
+      <div className="w-full  h-[230px]  border rounded-xl shadow-md overflow-hidden flex flex-col relative group cursor-pointer flex-shrink-0 ">
         <div className="relative w-full h-40 rounded-t-lg ">
           <Image
-            src={"https://picsum.photos/200/200?random=3"}
+            src={"https://picsum.photos/200/200?random=7"}
             objectFit="cover"
             layout="fill"
             className="rounded-t-lg"
@@ -21,10 +21,10 @@ const ChannelCard = ({ main }) => {
         <div className="p-2">
           <div className="flex items center justify-start">
             <div className="col-container space-y-1">
-              <span className="text-xl text-gray-700 font-bold">
+              <span className="text-lg text-gray-700 font-bold">
                 Best place
               </span>
-              <span className="text-sm font-semibold text-gray-400">
+              <span className="text-xs font-semibold text-gray-400">
                 Bessie howard
               </span>
             </div>
@@ -48,7 +48,7 @@ const ChannelCard = ({ main }) => {
     <div className="first:ml-auto last:mr-auto w-56 h-[300px] mb-5 border rounded-xl shadow-md overflow-hidden flex flex-col relative group cursor-pointer flex-shrink-0 space-y-3">
       <div className="relative w-full h-[90px] rounded-t-lg mb-16">
         <Image
-          src={"https://picsum.photos/200/200?random=3"}
+          src={"https://picsum.photos/200/200?random=9"}
           objectFit="cover"
           layout="fill"
           className="rounded-t-lg"

@@ -37,32 +37,26 @@ const ChannelTabs = () => {
           </div>
         </Tab.List>
         <Tab.Panels className="mt-2">
-          {/* users tab */}
           <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
             <div className="p-2 flex overflow-x-scroll space-x-4 py-1 scrollbar-thin scrollbar-thumb-gray-300 hover:scrollbar-thumb-gray-400 scroll-smooth scrollbar-track-white">
-               {[...Array(10)].map((_, index) => (
+              {[...Array(10)].map((_, index) => (
                 <ChannelCard key={index} />
               ))}
             </div>
-             
           </Tab.Panel>
-          {/* channels tab */}
+
           <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-x-20 gap-y-4"></div>
-            <div className="w-full row-container space-x-1 py-5">
-              <div className="!bg-white border !w-8 !h-8 shadow hover:shadow-2xl icon-bg"></div>
-              <p className="text-lightPlayRed font-medium text-sm cursor-pointer">
-                Load more Channels
-              </p>
+            <div className="p-2 flex overflow-x-scroll space-x-4 py-1 scrollbar-thin scrollbar-thumb-gray-300 hover:scrollbar-thumb-gray-400 scroll-smooth scrollbar-track-white">
+              {[...Array(10)].map((_, index) => (
+                <ChannelCard key={index} />
+              ))}
             </div>
           </Tab.Panel>
-          <Tab.Panel className={classNames("bg-white rounded-xl p-3")}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-5"></div>
-            <div className="w-full row-container space-x-1 py-5">
-              <div className="!bg-white border !w-8 !h-8 shadow hover:shadow-2xl icon-bg"></div>
-              <p className="text-lightPlayRed font-medium text-sm cursor-pointer">
-                Load more Groups
-              </p>
+          <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
+            <div className="p-2 flex overflow-x-scroll space-x-4 py-1 scrollbar-thin scrollbar-thumb-gray-300 hover:scrollbar-thumb-gray-400 scroll-smooth scrollbar-track-white">
+              {[...Array(10)].map((_, index) => (
+                <ChannelCard key={index} />
+              ))}
             </div>
           </Tab.Panel>
         </Tab.Panels>
