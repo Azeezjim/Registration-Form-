@@ -1,7 +1,7 @@
 function MarketBody() {
   return (
     <div className="flex w-full space-x-5">
-      <div className="mt-6 p-2 shadow-md shadow-gray-300 rounded-md w-1/2 ">
+      <div className="mt-6 p-2 shadow-md shadow-gray-300 rounded-md w-[48%] ml-7">
         <img
           src="images/Illustration/football.jpg"
           alt="Order image"
@@ -66,12 +66,12 @@ function MarketBody() {
       </div>
 
 
-      <div className=" shadow-md shadow-gray-300 rounded-md w-1/2 px-3 ">
-        <div className="mt-6 p-2">
+      <div className=" shadow-md shadow-gray-300 rounded-md w-[48%] px-3 h-80 mt-6 p-2 ">
+        <div className="">
           <p className="text-gray-400 font-medium mb-4 mt-1.5 ">Order Sommary</p>
-          <div className="space-y-2">
+          <div className="space-y-1">
             <div className="flex text-[12px] justify-between space-x-1">
-              <p className="flex items-center text-gray-400 font-normal">
+              <p className="flex items-center mt-2.5 text-gray-400 font-normal">
                 Shiping address
               </p>
               <div className="font-bold ">
@@ -85,26 +85,31 @@ function MarketBody() {
               <p>Order id</p>
               <p className="font-bold">0-44-09887457-09</p>
             </div>
-            <hr className="w-full" />
+            <hr className="w-full mt-2" />
           </div>
         </div>
         <div className="">
           <p className="text-gray-400 font-medium mb-4 mt-1.5 ">Price Details</p>
-          <div>
+          <div className="space-y-1.5">
             <div className="flex justify-between text-[12px]">
-              <p>Order id</p>
-              <p className="font-bold">0-44-09887457-09</p>
+              <p>Last Price</p>
+              <p className="font-bold">$10.00</p>
             </div>
             <div className="flex justify-between text-[12px]">
-              <p>Order id</p>
-              <p className="font-bold">0-44-09887457-09</p>
+              <p>Shiping Fee</p>
+              <p className="font-bold">$0.00</p>
             </div>
             <div className="flex justify-between text-[12px]">
-              <p>Order id</p>
-              <p className="font-bold">0-44-09887457-09</p>
+              <p>Taxes</p>
+              <p className="font-bold">$0.00</p>
             </div>
           </div>
+          <hr className="w-full mt-2" />
         </div>
+        <div className="flex justify-between text-[15px] my-5 ">
+              <p>Total</p>
+              <p className="font-bold">$10.00</p>
+            </div>
       </div>
     </div>
   );
