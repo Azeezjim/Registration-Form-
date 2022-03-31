@@ -1,45 +1,72 @@
 /* eslint-disable @next/next/no-img-element */
 import ProfileNavBar from "../components/ProfileNavBar";
-import { MdProductionQuantityLimits } from "react-icons/md";
+import MarketButtons from "../components/MarketButtons.jsx";
 
 function Market() {
   return (
     <div className="flex">
       <ProfileNavBar className="w-20" />
-      <div className="max-w-5xl px-1 mx-auto pt-3mr-16 ml-6 shadow  mt-20">
+      <div className=" w-full px-1 mx-auto pt-3  ml-6 shadow  mt-20">
         <p className="font-semibold">Order View</p>
-        <div>
-          <div >
-            <div className="flex space-x-2.5 mt-3 ml-2 text-[13px]">
-              <div className=" py-2 px-1.5 rounded flex items-center justify-start bg-lightPlayRed cursor-pointer">
-                <span className="font-semibold text-white flex">
-                  <MdProductionQuantityLimits className="mt-1" /> Products
-                </span>
-              </div>
-              <div className=" py-2 px-1.5 rounded flex items-center justify-start bg-lightPlayRed cursor-pointer">
-                <span className="font-semibold text-white flex text-sm">
-                  <MdProductionQuantityLimits className="mt-1" /> Products
-                </span>
-              </div>
-              <div className=" py-2 px-1.5 rounded flex items-center justify-start bg-lightPlayRed cursor-pointer">
-                <span className="font-semibold text-white flex">
-                  <MdProductionQuantityLimits className="mt-1" /> Products
-                </span>
-              </div>
-            </div>
-              <div className="mt-6 p-2 shadow-md rounded flex-start">
-                <img
-                  src="images/Illustration/football.jpg"
-                  alt="Order image"
-                  className="w-20 h-20 flex justify-start"
-                />
-                <div className="flex">
-                  <span className="flex text-[10px] flex-row justify-around">
-                    <p>Order id</p>
-                    <p className="flex-end">0-44-87543-145763</p>
-                  </span>
-                </div>
-              </div>
+        <MarketButtons />
+        <div className="mt-6 p-2 w-72 shadow-md rounded ">
+          <img
+            src="images/Illustration/football.jpg"
+            alt="Order image"
+            className="w-20 h-20 flex justify-start"
+          />
+          <div className="mt-4 ">
+            <span className="flex text-[10px] justify-between mr-8">
+              <p className="font-semibold">Order id</p>
+              <p className=" mb-7 text-[10px] ">0-44-87543-145763</p>
+            </span>
+            <hr className="w-full font-bold mt-1.5" />
+          </div>
+
+          <div className="mt-4 ">
+            <span className="flex text-[10px] justify-between mr-8">
+              <p className="font-semibold ">Product Name :</p>
+            </span>
+            <hr className="w-full font-bold mt-1.5 " />
+          </div>
+
+          <div className="mt-4 ">
+            <span className="flex text-[10px] justify-between mr-8">
+              <p className="font-semibold">Quality :</p>
+              <p className=" mb-7 text-[10px] ">0-44-87543-145763</p>
+            </span>
+            <hr className="w-full font-bold mt-1.5" />
+          </div>
+
+          <div className="mt-4 ">
+            <span className="flex text-[10px] justify-between mr-8">
+              <p className="font-semibold">Per Quantity Order :</p>
+              <p className=" mb-7 text-[10px] ">0-44-87543-145763</p>
+            </span>
+            <hr className="w-full font-bold mt-1.5" />
+          </div>
+          <div className="mt-4 ">
+            <span className="flex text-[10px] justify-between mr-8">
+              <p className="font-semibold">Sub Total Ammunt :</p>
+              <p className=" mb-7 text-[10px] ">0-44-87543-145763</p>
+            </span>
+            <hr className="w-full font-bold mt-1.5" />
+          </div>
+
+          <div className="mt-4 ">
+            <span className="flex text-[10px] justify-between mr-8">
+              <p className="font-semibold">Order Date :</p>
+              <p className=" mb-7 text-[10px] ">0-44-87543-145763</p>
+            </span>
+            <hr className="w-full font-bold mt-1.5" />
+          </div>
+
+          <div className="mt-4 ">
+            <span className="flex text-[10px]">
+              <p className="font-semibold">Payment Method :</p>
+              <p className=" mb-7 text-[10px] ">0-44-87543-145763</p>
+            </span>
+            <hr className="w-full font-bold mt-1.5" />
           </div>
         </div>
       </div>
