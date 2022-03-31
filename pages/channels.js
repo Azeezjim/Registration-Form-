@@ -5,7 +5,7 @@ import CreatorCard from "../components/CreatorCard";
 import { useSelector } from "react-redux";
 
 
-const channels = () => {
+const Channels = () => {
   const creators = useSelector((state) => state.creators.creators);
 
 
@@ -41,4 +41,4 @@ const channels = () => {
   );
 };
 
-export default channels;
+export default Channels;
