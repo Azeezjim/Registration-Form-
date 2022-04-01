@@ -57,9 +57,10 @@ function ProfileNavItem() {
             <VscReferences className="mt-1 font-semibold" />
             <p>Referrals</p>
           </span>
+          <Link
           <span className="flex space-x-4 cursor-pointer">
             <FaSuitcase className="mt-1 font-semibold" />
-            <p>Ecommerce</p>
+            <p>Marketing</p>
           </span>
           <span className="flex space-x-4 cursor-pointer">
             <MdOutlinePayment className="mt-1 font-semibold" />

@@ -5,10 +5,10 @@ import MarketBody from "../components/MarketBody.jsx"
 
 function Market() {
   return (
-    <div className="flex">
-      <ProfileNavBar className="w-20" />
-      <div className=" w-full px-1 mx-auto pt-3  ml-16mr-24 shadow  mt-28 mr-24">
-        <p className="font-semibold">Order View</p>
+    <div className="flex p-2 rounded shadow">
+      <ProfileNavBar className="w-24 mb-8" />
+      <div className=" w-full px-1 mx-auto pt-3 mr-24  mt-12 bg-white rounded">
+        <p className="font-semibold mt1.5 mb-3.5 pl-2">Order View</p>
         <MarketButtons />
         <MarketBody />
       </div>
