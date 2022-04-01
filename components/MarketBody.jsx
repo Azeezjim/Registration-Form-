@@ -68,7 +68,7 @@ function MarketBody() {
       <div className=" shadow-md shadow-gray-300 rounded-md w-[48%] px-3  mt-6 p-2 h-[110%]">
         <div className="">
           <p className="text-gray-400 font-medium mb-4 mt-1.5 ">
-            Order Sommary
+            Order Summary
           </p>
           <div className="space-y-1">
             <div className="flex text-[12px] justify-between space-x-1">
