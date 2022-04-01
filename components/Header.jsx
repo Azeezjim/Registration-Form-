@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { signIn, signOut } from "next-auth/react";
+
 import { useSelector } from "react-redux";
 import { useSession } from "next-auth/react";
 import {
@@ -11,6 +11,7 @@ import {
 import { SiGooglechat } from "react-icons/si";
 import { AiFillBell } from "react-icons/ai";
 import HeaderCreateMenu from "./HeaderCreateMenu";
+import HeaderMenu from "./HeaderMenu";
 import { useRouter } from "next/router";
 
 const Header = () => {
@@ -82,7 +83,8 @@ const Header = () => {
           <div className="icon-bg">
             <AiFillBell className="h-5 w-5 text-white" />
           </div>
-          <div
+          <HeaderMenu user={session.user.userDetails}/>
+          {/* <div
             onClick={() => signOut({ callbackUrl: "/login" })}
             className="row-container rounded-full bg-[#BA253D] space-x-1 pr-2 cursor-pointer"
           >
@@ -97,7 +99,7 @@ const Header = () => {
             <p className=" text-xs font-semibold text-white">
               {session.user.userDetails.name}
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
