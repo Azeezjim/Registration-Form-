@@ -6,7 +6,9 @@
   .icon-bg {
     @apply w-10 h-10  rounded-full bg-[#BA253D] flex items-center justify-center cursor-pointer;
   }
-
+  .white-icon {
+    @apply bg-white rounded-full flex items-center p-1 shadow;
+  }
   .side-icon {
     @apply bg-[#CD0929] rounded-full flex items-center w-10 h-10 pl-2;
   }
