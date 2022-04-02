@@ -230,3 +230,43 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* chat ui */
+.scrollbar-w-2::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+
+.scrollbar-track-blue-lighter::-webkit-scrollbar-track {
+  --bg-opacity: 1;
+  background-color: #f7fafc;
+  background-color: rgba(247, 250, 252, var(--bg-opacity));
+}
+
+.scrollbar-thumb-blue::-webkit-scrollbar-thumb {
+  --bg-opacity: 1;
+  background-color: #edf2f7;
+  background-color: rgba(237, 242, 247, var(--bg-opacity));
+}
+
+.scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+}
+/* end chat ui */
+
+/* header menu */
+.tag_scroll::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+.tag_scroll::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 12px;
+  border: 3px solid #fff;
+}
+
+.tag_scroll::-webkit-scrollbar-button {
+  display: none;
+}
+/* end header meunu */
