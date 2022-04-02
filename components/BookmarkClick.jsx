@@ -5,7 +5,7 @@ import {
 } from "react-icons/md";
 import { AiOutlineAudio } from "react-icons/ai";
 
-function BookmarkClick() {
+const BookmarkClick = () => {
   return (
     <div>
       <div className="bg-white p-2">
