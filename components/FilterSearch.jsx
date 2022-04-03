@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useMemo} from "react";
 import RangeSlider from "./RangeSlider";
 import { FaCheckCircle } from "react-icons/fa";
 import { MdLocationOn, MdImage } from "react-icons/md";

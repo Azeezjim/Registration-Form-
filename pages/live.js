@@ -93,7 +93,7 @@ const live = () => {
   // const data = useMemo(() => getData(), []);
   return (
     <SideNavLayout>
-      <div className="max-w-[980px] mx-auto my-8 bg-white p-5">
+      <div className="lg:max-w-[980px] xl:max-w-6xl mx-auto my-8 bg-white p-5">
         <div className="flex overflow-x-scroll space-x-4 py-1 scrollbar-thin scrollbar-thumb-gray-300 hover:scrollbar-thumb-gray-400 scroll-smooth scrollbar-track-white ">
           {[...Array(10)].map((_, index) => (
             <LiveCard key={index} />

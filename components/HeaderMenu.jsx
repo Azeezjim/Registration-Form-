@@ -3,9 +3,7 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import {useRouter} from "next/router";
 import { signIn, signOut } from "next-auth/react";
 import Image from "next/image";
-import BookmarkClick from "./BookmarkClick";
-import Dropdown from "./Dropdown";
-import Link from "next/link";
+
 
 import {
   BsDot,
@@ -59,6 +57,7 @@ const router = useRouter();
               <Menu.Item>
                 {({ active }) => (
                   <button
+                  onClick={()=>router.push("/profile")}
                     className={`${
                       active
                         ? "bg-gray-100 text-[#252525] font-bold"
