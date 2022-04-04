@@ -1,8 +1,8 @@
-import { data } from "./data.js";
+import { useSelector } from "react-redux";
 import { useState } from "react";
 import NewsFeedCard from "./NewsFeedCard";
 const NewsFeed = () => {
-  const [feeds, setFeeds] = useState(data?.feed);
+  const feeds = useSelector(state => state.creators.feed)
   return (
     <div className="col-span-2 flex flex-col place-content-center space-y-2 mb-5">
       {feeds.map((feed, index) => (

@@ -1,4 +1,5 @@
 import SideNavLayout from "../components/SideNavLayout";
+import ProfileTabs from "../components/ProfileTabs";
 import Button from "../components/Button";
 import Image from "next/image";
 import {
@@ -17,6 +18,7 @@ import { RiUpload2Line,RiInstagramFill } from "react-icons/ri";
 import { useRouter } from "next/router";
 import { GiPhone } from "react-icons/gi";
 
+
 const profile = () => {
   const router = useRouter();
   return (
@@ -27,7 +29,7 @@ const profile = () => {
             src="https://playjor.ams3.digitaloceanspaces.com/upload/photos/d-cover.jpg"
             alt=""
             srcSet=""
-            className="object-cover w-full"
+            className="object-cover w-full h-[400px]"
           />
           <div
             className="w-8 h-8 rounded-full absolute z-10 top-28 left-8 bg-white cursor-pointer"
@@ -49,7 +51,7 @@ const profile = () => {
             </div>
           </div>
         </div>
-        <div className="px-10 grid grid-cols-1 lg:grid-cols-3 bg-white mb-10">
+        <div className="px-10 grid grid-cols-1 lg:grid-cols-3 gap-x-3 bg-white mb-10">
           <div className="space-y-3 mt-16 ">
             <div className="ml-14">
               <div className="flex items-center justify-start space-x-2 ">
@@ -146,17 +148,19 @@ const profile = () => {
               <div className="flex justify-start items-center space-x-2 p-2 rounded-md hover:bg-gray-100 w-full">
                 <BsShare className="w-4 h-4" />
                 <div className="row-container space-x-2">
-                  <BsTwitter className="w-4 h-4 text-[#1DA1F2]" />
-                  <BsFacebook className="w-4 h-4 text-[#4267B2]" />
-                  <BsYoutube className="w-4 h-4 text-[#FF0000]" />
-                  <RiInstagramFill className="w-4 h-4 text-[#C13584]" />
+                  <BsTwitter className="w-4 h-4 text-[#1DA1F2]  cursor-pointer" />
+                  <BsFacebook className="w-4 h-4 text-[#4267B2] cursor-pointer" />
+                  <BsYoutube className="w-4 h-4 text-[#FF0000] cursor-pointer" />
+                  <RiInstagramFill className="w-4 h-4 text-[#C13584] cursor-pointer" />
                 </div>
               </div>
             </div>
           </div>
+          <div className="col-span-2">
+          <ProfileTabs />
         </div>
-
-        <div className="col-span-2"></div>
+        </div>
+       
       </div>
     </SideNavLayout>
   );
