@@ -19,7 +19,7 @@ import { useRouter } from "next/router";
 import { GiPhone } from "react-icons/gi";
 
 
-const profile = () => {
+const Profile = () => {
   const router = useRouter();
   return (
     <SideNavLayout>
@@ -166,4 +166,4 @@ const profile = () => {
   );
 };
 
-export default profile;
+export default Profile;
