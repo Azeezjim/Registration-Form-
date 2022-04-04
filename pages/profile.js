@@ -111,7 +111,7 @@ const Profile = () => {
             </div>
             <div className="row-container bg-gray-50 p-1 rounded-md py-2">
               <div className="bg-gray-100 p-1 rounded-md">
-                <p className="text-sm font-bold"> See Oreoluwa's about info</p>
+                <p className="text-sm font-bold"> See Oreoluwa&apos;s about info</p>
               </div>
             </div>
             <p className=" text-sm font-semibold">
