@@ -68,7 +68,7 @@ const ProfileTabs = () => {
                 <div className="side-icon">
                   <MdSmartDisplay className="text-white h-6 w-6" />
                 </div>
-                <h1 className="text-3xl font-semibold">Ore's Groups</h1>
+                <h1 className="text-3xl font-semibold">Ore&apos;s Groups</h1>
               </div>
               <div className="p-2 grid grid-cols-2 gap-3">
                 {[...Array(3)].map((_, index) => (
