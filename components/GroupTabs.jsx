@@ -38,27 +38,14 @@ const ChannelTabs = () => {
         </Tab.List>
         <Tab.Panels className="mt-2">
           <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
-            <div className="p-2 flex overflow-x-scroll space-x-4 py-1 scrollbar-thin scrollbar-thumb-gray-300 hover:scrollbar-thumb-gray-400 scroll-smooth scrollbar-track-white">
+            <div className="p-2 pb-5 flex overflow-x-scroll space-x-4 py-1 scrollbar-thin scrollbar-thumb-gray-300 hover:scrollbar-thumb-gray-400 scroll-smooth scrollbar-track-white">
               {[...Array(10)].map((_, index) => (
-                <ChannelCard key={index} channel={index} />
+                <GroupCard key={index} groups={true} />
               ))}
             </div>
           </Tab.Panel>
 
-          <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
-            <div className="p-2 flex overflow-x-scroll space-x-4 py-1 scrollbar-thin scrollbar-thumb-gray-300 hover:scrollbar-thumb-gray-400 scroll-smooth scrollbar-track-white">
-              {[...Array(10)].map((_, index) => (
-                <ChannelCard key={index}channel={index}/>
-              ))}
-            </div>
-          </Tab.Panel>
-          <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
-            <div className="p-2 flex overflow-x-scroll space-x-4 py-1 scrollbar-thin scrollbar-thumb-gray-300 hover:scrollbar-thumb-gray-400 scroll-smooth scrollbar-track-white">
-              {[...Array(10)].map((_, index) => (
-                <ChannelCard key={index}channel={index}/>
-              ))}
-            </div>
-          </Tab.Panel>
+         
         </Tab.Panels>
       </div>
     </Tab.Group>
