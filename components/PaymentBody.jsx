@@ -69,14 +69,14 @@ function ProfileBody() {
         {/* input fealds  */}
 
         <div className="mt-6 p-2 rounded-md w-full ">
-          <div className="pb-5">
-            <p>Shipping address</p>
+          <div className="">
+            <p className="mb-2">Shipping address</p>
             <form action="" className="flex flex-col justify-center space-y-3 ">
               <div className="flex flex-col w-full justify-center ">
                 <input
                   type="text"
                   name="Name"
-                  className="w-[100%] h-[27px] border-white shadow-gray-300 shadow-md rounded text-[10px]"
+                  className="w-[100%] h-[27px] border-white shadow-gray-300 shadow-md rounded text-[10px] outline-none"
                   placeholder="Name"
                 />
               </div>
@@ -85,7 +85,7 @@ function ProfileBody() {
                 <input
                   type="text"
                   name="Contact Number"
-                  className="w-[100%] h-[27px] border-white shadow-gray-300 shadow-md rounded text-[10px]"
+                  className="w-[100%] h-[27px] border-white shadow-gray-300 shadow-md rounded text-[10px] outline-none"
                   placeholder="Contact Number"
                 />
               </div>
@@ -94,7 +94,7 @@ function ProfileBody() {
                 <input
                   type="text"
                   name="Address"
-                  className="w-[100%] h-[27px] border-white shadow-gray-300 shadow-md rounded text-[10px]"
+                  className="w-[100%] h-[27px] border-white shadow-gray-300 shadow-md rounded text-[10px] outline-none"
                   placeholder="Address"
                 />
               </div>
@@ -103,7 +103,7 @@ function ProfileBody() {
                 <input
                   type="text"
                   name="Landmark"
-                  className="w-[100%] h-[27px] border-white shadow-gray-300 shadow-md rounded text-[10px]"
+                  className="w-[100%] h-[27px] border-white shadow-gray-300 shadow-md rounded text-[10px] outline-none"
                   placeholder="Landmark"
                 />
               </div>
@@ -112,7 +112,7 @@ function ProfileBody() {
                 <input
                   type="text"
                   name="Pin Code"
-                  className="w-[100%] h-[27px] border-white shadow-gray-300 shadow-md rounded text-[10px]"
+                  className="w-[100%] h-[27px] border-white shadow-gray-300 shadow-md rounded text-[10px] outline-none"
                   placeholder="Pin Code"
                 />
               </div>
@@ -152,7 +152,7 @@ function ProfileBody() {
               <input
                 type="radio"
                 checked=""
-                className="checked:bg-none mr-3 h-2.5 w-2.5"
+                className="checked:bg-none mr-3 h-2.5 w-2.5 outline-none"
               />
             </div>
           </div>
@@ -198,6 +198,14 @@ function ProfileBody() {
             checked="checked"
             className="checked:bg-none text-red-500 mr-3 h-2.5 w-2.5"
           />
+        </div>
+        <div className="space-x-2">
+          <button className="text-white bg-red-500 py-1.5 px-3.5 rounded-full">
+            Pay Now
+          </button>
+          <button className="text-red-500 bg-white-500 py-1.5 px-3.5 rounded-full border">
+            Pay Now
+          </button>
         </div>
       </div>
 
