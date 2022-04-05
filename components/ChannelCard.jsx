@@ -4,7 +4,7 @@ import { BsHeartFill, BsEyeFill } from "react-icons/bs";
 
 import Link from "next/link";
 
-const ChannelCard = ({ main, channel}) => {
+const ChannelCard = ({ main, channel, profile}) => {
   if (main) {
     return (
       <div className="w-full  h-[230px]  border rounded-xl shadow-md overflow-hidden flex flex-col relative group cursor-pointer flex-shrink-0 ">
@@ -44,6 +44,60 @@ const ChannelCard = ({ main, channel}) => {
       </div>
     );
   }
+  if(profile){
+    return (
+      <div className="first:ml-auto last:mr-auto w-48 h-[300px] mb-5 border rounded-xl shadow-md overflow-hidden flex flex-col relative group cursor-pointer flex-shrink-0 space-y-3">
+        <Link href={`/channels/${channel}`}>  
+        <div className="relative w-full h-[90px] rounded-t-lg mb-16">
+            <Image
+              src={"https://picsum.photos/200/200?random=9"}
+              objectFit="cover"
+              layout="fill"
+              className="rounded-t-lg"
+            />
+            <div className="absolute -bottom-16 left-[40px]">
+              <div className="row-container bg-white p-1 rounded-3xl">
+                <div className="w-16 h-16 md:w-28 md:h-28 relative rounded-3xl">
+                  <Image
+                    src="https://picsum.photos/200/200?random=3"
+                    alt="side-img"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-3xl"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </Link>
+  
+        <div className="col-container w-full ">
+          <p className="font-semibold text-center text-lg">Fashionista</p>
+          <div className="row-container space-x-1 ">
+            <span className="border-r-2 border-black pr-10  font-bold text-sm">
+              4
+            </span>
+            <span className="pl-10 font-bold text-sm">4</span>
+          </div>
+          <div className="row-container space-x-1  ">
+            <span className="pr-2 font-semibold text-gray-400">Posts</span>
+            <span className="pl-3 font-semibold text-gray-400">Subscribers</span>
+          </div>
+        </div>
+        <div className="row-container px-3">
+          <Button
+            text="Subscribe N2,000"
+            textClass="text-sm text-gray-100 font-semibold"
+            extraClasses="w-full h-8"
+            active={true}
+          />
+        </div>
+      </div>
+    );
+  };
+ 
+
+
 
   return (
     <div className="first:ml-auto last:mr-auto w-56 h-[300px] mb-5 border rounded-xl shadow-md overflow-hidden flex flex-col relative group cursor-pointer flex-shrink-0 space-y-3">

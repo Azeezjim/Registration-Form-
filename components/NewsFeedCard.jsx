@@ -55,7 +55,7 @@ const NewsFeedCard = ({
                 ${open ? "" : "text-opacity-90"}
                 group  hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                 >
-                  <BsThreeDots className="text-3xl" />
+                  <BsThreeDots className="h-6 w-6 font-semibold rotate-90 lg:rotate-0" />
                 </Popover.Button>
                 <Transition
                   as={Fragment}

@@ -3,6 +3,9 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  corePlugins: {
+    aspectRatio: false,
+  },
   theme: {
     extend: {
       colors: {
@@ -23,5 +26,6 @@ module.exports = {
     require('tailwind-scrollbar-hide'),
     require('@tailwindcss/forms'),
     require('tailwind-scrollbar'),
+    require('@tailwindcss/aspect-ratio'),
   ],
 }

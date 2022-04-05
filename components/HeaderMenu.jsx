@@ -1,7 +1,9 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useRef, useState } from "react";
+import {useRouter} from "next/router";
 import { signIn, signOut } from "next-auth/react";
 import Image from "next/image";
+
 
 import {
   BsDot,
@@ -23,10 +25,8 @@ import { MdMail } from "react-icons/md";
 import { IoLogOut } from "react-icons/io5";
 
 const HeaderMenu = ({ user }) => {
-  // function format (number) {
-  //   return number.trim();
-  // }
-  // console.log(user);
+const router = useRouter();
+
   return (
     <div>
       <Menu as="div" className="relative inline-block text-left">
@@ -52,11 +52,12 @@ const HeaderMenu = ({ user }) => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute z-10 origin-top-right right-0 tag_scroll py-[3px] px-[10px] overflow-y-scroll overscroll-y-contain rounded-[8px] min-w-[350px] max-h-[90vh]   bg-white divide-y divide-gray-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute z-10 origin-top-right -right-6 tag_scroll py-[3px] px-[10px] overflow-y-scroll overscroll-y-contain rounded-[8px] min-w-[350px] max-h-[90vh]   bg-white divide-y divide-gray-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="px-1 py-1 ">
               <Menu.Item>
                 {({ active }) => (
                   <button
+                  onClick={()=>router.push("/profile")}
                     className={`${
                       active
                         ? "bg-gray-100 text-[#252525] font-bold"
@@ -187,21 +188,27 @@ const HeaderMenu = ({ user }) => {
                 )}
               </Menu.Item>
               <Menu.Item>
-                {({ active }) => (
-                  <button
-                    className={`${
-                      active
-                        ? "bg-gray-100 text-[#252525] font-semibold"
-                        : "text-[#252525] font-semibold"
-                    } group flex rounded-md items-center space-x-2 w-full px-2 py-2 text-sm`}
-                  >
-                    <div className=" row-container bg-gray-100 rounded-full p-2 mr-3">
-                      <FaBookmark className="h-6 w-6" />
-                    </div>
-                    Bookmarks
-                  </button>
-                )}
+               
+                  {({ active }) => ( 
+                    <button
+                      onClick={()=>router.push("/bookmarks/photos")}
+                      className={`${
+                        active
+                          ? "bg-gray-100 text-[#252525] font-semibold"
+                          : "text-[#252525] font-semibold"
+                      } group flex rounded-md items-center space-x-2 w-full px-2 py-2 text-sm`}
+                    >
+                      <div className=" row-container bg-gray-100 rounded-full p-2 mr-3">
+                        <FaBookmark className="h-6 w-6" />
+                      </div>
+                      Bookmarks
+                    </button>
+                      
+                
+                  )}
+                
               </Menu.Item>
+
               <Menu.Item>
                 {({ active }) => (
                   <button

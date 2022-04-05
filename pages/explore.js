@@ -5,7 +5,7 @@ import Tabs from "../components/Tabs"
 const explore = () => {
   return (
     <SideNavLayout>
-      <div className="max-w-3xl px-1 mx-auto">
+      <div className="max-w-5xl px-1 mx-auto">
         <FilterSearch />
         <Tabs/>
       </div>
