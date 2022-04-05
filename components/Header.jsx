@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Link from "next/link";
 import { useSelector } from "react-redux";
 import { useSession } from "next-auth/react";
 import {
@@ -54,12 +54,15 @@ const Header = () => {
         <div className="flex  justify-between lg:justify-start items-center space-x-2 ">
           <div className="flex items-center justify-center">
             <MdMenu className="text-white h-6 w-8 cursor-pointer" />
-            <div
+            <Link href="/">
+               <div
               className="relative w-32 h-10 lg:inline-grid cursor-pointer"
-              onClick={() => router.push("/")}
+              
             >
               <Image src="/logo.png" objectFit="contain" layout="fill" />
             </div>
+            </Link>
+           
           </div>
           <div className="hidden sm:flex relative mt-1 p-1 pl-2 rounded-full sm:text-sm  bg-[#C51834]   items-center">
             <MdSearch className="h-5 w-5 text-gray-200" />
@@ -80,10 +83,13 @@ const Header = () => {
           <div className="icon-bg">
             <SiGooglechat className="h-5 w-5 text-white" />
           </div>
-          <div className="icon-bg">
-            <AiFillBell className="h-5 w-5 text-white" />
-          </div>
-          <HeaderMenu user={session.user.userDetails}/>
+
+          <Link href="/notifications">
+            <div className="icon-bg">
+              <AiFillBell className="h-5 w-5 text-white" />
+            </div>
+          </Link>
+          <HeaderMenu user={session.user.userDetails} />
           {/* <div
             onClick={() => signOut({ callbackUrl: "/login" })}
             className="row-container rounded-full bg-[#BA253D] space-x-1 pr-2 cursor-pointer"

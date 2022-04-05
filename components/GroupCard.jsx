@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Button from "./Button.jsx";
-const GroupCard = ({ filter , profile}) => {
+const GroupCard = ({ filter , profile, }) => {
   if (filter) {
     return (
       <div className="flex flex-col w-full space-y-1 rounded-t-lg border shadow-md ">
