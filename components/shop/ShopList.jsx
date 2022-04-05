@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react'
 import { Dialog, RadioGroup, Transition } from '@headlessui/react';
+import {MdClose,MdStarBorder} from "react-icons/md"
 
 const product = {
     name: 'Basic Tee 6-Pack ',
@@ -163,7 +164,7 @@ const products = [
                   onClick={() => setOpen(false)}
                 >
                   <span className="sr-only">Close</span>
-                  {/* <XIcon className="h-6 w-6" aria-hidden="true" /> */}
+                  <MdClose className="h-6 w-6" aria-hidden="true" />
                 </button>
 
                 <div className="w-full grid grid-cols-1 gap-y-8 gap-x-6 items-start sm:grid-cols-12 lg:gap-x-8">
@@ -184,9 +185,9 @@ const products = [
                       <div className="mt-6">
                         <h4 className="sr-only">Reviews</h4>
                         <div className="flex items-center">
-                          {/* <div className="flex items-center">
+                          <div className="flex items-center">
                             {[0, 1, 2, 3, 4].map((rating) => (
-                              <StarIcon
+                              <MdStarBorder
                                 key={rating}
                                 className={classNames(
                                   product.rating > rating ? 'text-gray-900' : 'text-gray-200',
@@ -195,7 +196,7 @@ const products = [
                                 aria-hidden="true"
                               />
                             ))}
-                          </div> */}
+                          </div>
                           <p className="sr-only">{product.rating} out of 5 stars</p>
                           <a href="#" className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
                             {product.reviewCount} reviews
