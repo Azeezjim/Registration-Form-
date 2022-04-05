@@ -69,20 +69,29 @@ function MarketForm() {
         </div>
       </div>
 
-
       <div className="rounded-md w-[48%] px-3  mt-6 p-2 h-[110%] flex flex-col">
         <p className="text-[12px] font-semibold mb-1">Update Product Image</p>
         <div className="w-[100%] h-20 shadow-sm border-2 rounded ">
           <div className="space-y-1 flex justify-center flex-col items-center text-gray-500 container my-4 ">
             <FaDownload className="text-[25px] " />
-            <p className="text-[12px] font-normal mb-1 t-[15px]">Sellect an image</p>
+            <p className="text-[12px] font-normal mb-1 t-[15px]">
+              Sellect an image
+            </p>
           </div>
         </div>
-        <p className="text-[12px] font-normal mb-1 t-[10px] text-gray-500 ml-3 my-2.5">Please upload .jpg .jpeg and ,png format image only</p>
-      <div className="flex flex-col">
-      <p className="text-[12px] font-semibold mb-1">Description</p>
-        <textarea name="description" id="" cols="30" rows="3" className="border-2 border-gray-200 shadow-md rounded"></textarea>
-      </div>
+        <p className="text-[12px] font-normal mb-1 t-[10px] text-gray-500 ml-3 my-2.5">
+          Please upload .jpg .jpeg and ,png format image only
+        </p>
+        <div className="flex flex-col">
+          <p className="text-[12px] font-semibold mb-1">Description</p>
+          <textarea
+            name="description"
+            id=""
+            cols="30"
+            rows="3"
+            className="border-2 border-gray-200 shadow-md rounded"
+          ></textarea>
+        </div>
       </div>
     </div>
   );
