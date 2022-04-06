@@ -281,6 +281,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 5;
   background: linear-gradient(rgba(255, 255, 255, 0.1), var(#f9f9f9) 80%, var(#f9f9f9) 100%);
 }
 /* end blur bg */
