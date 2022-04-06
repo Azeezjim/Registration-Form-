@@ -54,6 +54,9 @@ const Groups = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-3">
+              <h1 className="text-2xl font-semibold">
+                Suggested For You
+              </h1>
               {[...Array(2)].map((_, index) => (
                 <GroupCard filter={true} key={index} />
               ))}{" "}

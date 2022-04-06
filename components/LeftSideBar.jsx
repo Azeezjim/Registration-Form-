@@ -7,7 +7,7 @@ import Link from "next/link";
 const LeftSideBar = () => {
   const router = useRouter();
   return (
-    <aside className="hidden  lg:block col-span-2  pt-20 border-solid border-black-50  h-screen border-r-[1px] sticky top-0">
+    <aside className="hidden z-10 lg:block col-span-2  pt-20 border-solid border-black-50  h-screen border-r-[1px] sticky top-0">
       <div className="flex flex-col space-y-4 ">
         <Link href="/">
           <div className="side-nav-button">

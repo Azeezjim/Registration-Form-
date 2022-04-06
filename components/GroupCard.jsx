@@ -155,7 +155,7 @@ const GroupCard = ({ filter, profile, groups, groupsAll, groupsSuggestion}) => {
         <img
           src="https://stackdiary.com/140x100.png"
           alt=""
-          className="w-full h-28 rounded-t-lg"
+          className="w-full h-24 rounded-t-lg"
         />
         <div className="p-2 py-3">
           <div className="flex flex-col items-start pb-2">
