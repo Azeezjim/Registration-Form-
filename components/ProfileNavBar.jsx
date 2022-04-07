@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-undef */
 import React, { useState } from "react";
 import Link from "next/link";
-import BookmarkClick from "./BookmarkClick";
+import {BookmarkClick, MarketClick} from "./NavClicks";
 import { RiBarChartHorizontalFill } from "react-icons/ri";
 import { BiHistory, BiUserCircle } from "react-icons/bi";
 import { BsBookmark, BsListStars } from "react-icons/bs";
@@ -15,8 +15,11 @@ import { FaSuitcase } from "react-icons/fa";
 import { GrShieldSecurity } from "react-icons/gr";
 
 function ProfileNavItem() {
-  const [showBookmark, setShowBookmark] = useState(false);
-  const handleClick = () => setShowBookmark(!showBookmark);
+  const [bookClick, setBookClick] = useState(false);
+  const handleBookClick = () => setBookClick(!bookClick);
+
+  const [marketPageClick, setMarketPageClick] = useState(false);
+  const handleMarketPageClick = () => setMarketPageClick(!marketPageClick);
 
   return (
     <div className="mt-16 w-1/5">
@@ -35,11 +38,11 @@ function ProfileNavItem() {
             <p>Stories</p>
           </span>
 
-          <span className="flex space-x-5 cursor-pointer" onClick={handleClick}>
+          <span className="flex space-x-5 cursor-pointer" onClick={handleBookClick}>
             <BsBookmark className="mt-1 font-semibold" />
             <p>Bookmarks</p>
           </span>
-          {showBookmark && (
+          {bookClick && (
             <BookmarkClick className="absolute  top-5 right-0" />
           )}
 
@@ -56,12 +59,15 @@ function ProfileNavItem() {
             <VscReferences className="mt-1 font-semibold" />
             <p>Referrals</p>
           </span>
-          {/* <Link href="/market" replace> */}
+          {/* <Link href="/market" replace className="flex space-x-5 cursor-pointer">  */}
             {/* <a> */}
-              <span className="flex space-x-5 cursor-pointer">
+            <span className="flex space-x-5 cursor-pointer" onClick={handleMarketPageClick}>
                 <FaSuitcase className="mt-1 font-semibold" />
                 <p>Marketing</p>
               </span>
+              {marketPageClick && (
+            <MarketClick className="absolute  top-5 right-0" />
+          )}
             {/* </a> */}
           {/* </Link> */}
           <span className="flex space-x-5 cursor-pointer">

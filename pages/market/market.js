@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import ProfileNavBar from "../components/ProfileNavBar";
-import MarketButtons from "../components/MarketButtons.jsx";
-import MarketBody from "../components/MarketBody.jsx"
+import ProfileNavBar from "../../components/ProfileNavBar";
+import MarketButtons from "../../components/MarketButtons";
+import MarketBody from "../../components/MarketBody";
 
 function Market() {
   return (
