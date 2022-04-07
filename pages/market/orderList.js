@@ -1,7 +1,7 @@
 import React from "react";
-import ProfileNavBar from "../components/ProfileNavBar.jsx";
-import MarketButtons from "../components/MarketButtons.jsx";
-import OrderList from "../components/OrderList.jsx";
+import ProfileNavBar from "../../components/ProfileNavBar.jsx";
+import MarketButtons from "../../components/MarketButtons.jsx";
+import OrderList from "../../components/OrderList.jsx";
 
 function Order() {
   return (

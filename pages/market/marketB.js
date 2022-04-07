@@ -1,6 +1,6 @@
-import ProfileNavBar from "../components/ProfileNavBar";
-import MarketButtons from "../components/MarketButtons.jsx";
-import MarketForm from "../components/MarketForm.jsx";
+import ProfileNavBar from "../../components/ProfileNavBar";
+import MarketButtons from "../../components/MarketButtons.jsx";
+import MarketForm from "../../components/MarketForm.jsx";
 
 function MaeketB() {
   return (

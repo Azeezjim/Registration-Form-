@@ -56,7 +56,7 @@ function OrderList() {
       image: "https://images.pexels.com/photos/6752172/pexels-photo-6752172.jpeg?cs=srgb&dl=pexels-rachel-claire-6752172.jpg&fm=jpg",
       item_name: "Stretch Brand",
       quantity: "Quantity 24",
-      identification: "0-12-3e6376-784",
+      id: "0-12-3e6376-784",
       address: "Kudiu Gati, Hosur Road, Banglone, Kankataka",
       phone: 91346451287,
       amount: "$1629.00",
