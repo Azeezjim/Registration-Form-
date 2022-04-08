@@ -157,4 +157,4 @@ const GroupTabs = ({ groupsAll }) => {
   );
 };
 
-export default Grouptabs;
+export default GroupTabs;
