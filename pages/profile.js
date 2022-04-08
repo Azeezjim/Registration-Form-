@@ -1,5 +1,5 @@
 import SideNavLayout from "../components/SideNavLayout";
-import ProfileTabs from "../components/ProfileTabs";
+import ProfileTabs from "../components/userProfile/ProfileTabs";
 import Button from "../components/Button";
 import Image from "next/image";
 import {

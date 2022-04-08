@@ -7,7 +7,7 @@ import { AiOutlineUserAdd } from "react-icons/ai";
 
 const GroupFeedSideBar = () => {
   return (
-    <div className="grid grid-cols-1 space-y-5 p-1 pr-2 mt-3">
+    <div className="grid grid-cols-1 space-y-5 p-1 pr-2 mt-3 sticky -top-96 ">
       <div className="flex flex-col w-full space-y-2  bg-white rounded-md shadow-md p-2 pb-4">
         <div className="py-2  text-gray-600">
           <input

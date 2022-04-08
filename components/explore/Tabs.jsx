@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
-import UserCard from "./UserCard";
+import UserCard from "../userProfile/UserCard";
 import { FaChevronDown } from "react-icons/fa";
-import ChannelFilter from "./ChannelFilter";
-import GroupCard from "./GroupCard";
+import ChannelFilter from "../channels/ChannelFilter";
+import GroupCard from "../groups//GroupCard";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");

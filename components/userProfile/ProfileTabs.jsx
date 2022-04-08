@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
-import ChannelCard from "./ChannelCard";
-import NewsFeedCard from "./NewsFeedCard";
-import ShopList from "./shop/ShopList";
-import GroupCard from "./GroupCard";
+import ChannelCard from "../channels/ChannelCard";
+import NewsFeedCard from "../feeds/NewsFeedCard";
+import ShopList from "../shop/ShopList";
+import GroupCard from "../groups/GroupCard";
 import { useSelector } from "react-redux";
 import { MdSmartDisplay, MdPhotoSizeSelectActual} from "react-icons/md";
 import {FaVideo} from "react-icons/fa";

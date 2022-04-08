@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "./Button";
+import Button from "../Button";
 import { BsHeartFill, BsEyeFill } from "react-icons/bs";
 
 import Link from "next/link";

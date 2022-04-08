@@ -1,5 +1,5 @@
 import SideNavLayout from "../../components/SideNavLayout";
-import GroupPageTabs from "../../components/GroupPageTabs";
+import GroupPageTabs from "../../components/groups/GroupPageTabs";
 
 import { BsFillArrowLeftCircleFill , BsPeople} from "react-icons/bs";
 import {RiPriceTag3Line} from "react-icons/ri";

@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
-import Stories from "../components/Stories";
-import NewsFeed from "../components/NewsFeed";
-import NewsFeedSideBar from "../components/NewsFeedSideBar";
+import Stories from "../components/feeds/Stories";
+import NewsFeed from "../components/feeds/NewsFeed";
+import NewsFeedSideBar from "../components/feeds/NewsFeedSideBar";
 import SideNavLayout from "../components/SideNavLayout";
 
 import { getSession } from "next-auth/react";

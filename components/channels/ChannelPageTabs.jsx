@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import { useSelector } from "react-redux";
-import NewsFeedCard from "../NewsFeedCard";
+import NewsFeedCard from "../feeds/NewsFeedCard";
 import ChannelFeedSideBar from "./ChannelFeedSideBar";
-import GroupCard from "../GroupCard";
 import { BsPlusCircle, BsCameraVideo } from "react-icons/bs";
 import { RiMusic2Line } from "react-icons/ri";
 import { CgNotes } from "react-icons/cg";

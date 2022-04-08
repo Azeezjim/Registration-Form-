@@ -1,6 +1,6 @@
 import SideNavLayout from "../components/SideNavLayout";
-import FilterSearch from "../components/FilterSearch";
-import Tabs from "../components/Tabs"
+import FilterSearch from "../components/explore/FilterSearch";
+import Tabs from "../components/explore/Tabs"
 
 const explore = () => {
   return (

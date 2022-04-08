@@ -1,6 +1,6 @@
 import { RiPriceTag3Line } from "react-icons/ri";
-import GroupCard from "../GroupCard";
-import CreatorCard from "../CreatorCard";
+import GroupCard from "../groups/GroupCard"
+import CreatorCard from "../creators/CreatorCard";
 import Button from "../Button";
 import { CgNotes } from "react-icons/cg";
 import { MdOutlineBolt } from "react-icons/md";
@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 const ChannelFeedSideBar = () => {
   const creators = useSelector((state) => state.creators.creators.slice(0, 3));
   return (
-    <div className="grid grid-cols-1 space-y-5 pr-1 mt-3">
+    <div className="grid grid-cols-1 space-y-5 pr-1 mt-3  sticky -top-96 ">
       <div className="flex flex-col w-full space-y-2  bg-white rounded-md shadow-md p-2 pb-4 border">
         <div className="py-2  text-gray-600">
           <input

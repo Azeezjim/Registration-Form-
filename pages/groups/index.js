@@ -1,6 +1,6 @@
 import SideNavLayout from "../../components/SideNavLayout";
-import GroupTabs from "../../components/GroupTabs";
-import GroupCard from "../../components/GroupCard";
+import GroupTabs from "../../components/groups/GroupTabs";
+import GroupCard from "../../components/groups/GroupCard";
 import Image from "next/image";
 
 const Groups = () => {

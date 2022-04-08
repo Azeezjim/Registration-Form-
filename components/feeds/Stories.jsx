@@ -1,10 +1,10 @@
 import { useState, useRef } from "react";
 import Story from "./Story";
-import { data } from "./data.js";
+import { useSelector } from "react-redux";
 import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 
 const Stories = () => {
-  const stories = data?.stories;
+  const stories = useSelector(state => state.creators.creators)
   const storiesRef = useRef(null);
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(true);

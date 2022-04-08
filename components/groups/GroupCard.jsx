@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "./Button.jsx";
+import Button from "../Button.jsx";
 import {BsFillPlusCircleFill} from "react-icons/bs";
 const GroupCard = ({ filter, profile, groups, groupsAll, groupsSuggestion}) => {
   if(groupsSuggestion){
