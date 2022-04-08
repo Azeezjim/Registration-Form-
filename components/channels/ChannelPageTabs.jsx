@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import { useSelector } from "react-redux";
-import NewsFeedCard from "./NewsFeedCard";
-import GroupFeedSideBar from "./GroupFeedSideBar";
-import GroupCard from "./GroupCard";
+import NewsFeedCard from "../NewsFeedCard";
+import ChannelFeedSideBar from "./ChannelFeedSideBar";
+import GroupCard from "../GroupCard";
 import { BsPlusCircle, BsCameraVideo } from "react-icons/bs";
 import { RiMusic2Line } from "react-icons/ri";
 import { CgNotes } from "react-icons/cg";
+import {MdOutlineBolt} from "react-icons/md";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const GroupPageTabs = () => {
+const ChannelPageTabs = () => {
   const feeds = useSelector((state) => state.creators.feed);
   return (
     <Tab.Group>
@@ -30,7 +31,7 @@ const GroupPageTabs = () => {
                 )
               }
             >
-              <BsPlusCircle className="w-5 h-5"/>
+              <BsPlusCircle className="w-5 h-5" />
               <span>Create</span>
             </Tab>
             <Tab
@@ -44,7 +45,7 @@ const GroupPageTabs = () => {
                 )
               }
             >
-              <CgNotes className="w-5 h-5"/>
+              <CgNotes className="w-5 h-5" />
               <span>All</span>
             </Tab>
             <Tab
@@ -58,7 +59,7 @@ const GroupPageTabs = () => {
                 )
               }
             >
-              <BsCameraVideo className="w-5 h-5"/>
+              <BsCameraVideo className="w-5 h-5" />
               <span>Videos</span>
             </Tab>
             <Tab
@@ -72,7 +73,7 @@ const GroupPageTabs = () => {
                 )
               }
             >
-              <RiMusic2Line className="w-5 h-5"/>
+              <RiMusic2Line className="w-5 h-5" />
               <span>Sounds</span>
             </Tab>
           </div>
@@ -132,11 +133,11 @@ const GroupPageTabs = () => {
               </div>
             </Tab.Panel>
           </Tab.Panels>
-          <div><GroupFeedSideBar/></div>
+          <div><ChannelFeedSideBar/></div>
         </div>
       </div>
     </Tab.Group>
   );
 };
 
-export default GroupPageTabs;
+export default ChannelPageTabs;
