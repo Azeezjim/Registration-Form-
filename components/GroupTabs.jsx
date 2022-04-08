@@ -6,7 +6,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const ChannelTabs = ({ groupsAll }) => {
+const GroupTabs = ({ groupsAll }) => {
   let [categories] = useState([
     "Subscribed Groups",
     "Suggested Groups",
@@ -157,4 +157,4 @@ const ChannelTabs = ({ groupsAll }) => {
   );
 };
 
-export default ChannelTabs;
+export default Grouptabs;

@@ -1,0 +1,142 @@
+import { useState } from "react";
+import { Tab } from "@headlessui/react";
+import { useSelector } from "react-redux";
+import NewsFeedCard from "./NewsFeedCard";
+import GroupFeedSideBar from "./GroupFeedSideBar";
+import GroupCard from "./GroupCard";
+import { BsPlusCircle, BsCameraVideo } from "react-icons/bs";
+import { RiMusic2Line } from "react-icons/ri";
+import { CgNotes } from "react-icons/cg";
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
+const GroupPageTabs = () => {
+  const feeds = useSelector((state) => state.creators.feed);
+  return (
+    <Tab.Group>
+      <div className="bg-white rounded-2xl  pb-5 shadow-md">
+        <Tab.List>
+          <div className="flex justify-center space-x-3 items-center p-2">
+            <Tab
+              className={({ selected }) =>
+                classNames(
+                  "w-auto h-8 px-4 text-sm leading-5 font-medium ",
+                  "focus:outline-none focus:ring-0 row-container space-x-2 py-1",
+                  selected
+                    ? "bg-[#FFCFD4] text-textPlayRed rounded-full shadow-lg"
+                    : "text-gray-800 bg-white rounded-full shadow-lg"
+                )
+              }
+            >
+              <BsPlusCircle w-5 h-5 />
+              <span>Create</span>
+            </Tab>
+            <Tab
+              className={({ selected }) =>
+                classNames(
+                  "w-auto h-8 px-4 text-sm leading-5 font-medium ",
+                  "focus:outline-none focus:ring-0 row-container space-x-2 py-1",
+                  selected
+                    ? "bg-[#FFCFD4] text-textPlayRed rounded-full shadow-lg"
+                    : "text-gray-800 bg-white rounded-full shadow-lg"
+                )
+              }
+            >
+              <CgNotes w-5 h-5 />
+              <span>All</span>
+            </Tab>
+            <Tab
+              className={({ selected }) =>
+                classNames(
+                  "w-auto h-8 px-4 text-sm leading-5 font-medium ",
+                  "focus:outline-none focus:ring-0 row-container space-x-2 py-1",
+                  selected
+                    ? "bg-[#FFCFD4] text-textPlayRed rounded-full shadow-lg"
+                    : "text-gray-800 bg-white rounded-full shadow-lg"
+                )
+              }
+            >
+              <BsCameraVideo w-5 h-5 />
+              <span>Videos</span>
+            </Tab>
+            <Tab
+              className={({ selected }) =>
+                classNames(
+                  "w-auto h-8 px-4 text-sm leading-5 font-medium ",
+                  "focus:outline-none focus:ring-0 row-container space-x-2 py-1",
+                  selected
+                    ? "bg-[#FFCFD4] text-textPlayRed rounded-full shadow-lg"
+                    : "text-gray-800 bg-white rounded-full shadow-lg"
+                )
+              }
+            >
+              <RiMusic2Line w-5 h-5 />
+              <span>Sounds</span>
+            </Tab>
+          </div>
+        </Tab.List>
+        <div className="grid grid-cols-3">
+          <Tab.Panels className="mt-2 col-span-2">
+            {" "}
+            <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
+              create tab
+            </Tab.Panel>
+            <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
+              <div className="p-2 grid grid-cols-1 gap-y-3">
+                {feeds.map((feed, index) => (
+                  <NewsFeedCard
+                    image={feed.photos[0]}
+                    user={feed.user}
+                    likeCount={feed.likeCount}
+                    commentCount={feed.commentCount}
+                    description={feed.description}
+                    popularComments={feed.popularComments}
+                    time={feed.time}
+                    key={index}
+                  />
+                ))}
+              </div>
+            </Tab.Panel>
+            <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
+              <div className="p-2 grid grid-cols-1 gap-y-3">
+                {feeds.map((feed, index) => (
+                  <NewsFeedCard
+                    image={feed.photos[0]}
+                    user={feed.user}
+                    likeCount={feed.likeCount}
+                    commentCount={feed.commentCount}
+                    description={feed.description}
+                    popularComments={feed.popularComments}
+                    time={feed.time}
+                    key={index}
+                  />
+                ))}
+              </div>
+            </Tab.Panel>
+            <Tab.Panel className={classNames("bg-white rounded-xl p-1")}>
+              <div className="p-2 grid grid-cols-1 gap-y-3">
+                {feeds.map((feed, index) => (
+                  <NewsFeedCard
+                    image={feed.photos[0]}
+                    user={feed.user}
+                    likeCount={feed.likeCount}
+                    commentCount={feed.commentCount}
+                    description={feed.description}
+                    popularComments={feed.popularComments}
+                    time={feed.time}
+                    key={index}
+                  />
+                ))}
+              </div>
+            </Tab.Panel>
+          </Tab.Panels>
+          <div><GroupFeedSideBar/></div>
+        </div>
+      </div>
+    </Tab.Group>
+  );
+};
+
+export default GroupPageTabs;

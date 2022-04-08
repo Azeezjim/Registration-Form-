@@ -1,7 +1,6 @@
 import SideNavLayout from "../../components/SideNavLayout";
 import Image from "next/image";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
-import { MdVerified } from "react-icons/md";
 import { useRouter } from "next/router";
 import Button from "../../components/Button";
 
