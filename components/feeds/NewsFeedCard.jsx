@@ -22,19 +22,21 @@ const NewsFeedCard = ({
   description,
   popularComments,
   time,
+  main,
 }) => {
   const [comments, setComments] = useState([]);
   const [showComments, setShowComments] = useState(false);
+
   return (
-    <div className="sm:rounded-2xl bg-white sm:border shadow-md w-full border bprder-red-500 basis-2/3 bg-coolGray-900 tex">
-      <div className="flex items-center justify-between p-1 px-2 sm:px-4 sm:p-4 border-b">
+    <div className="sm:rounded-2xl bg-white sm:border shadow-md ">
+      <div className="flex flex-1 p-1 px-2 sm:px-4 sm:p-4 border-b">
         <div className="flex items-center space-x-1 sm:space-x-2">
           <img
             src={user.image}
             alt=""
             className="object-cover object-center w-12 h-12   rounded-full shadow-sm bg-gray-500 border-gray-700"
           />
-          <div className="flex space-x-1 text-sm  items-center justify-center">
+          <div className="flex space-x-1 text-sm md:text-lg  items-center justify-center">
             <h2 className=" font-semibold leading-none">{user.username}</h2>
             <FaCheckCircle className="w-3 h-3 text-playRed" />
 
@@ -43,8 +45,8 @@ const NewsFeedCard = ({
             </span>
           </div>
         </div>
-        <div className="row-container space-x-1 p-1">
-          <span className="text-xs sm:text-sm text-gray-600 font-light leading-none">
+        <div className="row-container space-x-1  ml-auto">
+          <span className="text-xs sm:text-sm text-gray-600 font-light ">
             {time}
           </span>
           <Popover className="relative">
@@ -53,7 +55,7 @@ const NewsFeedCard = ({
                 <Popover.Button
                   className={`
                 ${open ? "" : "text-opacity-90"}
-                group  hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                group  hover:text-opacity-100 focus:outline-none focus-visible:ring-0 focus-visible:ring-white focus-visible:ring-opacity-75`}
                 >
                   <BsThreeDots className="h-6 w-6 font-semibold rotate-90 lg:rotate-0" />
                 </Popover.Button>
@@ -66,8 +68,8 @@ const NewsFeedCard = ({
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-1"
                 >
-                  <Popover.Panel className="absolute z-10 w-[200px] lg:w-[20vw]  px-4 mt-3 transform shadow-md -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
-                    <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                  <Popover.Panel className="absolute z-10 w-[250px] lg:w-[20vw]  mt-3 transform shadow-md right-4 lg:translate-x-1/2 sm:px-0 lg:max-w-3xl">
+                    <div className="overflow-hidden rounded-lg ">
                       <div className="relative grid gap-y-2 bg-white p-1 grid-cols-1">
                         <div className="hover:bg-gray-100 hover:text-red-500  border-b h-8 p-2 rounded-md cursor-pointer flex items-center justify-start">
                           <p className="font-bold text-xs">Copy link to post</p>
@@ -97,10 +99,41 @@ const NewsFeedCard = ({
           text={description}
         />
       </div>
-      <div className="md:border md:p-0.5 ">
-        <img src={image} className="w-full  object-cover bg-gray-500" />
+      <div>
+        {" "}
+        <div>
+          <div className="flex  rounded object-center bg-transparent cursor-pointer">
+            <div className="object-center p-1 h-full w-[100%] my-0 mx-auto">
+              {/* <div className="h-full w-full relative">
+                <Image src={image} layout="fill" priority objectFit="cover"  className="block mx-auto h-full w-full max-w-[800px]"/>
+              </div> */}
+              <img
+                src={image}
+                height="100%"
+                width="100%"
+                alt="image attached to post"
+                className="block mx-auto w-full max-w-[800px]"
+              ></img>
+            </div>
+          </div>
+        </div>
       </div>
-
+      {/* <div>
+                      {" "}
+                      <div>
+                        <div className="flex border border-solid border-grey rounded object-center bg-gray-200">
+                          <div className="player-wrapper">
+                            <ReactPlayer
+                              className="react-player"
+                              url={media}
+                              width="100%"
+                              height="100%"
+                              controls
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div> */}
       <div className="p-3 px-7">
         <div className="flex items-center justify-between px-2">
           <button

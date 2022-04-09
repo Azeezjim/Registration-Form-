@@ -95,7 +95,7 @@ const ChannelFeedSideBar = () => {
             </div>
           </div>
         </div>{" "}
-        <div className="grid grid-cols-3 gap-3 px-2">
+        <div className="grid grid-cols-3 gap-2 px-2">
           {creators.map((creator) => (
             <CreatorCard
               username={creator.username}
