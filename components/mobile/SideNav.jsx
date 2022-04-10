@@ -24,7 +24,7 @@ import { IoLogOut } from "react-icons/io5";
 const SideNav = () => {
   const { data: session, status } = useSession();
   const user = session.user.userDetails;
-  console.log(user);
+
   return (
     <div className="top-12 right-0 w-full bg-black bg-opacity-60 fixed bottom-[46px]  z-10 md:hidden">
       <div className="grid grid-cols-3">
