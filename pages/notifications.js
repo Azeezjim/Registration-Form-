@@ -1,5 +1,5 @@
 import SideNavLayout from "../components/SideNavLayout";
-import Notificationcard from "../components/NotificationCard";
+import Notificationcard from "../components/notifications/NotificationCard";
 import { MdArrowBack } from "react-icons/md";
 import { RiCheckboxMultipleLine } from "react-icons/ri";
 import { FaRegComment } from "react-icons/fa";
@@ -23,11 +23,11 @@ const Notifications = () => {
         </div>
         <Tab.Group>
           <Tab.List>
-            <div className="flex justify-start  items-center  py-3">
+            <div className="grid grid-cols-2 md:grid-cols-7 gap-2 md:gap-x-5 gap-x-0 gap-y-8 md:gap-y-0">
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    "w-auto h-8 px-3 text-sm leading-5 font-semibold flex items-center space-x-1 ",
+                    "notification-nav ",
                     "focus:outline-none focus:ring-0 pb-3",
                     selected
                       ? "text-lightPlayRed border-b-lightPlayRed border-b-[2px]   font-bold"
@@ -36,12 +36,12 @@ const Notifications = () => {
                 }
               >
                 <RiCheckboxMultipleLine className="w-6 h-6 " />
-                <h2 className="text-lg font-medium ">All</h2>
+                <h2 className="text-sm font-medium ">All</h2>
               </Tab>
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    "w-auto h-8 px-3 text-sm leading-5 font-semibold flex items-center space-x-1 ",
+                    " notification-nav ",
                     "focus:outline-none focus:ring-0 pb-3",
                     selected
                       ? "text-lightPlayRed border-b-lightPlayRed border-b-[2px]   font-bold"
@@ -50,12 +50,12 @@ const Notifications = () => {
                 }
               >
                 <FaRegComment className="w-6 h-6 " />
-                <h2 className="text-lg font-medium ">COMMENTS</h2>
+                <h2 className="text-sm font-medium ">COMMENTS</h2>
               </Tab>
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    "w-auto h-8 px-3 text-sm leading-5 font-semibold flex items-center space-x-1 ",
+                    " notification-nav ",
                     "focus:outline-none focus:ring-0 pb-3",
                     selected
                       ? "text-lightPlayRed border-b-lightPlayRed border-b-[2px]   font-bold"
@@ -64,12 +64,12 @@ const Notifications = () => {
                 }
               >
                 <BsHeart className="w-6 h-6 " />
-                <h2 className="text-lg font-medium ">LIKED</h2>
+                <h2 className="text-sm font-medium ">LIKED</h2>
               </Tab>
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    "w-auto h-8 px-3 text-sm leading-5 font-semibold flex items-center space-x-1 ",
+                    " notification-nav ",
                     "focus:outline-none focus:ring-0 pb-3",
                     selected
                       ? "text-lightPlayRed border-b-lightPlayRed border-b-[2px]   font-bold"
@@ -78,12 +78,12 @@ const Notifications = () => {
                 }
               >
                 <BsUnlock className="w-6 h-6 " />
-                <h2 className="text-lg font-medium ">SUBSCRIBED</h2>
+                <h2 className="text-sm font-medium ">SUBSCRIBED</h2>
               </Tab>
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    "w-auto h-8 px-3 text-sm leading-5 font-semibold flex items-center space-x-1 ",
+                    " notification-nav ",
                     "focus:outline-none focus:ring-0 pb-3",
                     selected
                       ? "text-lightPlayRed border-b-lightPlayRed border-b-[2px]   font-bold"
@@ -92,12 +92,12 @@ const Notifications = () => {
                 }
               >
                 <AiOutlineDollarCircle className="w-6 h-6 " />
-                <h2 className="text-lg font-medium ">TIPPED</h2>
+                <h2 className="text-sm font-medium ">TIPPED</h2>
               </Tab>
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    "w-auto h-8 px-3 text-sm leading-5 font-semibold flex items-center space-x-1 ",
+                    " notification-nav ",
                     "focus:outline-none focus:ring-0 pb-3",
                     selected
                       ? "text-lightPlayRed border-b-lightPlayRed border-b-[2px]   font-bold"
@@ -106,12 +106,12 @@ const Notifications = () => {
                 }
               >
                 <BsCameraVideo className="w-6 h-6 " />
-                <h2 className="text-lg font-medium ">VIDEO CALLS</h2>
+                <h2 className="text-sm font-medium ">VIDEO CALLS</h2>
               </Tab>
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    "w-auto h-8 px-3 text-sm leading-5 font-semibold flex items-center space-x-1 ",
+                    " notification-nav ",
                     "focus:outline-none focus:ring-0 pb-3",
                     selected
                       ? "text-lightPlayRed border-b-lightPlayRed border-b-[2px]   font-bold"
@@ -119,8 +119,8 @@ const Notifications = () => {
                   )
                 }
               >
-                <BiMicrophone className="w-6 h-6 " />
-                <h2 className="text-lg font-medium ">AUDIO CALLS</h2>
+                <BiMicrophone className="w-6 h-6 -mr-1 md:-mr-0" />
+                <h2 className="text-sm font-medium ">AUDIO CALLS</h2>
               </Tab>
             </div>
           </Tab.List>

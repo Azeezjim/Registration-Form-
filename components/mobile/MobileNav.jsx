@@ -1,32 +1,52 @@
 import { RiHome2Fill } from "react-icons/ri";
 import { MdOutlinePeopleAlt } from "react-icons/md";
-import { FiCompass, FiHome, FiPlusSquare , FiMail, FiBell, FiUser} from "react-icons/fi";
+import {
+  FiCompass,
+  FiHome,
+  FiPlusSquare,
+  FiMail,
+  FiBell,
+  FiUser,
+} from "react-icons/fi";
+import Link from "next/link";
 
 const MobileNav = () => {
   return (
     <div className="fixed inline-flex md:hidden -bottom-1 inset-x-0 ">
+
       <div className="w-full h-12  text-white">
         <div className="relative z-10 h-12 bg-playRed grid grid-cols-6 place-items-center">
-          <button className="nav-btn" title="Home">
-            <FiHome className="w-12 h-6" />
-          </button>
-          <button className="nav-btn" title="Requests">
-            <FiCompass className="w-12 h-6" />
-          </button>
-          <button className="nav-btn" title="Add">
-            <FiPlusSquare className="w-12 h-6" />
-          </button>
-          <button className="nav-btn" title="Message">
-            <FiMail className="w-12 h-6" />
-          </button>
-          <button className="nav-btn" title="Notifications">
-            <FiBell className="w-12 h-6" />
-          </button>
-          <button className="nav-btn" title="Menu">
-            <FiUser className="w-12 h-6" />
-          </button>
+          <Link href="/">
+            <button className="nav-btn" title="Home">
+              <FiHome className="w-12 h-6" />
+            </button>
+          </Link>
+          <Link href="/explore">
+            <button className="nav-btn" title="explore">
+              <FiCompass className="w-12 h-6" />
+            </button>
+          </Link>
+          <Link href="/">
+            <button className="nav-btn" title="Add">
+              <FiPlusSquare className="w-12 h-6" />
+            </button>
+          </Link>
+          <Link href="/messages">
+            <button className="nav-btn" title="Message">
+              <FiMail className="w-12 h-6" />
+            </button>
+          </Link>
+          <Link href="/notifications">
+            <button className="nav-btn" title="Notifications">
+              <FiBell className="w-12 h-6" />
+            </button>
+          </Link>
+          <Link href="/">
+            <button className="nav-btn" title="Menu">
+              <FiUser className="w-12 h-6" />
+            </button>
+          </Link>
         </div>
-       
       </div>
     </div>
     // <div className="flex md:hidden absolute -bottom-1 -left-2">

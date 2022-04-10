@@ -159,8 +159,8 @@ const GroupCard = ({ filter, profile, groups, groupsAll, groupsSuggestion}) => {
         />
         <div className="p-2 py-3">
           <div className="flex flex-col items-start pb-2">
-            <p className="font-semibold text-2xl">graphic</p>
-            <p className="font-medium text-sm text-gray-400">234 members and 1.7k Post A Day</p>
+            <p className="font-semibold text-sm md:text-2xl">graphic</p>
+            <p className="font-medium text-xs md:text-sm text-gray-400">234 members and 1.7k Post A Day</p>
           </div>
 
           <div className="w-full row-container">
