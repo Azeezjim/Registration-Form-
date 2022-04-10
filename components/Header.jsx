@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
-import { useSession } from "next-auth/react";
+import { useSession,getSession } from "next-auth/react";
 import {
   MdMenu,
   MdOutlineClose,
@@ -15,6 +15,7 @@ import HeaderMenu from "./HeaderMenu";
 import { useRouter } from "next/router";
 
 const Header = () => {
+
   const router = useRouter();
   const user = useSelector((state) => state.user.user);
   const { data: session, status } = useSession();
@@ -89,7 +90,7 @@ const Header = () => {
               <AiFillBell className="h-5 w-5 text-white" />
             </div>
           </Link>
-          <HeaderMenu user={session.user.userDetails} />
+          <HeaderMenu user={session?.user?.userDetails} />
           {/* <div
             onClick={() => signOut({ callbackUrl: "/login" })}
             className="row-container rounded-full bg-[#BA253D] space-x-1 pr-2 cursor-pointer"
@@ -112,4 +113,14 @@ const Header = () => {
   );
 };
 
+
 export default Header;
+
+// export async function getServerSideProps({req, res}){
+//   const session = await getSession({req})
+//   return {
+//     props: {
+//       session
+//     }
+//   }
+// }

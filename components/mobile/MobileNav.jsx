@@ -15,7 +15,7 @@ const MobileNav = () => {
     <div className="fixed inline-flex md:hidden -bottom-1 inset-x-0 ">
 
       <div className="w-full h-12  text-white">
-        <div className="relative z-10 h-12 bg-playRed grid grid-cols-6 place-items-center">
+        <div className="relative z-40 h-12 bg-playRed grid grid-cols-6 place-items-center">
           <Link href="/">
             <button className="nav-btn" title="Home">
               <FiHome className="w-12 h-6" />

@@ -166,8 +166,8 @@ const Notifications = () => {
                 ))}
               </div>
           </Tab.Panel>
-          <Tab.Panel className={classNames("bg-white p-1")}>
-             <div className="p-2 grid grid-cols-1">
+          <Tab.Panel className={classNames("bg-white p-0 md:p-1")}>
+             <div className="p-0 md:p-2 grid grid-cols-1">
                 {[...Array(3)].map((_, index) => (
                   <Notificationcard key={index} text="Video call request has been initiated by user test5 !! please check" call={true} />
                 ))}
@@ -176,8 +176,8 @@ const Notifications = () => {
                 ))}
               </div>
           </Tab.Panel>
-          <Tab.Panel className={classNames("bg-white p-1")}>
-             <div className="p-2 grid grid-cols-1">
+          <Tab.Panel className={classNames("bg-white p-0 md:p-1")}>
+             <div className="p-0 md:p-2 grid grid-cols-1">
                 {[...Array(3)].map((_, index) => (
                   <Notificationcard key={index} text="Audio call request has been initiated by user test5 !! please check" call={true} />
                 ))}
