@@ -12,7 +12,7 @@ const SideNavLayout = ({ children }) => {
       <LeftSideBar />
       <main className="lg:col-span-9 mt-[50px] lg:mt-16">{children}</main>
       <MobileNav />
-      <SideNav/>
+      {/* <SideNav/> */}
       <RightSideBar />
     </div>
   );
