@@ -1,16 +1,22 @@
 import Head from "next/head";
+import { useEffect } from "react";
 import Image from "next/image";
 import Stories from "../components/feeds/Stories";
 import NewsFeed from "../components/feeds/NewsFeed";
 import NewsFeedSideBar from "../components/feeds/NewsFeedSideBar";
 import SideNavLayout from "../components/SideNavLayout";
-
+import { END } from "redux-saga";
 import { getSession } from "next-auth/react";
 import { wrapper } from "../store";
 import { useSelector, useDispatch } from "react-redux";
-import {setUserData} from '../store/slices/userSlice';
+import {fetchUserDetailsStart} from '../store/slices/userSlice';
 
 export default function Home({ user }) {
+  // const dispatch = useDispatch();
+  // useEffect(()=>{
+  //   fetchUserDetailsStart
+  // }, [dispatch]);
+
   return (
     <>
       <Head>
@@ -34,8 +40,12 @@ export default function Home({ user }) {
 export const getServerSideProps = wrapper.getServerSideProps(
   store => async ({req, res}) => {
     const session = await getSession({ req });
+    
     // const dispatch = useDispatch();
-    session && store.dispatch(setUserData(session.user.userDetails))
+    // session && store.dispatch(setUserData(session.user.userDetails))
+    store.dispatch(fetchUserDetailsStart({accessToken: session.accessToken, userId: session.userId}));
+    store.dispatch(END)
+    await store.sagaTask.toPromise();
 
     if (!session) {
       return {

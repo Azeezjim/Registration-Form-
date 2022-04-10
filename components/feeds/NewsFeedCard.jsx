@@ -103,7 +103,7 @@ const NewsFeedCard = ({
         {" "}
         <div>
           <div className="flex  rounded object-center bg-transparent cursor-pointer">
-            <div className="object-center p-1 h-full w-[100%] my-0 mx-auto">
+            <div className="object-center p-0 lg:p-1 h-full w-[100%] my-0 mx-auto">
               {/* <div className="h-full w-full relative">
                 <Image src={image} layout="fill" priority objectFit="cover"  className="block mx-auto h-full w-full max-w-[800px]"/>
               </div> */}

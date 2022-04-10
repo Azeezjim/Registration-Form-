@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+  .nav-btn{
+    @apply text-white active:-translate-y-1 transition
+  }
   .icon-bg {
     @apply w-10 h-10  rounded-full bg-[#BA253D] flex items-center justify-center cursor-pointer;
   }

@@ -1,28 +1,39 @@
-import { configureStore, ThunkAction } from '@reduxjs/toolkit';
+import { applyMiddleware, createStore } from 'redux'
 import { createWrapper } from 'next-redux-wrapper';
 import {Action} from 'redux'
+import createSagaMiddleware from 'redux-saga';
 import userReducer from './slices/userSlice';
 import creatorReducer from './slices/creatorSlice'
+import mySaga from "./sagas";
+import { combineReducers } from "redux";
 
-const makeStore = () => configureStore({
-  reducer:{
-    user: userReducer,
-    creators: creatorReducer
-  },
-  devTools: true
+const reducers = combineReducers({
+  user: userReducer,
+  creators: creatorReducer
 })
 
-// export const fetchSubject = (id) => async (dispatch) => {
-//   const timeoutPromise = (timeout) => new Promise(resolve => setTimeout(resolve, timeout));
-//   await timeoutPromise(200);
-//   dispatch(subjectSlice.actions.setEnt({
-//       [id]: {
-//           id,
-//           name: `Subject ${id}`,
-//       },
-//   }));
-// };
-export const wrapper = createWrapper(makeStore);
+// const saga = createSagaMiddleware();
+// const middlewares = [saga];
+// const middleware = [...getDefaultMiddleware({thunk : false}), ...middlewares]
+
+const bindMiddleware = (middleware) => {
+  if (process.env.NODE_ENV !== 'production') {
+    const { composeWithDevTools } = require('redux-devtools-extension')
+    return composeWithDevTools(applyMiddleware(...middleware))
+  }
+  return applyMiddleware(...middleware)
+}
+
+export const makeStore = (context) => {
+  const sagaMiddleware = createSagaMiddleware()
+  const store = createStore(reducers, bindMiddleware([sagaMiddleware]))
+
+  store.sagaTask = sagaMiddleware.run(mySaga)
+
+  return store;
+}
+
+export const wrapper = createWrapper(makeStore, { debug: true })
 
 // let store;
 // export const initialiseStore = (preloadedState) => {
