@@ -2,9 +2,9 @@ import LeftSideBar from "./LeftSideBar";
 import RightSideBar from "./RightSideBar";
 import MobileNav from "./mobile/MobileNav";
 import SideNav from "./mobile/SideNav";
-import { getSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
-const SideNavLayout = ({ children }) => {
+const SideNavLayout = ({ children}) => {
   
 
   return (
@@ -12,7 +12,7 @@ const SideNavLayout = ({ children }) => {
       <LeftSideBar />
       <main className="lg:col-span-9 mt-[50px] lg:mt-16">{children}</main>
       <MobileNav />
-      {/* <SideNav/> */}
+      <SideNav />
       <RightSideBar />
     </div>
   );

@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
 
-
 const initialState = {
   profile: {
     data: {},
@@ -116,14 +115,14 @@ const initialState = {
     buttonDisable: false,
     loadingButtonContent: null,
   },
-  twoStepAuthUpdate : {
+  twoStepAuthUpdate: {
     data: {},
     loading: true,
     error: false,
     buttonDisable: false,
     loadingButtonContent: null,
   },
-  twoStepAuthLogin : {
+  twoStepAuthLogin: {
     data: {},
     loading: true,
     error: false,
@@ -136,7 +135,7 @@ const initialState = {
     error: false,
     buttonDisable: false,
     loadingButtonContent: null,
-  }
+  },
 };
 
 export const UserSlice = createSlice({
@@ -144,15 +143,15 @@ export const UserSlice = createSlice({
   initialState,
 
   reducers: {
-    fetchUserDetailsStart: (state, action)=>{
+    fetchUserDetailsStart: (state, action) => {
       state.profile.loading = true;
     },
-    fetchUserDetailsSuccess: (state, action)=>{
+    fetchUserDetailsSuccess: (state, action) => {
       state.profile.data = action.payload;
       state.profile.loading = false;
     },
-    fetchUserDetailsFailure: (state, action)=>{
-      state.profile.error = action.payload
+    fetchUserDetailsFailure: (state, action) => {
+      state.profile.error = action.payload;
       state.profile.loading = false;
     },
     // editUserDetails: ()=>{
@@ -163,12 +162,19 @@ export const UserSlice = createSlice({
   extraReducers: {
     [HYDRATE]: (state, action) => {
       // handle client
-      state.user = action.payload.user.user;
+      if (!action.payload.user.profile) {
+        return state;
+      }
+      state.profile = action.payload.user.profile;
     },
   },
 });
 
-export const { fetchUserDetailsStart, fetchUserDetailsSuccess, fetchUserDetailsFailure } = UserSlice.actions;
+export const {
+  fetchUserDetailsStart,
+  fetchUserDetailsSuccess,
+  fetchUserDetailsFailure,
+} = UserSlice.actions;
 
 // export const selectUser = UserSlice.state;
 

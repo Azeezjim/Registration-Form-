@@ -12,7 +12,7 @@ import Link from "next/link";
 
 const MobileNav = () => {
   return (
-    <div className="fixed inline-flex md:hidden -bottom-1 inset-x-0 ">
+    <div className="fixed inline-flex md:hidden -bottom-1 inset-x-0 z-20">
 
       <div className="w-full h-12  text-white">
         <div className="relative z-40 h-12 bg-playRed grid grid-cols-6 place-items-center">
