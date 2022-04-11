@@ -32,11 +32,11 @@ const SideNav = () => {
   // console.log(user);
   if(navOpen){
      return (
-    <div className="top-12 right-0 w-full bg-black bg-opacity-60 fixed h-[calc(100vh - 6px)]  z-10 md:hidden">
+    <div className="top-12 right-0 w-full bg-black bg-opacity-60 fixed h-screen  z-10 md:hidden">
       <div className="grid grid-cols-3">
         <div className="bg-transparent h-full" onClick={()=> dispatch(setNavState(false))}></div>
         <div className=" col-span-2 pt-2 pb-5 bg-white h-full">
-          <div className="flex flex-col space-y-3  p-5">
+          <div className="flex flex-col space-y-3  p-3">
             <div className="flex items-center justify-between">
               <div className="relative w-10 h-10 rounded-full mr-5">
                 <Image
@@ -52,17 +52,17 @@ const SideNav = () => {
             </div>{" "}
             <p className="font-semibold text-sm">{user.name}</p>
             <p className="text-xs font-light">{`@${user.username}`}</p>
-            <div className="flex items-center justify-start  pb-2">
-              <p className="font-semibold text-sm">
+            <div className="flex items-center justify-between  pb-2">
+              <p className="font-semibold text-xs xs:text-sm">
                 {user.total_followers} Fans
               </p>
-              <BsDot className="h-5 w-5" />
-              <p className="font-semibold text-sm">
+              <BsDot className="h-5 w-4" />
+              <p className="font-semibold text-xs xs:text-sm">
                 {user.total_followings} Following
               </p>
-              <button className="row-container bg-gray-100 rounded-full px-2 py-1 ml-2">
+              <button className="row-container bg-gray-100 rounded-full px-2 py-1 ">
                 <FaWallet className="h-4 w-4 mr-1" />
-                <p className="text-sm font-semibold">
+                <p className="text-xs xs:text-sm font-semibold">
                   {user.wallet_balance_formatted}
                 </p>
                 {/* <span>&#8358;</span>{ */}
@@ -70,7 +70,7 @@ const SideNav = () => {
             </div>
           </div>{" "}
           <hr className="w-full  mb-2" />
-          <div className="p-3 flex flex-col space-y-3 max-h-[calc(100vh-310px)] overflow-hidden overflow-y-scroll overscroll-y-contain scrollbar-hide z-10">
+          <div className="p-3 pb-20 flex flex-col space-y-3 max-h-[calc(100vh-248px)] overflow-hidden overflow-y-scroll overscroll-y-contain scrollbar-hide z-10">
             <button className="group flex rounded-md items-center space-x-2 w-full  text-sm">
               <div className="row-container bg-gray-100 rounded-full p-2 mr-3">
                 <FaUserCircle className="h-6 w-6 " />

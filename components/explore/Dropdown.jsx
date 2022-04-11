@@ -4,13 +4,13 @@ import { Fragment } from "react";
 
 export default function Dropdown({ children, name }) {
   return (
-    <Popover className="relative">
+    <Popover className="relative w-full lg:w-auto">
       {({ open }) => (
         <>
           <Popover.Button
             className={`
                 ${open ? "" : "text-opacity-90"}
-                flex items-center justify-between  pr-2 pl-1  text-xs font-semibold   rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 w-80 md:w-auto`}
+                flex items-center justify-between  pr-2 pl-1  text-xs font-semibold   rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 w-full lg:w-auto`}
           >
            
               <span>{name}</span>

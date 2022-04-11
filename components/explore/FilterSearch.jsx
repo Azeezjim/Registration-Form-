@@ -88,7 +88,8 @@ const FilterSearch = () => {
             defaultValue={0}
             name="country"
             id="country"
-            className="w-full lg:w-[125px] h-[32px] text-xs outline-none focus:outline-none focus:ring-0 lg:pr-[25px] lg:pl-[5px] border-0 ring-0 rounded-full cursor-pointer indent-[27px] bg-transparent font-medium "
+             id="grid-state"
+            className="w-full pr-5  appearance-none form-select lg:w-[125px] h-[32px] text-xs outline-none focus:outline-none focus:ring-0 border-red-200 border lg:pr-[25px] lg:pl-[5px] border-0 ring-0 rounded-full cursor-pointer indent-[27px] bg-transparent font-medium "
           >
             <option value="all">All Country</option>
             <option value="0">Select Country</option>
