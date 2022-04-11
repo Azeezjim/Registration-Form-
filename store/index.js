@@ -3,13 +3,15 @@ import { createWrapper } from 'next-redux-wrapper';
 import {Action} from 'redux'
 import createSagaMiddleware from 'redux-saga';
 import userReducer from './slices/userSlice';
-import creatorReducer from './slices/creatorSlice'
+import creatorReducer from './slices/creatorSlice';
+import navReducer from "./slices/NavSlice";
 import mySaga from "./sagas";
 import { combineReducers } from "redux";
 
 const reducers = combineReducers({
   user: userReducer,
-  creators: creatorReducer
+  creators: creatorReducer,
+  navbar: navReducer
 })
 
 // const saga = createSagaMiddleware();

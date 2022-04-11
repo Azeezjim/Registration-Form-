@@ -43,7 +43,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
     // const dispatch = useDispatch();
     if(session){
       store.dispatch(fetchUserDetailsSuccess(session.user.userDetails));
-      console.log('done')
+    
     }
   
     // session && store.dispatch(setUserData(session.user.userDetails))

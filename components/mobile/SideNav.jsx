@@ -1,7 +1,8 @@
 import { signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setNavState } from "../../store/slices/NavSlice";
 
 import {
   BsDot,
@@ -23,14 +24,17 @@ import { MdMail, MdClose } from "react-icons/md";
 import { IoLogOut } from "react-icons/io5";
 
 const SideNav = () => {
+  const dispatch = useDispatch();
+  const navOpen = useSelector(state => state.navbar.open)
   const user = useSelector((state) => state.user.profile.data);
 
+  
   // console.log(user);
-
-  return (
+  if(navOpen){
+     return (
     <div className="top-12 right-0 w-full bg-black bg-opacity-60 fixed h-[calc(100vh - 6px)]  z-10 md:hidden">
       <div className="grid grid-cols-3">
-        <div className="bg-transparent h-full"></div>
+        <div className="bg-transparent h-full" onClick={()=> dispatch(setNavState(false))}></div>
         <div className=" col-span-2 pt-2 pb-5 bg-white h-full">
           <div className="flex flex-col space-y-3  p-5">
             <div className="flex items-center justify-between">
@@ -42,23 +46,23 @@ const SideNav = () => {
                   objectFit="contain"
                 />
               </div>
-              <button>
+              <button onClick={()=> dispatch(setNavState(false))}>
                 <MdClose className="w-6 h-6" />
               </button>
             </div>{" "}
-            <p className="font-semibold text-xs">{user.name}</p>
+            <p className="font-semibold text-sm">{user.name}</p>
             <p className="text-xs font-light">{`@${user.username}`}</p>
             <div className="flex items-center justify-start  pb-2">
-              <p className="font-semibold text-xs">
+              <p className="font-semibold text-sm">
                 {user.total_followers} Fans
               </p>
               <BsDot className="h-5 w-5" />
-              <p className="font-semibold text-xs">
+              <p className="font-semibold text-sm">
                 {user.total_followings} Following
               </p>
               <button className="row-container bg-gray-100 rounded-full px-2 py-1 ml-2">
                 <FaWallet className="h-4 w-4 mr-1" />
-                <p className="text-xs font-semibold">
+                <p className="text-sm font-semibold">
                   {user.wallet_balance_formatted}
                 </p>
                 {/* <span>&#8358;</span>{ */}
@@ -66,7 +70,7 @@ const SideNav = () => {
             </div>
           </div>{" "}
           <hr className="w-full  mb-2" />
-          <div className="p-3 flex flex-col space-y-3 max-h-[calc(100vh-310px)] overflow-hidden overflow-y-scroll overscroll-y-contain scrollbar-hidden z-10">
+          <div className="p-3 flex flex-col space-y-3 max-h-[calc(100vh-310px)] overflow-hidden overflow-y-scroll overscroll-y-contain scrollbar-hide z-10">
             <button className="group flex rounded-md items-center space-x-2 w-full  text-sm">
               <div className="row-container bg-gray-100 rounded-full p-2 mr-3">
                 <FaUserCircle className="h-6 w-6 " />
@@ -187,6 +191,8 @@ const SideNav = () => {
       </div>
     </div>
   );
+  }
+  return null
 };
 
 export default SideNav;

@@ -1,3 +1,5 @@
+import { useSelector, useDispatch } from "react-redux";
+import { setNavState } from "../../store/slices/NavSlice";
 import { RiHome2Fill } from "react-icons/ri";
 import { MdOutlinePeopleAlt } from "react-icons/md";
 import {
@@ -11,6 +13,9 @@ import {
 import Link from "next/link";
 
 const MobileNav = () => {
+  const navOpen = useSelector(state => state.navbar.open);
+  const dispatch = useDispatch();
+  const toggleSideBar = ()=> {dispatch(setNavState(!navOpen))}
   return (
     <div className="fixed inline-flex md:hidden -bottom-1 inset-x-0 z-20">
 
@@ -41,11 +46,11 @@ const MobileNav = () => {
               <FiBell className="w-12 h-6" />
             </button>
           </Link>
-          <Link href="/">
-            <button className="nav-btn" title="Menu">
+       
+            <button className="nav-btn" title="Menu" onClick={toggleSideBar}>
               <FiUser className="w-12 h-6" />
             </button>
-          </Link>
+        
         </div>
       </div>
     </div>
