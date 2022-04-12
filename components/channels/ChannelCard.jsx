@@ -111,7 +111,7 @@ const ChannelCard = ({ main, channel, profile}) => {
           />
           <div className="absolute -bottom-16 left-[50px]">
             <div className="row-container bg-white p-1 rounded-3xl">
-              <div className="w-16 h-16 md:w-28 md:h-28 relative rounded-3xl">
+              <div className="w-28 h-28 relative rounded-3xl">
                 <Image
                   src="https://picsum.photos/200/200?random=3"
                   alt="side-img"

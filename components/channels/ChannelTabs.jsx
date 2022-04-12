@@ -17,13 +17,13 @@ const ChannelTabs = () => {
     <Tab.Group>
       <div className="bg-white rounded-2xl p-1">
         <Tab.List>
-          <div className="flex justify-start space-x-3 items-center">
+          <div className="flex items-center space-x-3 py-3 overflow-x-scroll scrollbar-thin flex-shrink-0">
             {categories.map((category, index) => (
               <Tab
                 key={index}
                 className={({ selected }) =>
                   classNames(
-                    "w-auto h-8 px-4 text-sm leading-5 font-medium ",
+                    " whitespace-nowrap p-2 text-sm leading-5 font-medium ",
                     "focus:outline-none focus:ring-0 ",
                     selected
                       ? "bg-[#FFCFD4] text-textPlayRed rounded-full shadow-lg"

@@ -24,7 +24,7 @@ const GroupTabs = ({ groupsAll }) => {
     return (
       <Tab.Group>
           <Tab.List>
-            <div className="flex justify-start space-x-3 items-center p-2">
+            <div className="flex items-center space-x-3 p-3 overflow-x-scroll scrollbar-thin scroll-smooth scrollbar-hide flex-shrink-0">
               <Tab
                 className={({ selected }) =>
                   classNames(
@@ -36,8 +36,8 @@ const GroupTabs = ({ groupsAll }) => {
                   )
                 }
               >
-                <h2 className="text-sm font-medium ">All Groups</h2>
-                <div className="bg-[#FFE2E5] rounded-full p-1 row-container">
+                <h2 className="text-sm font-medium whitespace-nowrap">All Groups</h2>
+                <div className="bg-[#FFE2E5] rounded-full p-1 row-container whitespace-nowrap">
                   <span className="text-lightPlayRed font-medium text-xs">
                     3,4510
                   </span>
@@ -56,7 +56,7 @@ const GroupTabs = ({ groupsAll }) => {
                   )
                 }
               >
-                <h2 className="text-sm font-medium ">{group}</h2>
+                <h2 className="text-sm font-medium whitespace-nowrap">{group}</h2>
                 
               </Tab>
                 ))
@@ -110,13 +110,13 @@ const GroupTabs = ({ groupsAll }) => {
       <div className="bg-white rounded-2xl p-1 pb-5 shadow-md">
         <h1 className="text-3xl font-semibold pl-2 py-3">Groups</h1>
         <Tab.List>
-          <div className="flex justify-start space-x-3 items-center p-2">
+          <div className="flex items-center space-x-3 py-3 overflow-x-scroll scrollbar-thin flex-shrink-0">
             {categories.map((category, index) => (
               <Tab
                 key={index}
                 className={({ selected }) =>
                   classNames(
-                    "w-auto h-8 px-4 text-sm leading-5 font-medium ",
+                    " whitespace-nowrap p-2 text-sm leading-5 font-medium",
                     "focus:outline-none focus:ring-0 ",
                     selected
                       ? "bg-[#FFCFD4] text-textPlayRed rounded-full shadow-lg"

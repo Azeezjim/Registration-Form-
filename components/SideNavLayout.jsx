@@ -2,7 +2,7 @@ import LeftSideBar from "./LeftSideBar";
 import RightSideBar from "./RightSideBar";
 import MobileNav from "./mobile/MobileNav";
 import SideNav from "./mobile/SideNav";
-import { useSession } from "next-auth/react";
+
 
 const SideNavLayout = ({ children}) => {
   
