@@ -44,6 +44,7 @@ const SideNav = () => {
                   layout="fill"
                   className="rounded-full mr-2"
                   objectFit="contain"
+                  alt=""
                 />
               </div>
               <button onClick={()=> dispatch(setNavState(false))}>

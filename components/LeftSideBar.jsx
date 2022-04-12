@@ -9,7 +9,7 @@ const LeftSideBar = () => {
   return (
     <aside className="hidden z-10 lg:block col-span-2  pt-20 border-solid border-black-50  h-screen border-r-[1px] sticky top-0">
       <div className="flex flex-col space-y-4 ">
-        <Link href="/">
+        <Link href="/" passHref>
           <div className="side-nav-button">
             <div className="side-icon">
               <svg
@@ -115,14 +115,10 @@ const LeftSideBar = () => {
           </div>
         </Link>
 
-        {router.pathname !== "/" ? (
-          <div className="justify-start p-1 pl-2 space-x-4 cursor-pointer row-container  w-40 h-10 ml-5 text-white   bg-lightPlayRed rounded-full">
-            <FiPlus className="h-6 w-6" />{" "}
-            <p className="text-lg font-medium">Create</p>
-          </div>
-        ) : (
-          ""
-        )}
+        <div className="justify-start p-1 pl-2 space-x-4 cursor-pointer row-container  w-40 h-10 ml-5 text-white   bg-lightPlayRed rounded-full">
+          <FiPlus className="h-6 w-6" />{" "}
+          <p className="text-lg font-medium">Create</p>
+        </div>
       </div>
     </aside>
   );

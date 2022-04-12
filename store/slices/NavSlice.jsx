@@ -5,12 +5,16 @@ export const navSlice = createSlice({
   name: "navbar",
   initialState: {
     open: false,
+    mainMobileNav: false
   },
 
   reducers: {
     setNavState: (state, action) => {
       state.open = action.payload;
     },
+    setMainMobileNavState: (state, action) => {
+      state.mainMobileNav = action.payload;
+    }
   },
 
 //   extraReducers: {
@@ -23,8 +27,8 @@ export const navSlice = createSlice({
 //   },
 });
 
-export const { setNavState } = navSlice.actions
+export const { setNavState ,setMainMobileNavState } = navSlice.actions
 
-// export const selectUser = UserSlice.state;
+
 
 export default navSlice.reducer;

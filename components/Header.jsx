@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch} from "react-redux";
 import { useSession,getSession } from "next-auth/react";
 import {
   MdMenu,
-  MdOutlineClose,
+  MdClose,
   MdSearch,
   MdOutlineSearch,
 } from "react-icons/md";
@@ -13,19 +13,24 @@ import { AiFillBell } from "react-icons/ai";
 import HeaderCreateMenu from "./HeaderCreateMenu";
 import HeaderMenu from "./HeaderMenu";
 import { useRouter } from "next/router";
+import { setMainMobileNavState } from "../store/slices/NavSlice";
+
 
 const Header = () => {
-
+  const dispatch = useDispatch();
   const router = useRouter();
-  const user = useSelector((state) => state.user.user);
+  const mainNavOpen = useSelector(state => state.navbar.mainMobileNav);
   const { data: session, status } = useSession();
+  const toggleMobileNav = ()=>{
+    dispatch(setMainMobileNavState(!mainNavOpen));
+  }
 
   if (!session)
     return (
       <div className="w-full bg-transparent fixed top-0 z-40">
         <div className="max-w-7xl mx-auto p-1 md:px-0 flex items-center justify-between">
           <div className="relative w-32 h-10 cursor-pointer">
-            <Image src="/logo.png" objectFit="contain" layout="fill" />
+            <Image src="/logo.png" objectFit="contain" layout="fill" alt="" />
           </div>
 
           <div>
@@ -54,13 +59,26 @@ const Header = () => {
       <div className="flex max-w-7xl p-2  items-center justify-between  mx-auto ">
         <div className="flex  justify-between lg:justify-start items-center space-x-2 ">
           <div className="flex items-center justify-center">
-            <MdMenu className="text-white h-6 w-8 cursor-pointer" />
-            <Link href="/">
+            {
+              mainNavOpen ? (
+                <button  onClick={()=>toggleMobileNav()} className="p-1 bg-white rounded-full shadow-md border mr-2">
+                  <MdClose className="text-black h-6 w-6 cursor-pointer" />
+                </button>
+                
+              ) : (
+                <button onClick={()=>toggleMobileNav()} >
+                   <MdMenu className="text-white h-8 w-8 cursor-pointer mr-2" />
+                </button>
+                
+              )
+            }
+           
+            <Link href="/" passHref>
                <div
               className="relative w-32 h-10 lg:inline-grid cursor-pointer"
               
             >
-              <Image src="/logo.png" objectFit="contain" layout="fill" />
+              <Image src="/logo.png" objectFit="contain" layout="fill" alt=""/>
             </div>
             </Link>
            
@@ -81,11 +99,14 @@ const Header = () => {
         </div>
         <div className="items-center space-x-2 hidden lg:flex  ">
           <HeaderCreateMenu />
-          <div className="icon-bg">
+          <Link href="/messages" passHref>
+           <div className="icon-bg">
             <SiGooglechat className="h-5 w-5 text-white" />
           </div>
 
-          <Link href="/notifications">
+          </Link>
+         
+          <Link href="/notifications" passHref>
             <div className="icon-bg">
               <AiFillBell className="h-5 w-5 text-white" />
             </div>
@@ -116,11 +137,3 @@ const Header = () => {
 
 export default Header;
 
-// export async function getServerSideProps({req, res}){
-//   const session = await getSession({req})
-//   return {
-//     props: {
-//       session
-//     }
-//   }
-// }

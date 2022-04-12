@@ -15,6 +15,9 @@
   .side-icon {
     @apply bg-[#CD0929] rounded-full flex items-center w-10 h-10 pl-2;
   }
+  .mobile-nav-icon{
+    @apply bg-textPlayRed text-white rounded-md flex items-center justify-center w-8 h-8  p-1;
+  }
   .side-nav-button {
     @apply flex items-center space-x-1 w-full ml-4 mr-20 cursor-pointer;
   }
