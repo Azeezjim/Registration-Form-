@@ -21,6 +21,9 @@
   .side-nav-button {
     @apply flex items-center space-x-1 w-full ml-4 mr-20 cursor-pointer;
   }
+  .side-nav-mobile-button {
+    @apply side-nav-button mx-0
+  }
   .side-container {
     @apply flex flex-col space-y-2 justify-center bg-white border shadow-lg rounded-lg max-w-3xl p-2;
   }

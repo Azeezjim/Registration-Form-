@@ -31,7 +31,7 @@ const LeftSideBar = () => {
             <span className="font-bold">News Feed</span>
           </div>
         </Link>
-        <Link href="/explore">
+        <Link href="/explore" passHref>
           <div className="side-nav-button">
             <div className="side-icon">
               <svg
@@ -54,7 +54,7 @@ const LeftSideBar = () => {
           </div>
         </Link>
 
-        <Link href="/live">
+        <Link href="/live" passHref> 
           <div className="side-nav-button">
             <div className="side-icon">
               <TiVideo className="text-white h-6 w-6" />
@@ -62,7 +62,7 @@ const LeftSideBar = () => {
             <span className="font-bold">Live</span>
           </div>
         </Link>
-        <Link href="/channels">
+        <Link href="/channels" passHref>
           <div className="side-nav-button">
             <div className="side-icon">
               <MdSmartDisplay className="text-white h-6 w-6" />
@@ -71,7 +71,7 @@ const LeftSideBar = () => {
           </div>
         </Link>
 
-        <Link href="/groups">
+        <Link href="/groups" passHref>
           <div className="side-nav-button">
             <div className="side-icon">
               <svg
@@ -93,7 +93,7 @@ const LeftSideBar = () => {
             <span className="font-bold">Groups</span>
           </div>
         </Link>
-        <Link href="/playhub">
+        <Link href="/playhub" passHref>
           <div className="side-nav-button">
             <div className="side-icon">
               <svg
