@@ -63,6 +63,7 @@ const Register = () =>{
       </p>
       <h1>Register</h1>
       <form>
+
         <label htmlFor="username">Username! 
         <span className={validName ? "valid" :"hide" }>
           <FontAwesomeIcon icon={faCheck} />
@@ -88,6 +89,7 @@ const Register = () =>{
           4 to 21 characters, letters, numbers, underscore, hyphens only<br />
           Must begin with a latter. <br />
         </p>
+
 
         <label htmlFor="password">Password:
         <span className={validPwd ? "valid" :"hide" }>
@@ -117,6 +119,7 @@ const Register = () =>{
           Must begin with a latter. <br />
         </p>
 
+
         <label htmlFor="password">Confirm Password:
         <span className={validMatch && matchPwd ? "valid" :"hide" }>
           <FontAwesomeIcon icon={faCheck} />
@@ -142,6 +145,7 @@ const Register = () =>{
 
         <button disabled={!validName || !validPwd || !validMatch ? true : false }>
           Sign Up
+          
         </button>
         <p>
           Already registered? <br />
