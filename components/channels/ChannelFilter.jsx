@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Button from "./Button";
+import Button from "../Button";
 import { IoMdThumbsUp } from "react-icons/io";
 import { BsTagFill } from "react-icons/bs";
 
 const ChannelFilter = () => {
   return (
-    <div className="flex items-center justify-center space-x-4 pt-2 pb-5 border-b w-full">
+    <div className="flex items-center justify-center space-x-4 pt-2 pb-5 border-b w-full pl-10 md:pl-0 ">
       <div className="rounded-full relative cursor-pointer">
         <Image
           src="/profile_avatar_full.jpg"

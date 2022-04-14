@@ -7,9 +7,9 @@ import Link from "next/link";
 const LeftSideBar = () => {
   const router = useRouter();
   return (
-    <aside className="hidden  lg:block col-span-2  pt-20 border-solid border-black-50  h-screen border-r-[1px] sticky top-0">
+    <aside className="hidden z-10 lg:block col-span-2  pt-20 border-solid border-black-50  h-screen border-r-[1px] sticky top-0">
       <div className="flex flex-col space-y-4 ">
-        <Link href="/">
+        <Link href="/" passHref>
           <div className="side-nav-button">
             <div className="side-icon">
               <svg
@@ -31,7 +31,7 @@ const LeftSideBar = () => {
             <span className="font-bold">News Feed</span>
           </div>
         </Link>
-        <Link href="/explore">
+        <Link href="/explore" passHref>
           <div className="side-nav-button">
             <div className="side-icon">
               <svg
@@ -54,7 +54,7 @@ const LeftSideBar = () => {
           </div>
         </Link>
 
-        <Link href="/live">
+        <Link href="/live" passHref> 
           <div className="side-nav-button">
             <div className="side-icon">
               <TiVideo className="text-white h-6 w-6" />
@@ -62,7 +62,7 @@ const LeftSideBar = () => {
             <span className="font-bold">Live</span>
           </div>
         </Link>
-        <Link href="/channels">
+        <Link href="/channels" passHref>
           <div className="side-nav-button">
             <div className="side-icon">
               <MdSmartDisplay className="text-white h-6 w-6" />
@@ -71,7 +71,7 @@ const LeftSideBar = () => {
           </div>
         </Link>
 
-        <Link href="/groups">
+        <Link href="/groups" passHref>
           <div className="side-nav-button">
             <div className="side-icon">
               <svg
@@ -93,7 +93,7 @@ const LeftSideBar = () => {
             <span className="font-bold">Groups</span>
           </div>
         </Link>
-        <Link href="/playhub">
+        <Link href="/playhub" passHref>
           <div className="side-nav-button">
             <div className="side-icon">
               <svg
@@ -115,14 +115,10 @@ const LeftSideBar = () => {
           </div>
         </Link>
 
-        {router.pathname !== "/" ? (
-          <div className="justify-start p-1 pl-2 space-x-4 cursor-pointer row-container  w-40 h-10 ml-5 text-white   bg-lightPlayRed rounded-full">
-            <FiPlus className="h-6 w-6" />{" "}
-            <p className="text-lg font-medium">Create</p>
-          </div>
-        ) : (
-          ""
-        )}
+        <div className="justify-start p-1 pl-2 space-x-4 cursor-pointer row-container  w-40 h-10 ml-5 text-white   bg-lightPlayRed rounded-full">
+          <FiPlus className="h-6 w-6" />{" "}
+          <p className="text-lg font-medium">Create</p>
+        </div>
       </div>
     </aside>
   );

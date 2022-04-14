@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "./Button";
+import Button from "../Button";
 import UserCardPopup from "./UserCardPopup";
 import { IoMdPersonAdd } from "react-icons/io";
 

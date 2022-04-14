@@ -5,6 +5,7 @@ import TwitterProvider from "next-auth/providers/twitter";
 import CredentialsProvider from "next-auth/providers/credentials";
 var axios = require("axios");
 var FormData = require("form-data");
+var localStorage = require("localStorage");
 
 export default NextAuth({
   // Configure one or more authentication providers
@@ -61,8 +62,7 @@ export default NextAuth({
           const res = await axios(config);
 
           const user = await res.data.data;
-          
-         
+
           // If no error and we have user data, return it
 
           if (res.data.success && user) {
@@ -72,29 +72,33 @@ export default NextAuth({
           const errorMessage = e.response.data.message;
           throw new Error(errorMessage + "&email" + credentials.email);
         }
-        // // Return null if user data could not be retrieved
-        // return null;
+        // Return null if user data could not be retrieved
+        return null;
       },
     }),
   ],
   secret: "jhsggsjfjsdgf7ueshgfsjfhgj",
   callbacks: {
-    // async signIn({ user, account, profile, email, credentials }) {
-    //   return true
-    // },
+    async signIn({ user, account, profile, email, credentials }) {
+      localStorage.setItem("accessToken", user.token);
+      localStorage.setItem("userId", user.user_id);
+      return true;
+    },
     // async redirect({ url, baseUrl }) {
     //   return baseUrl
     // },
 
-    async jwt({token, user}) {
+    async jwt({ token, user }) {
       if (user) {
         token.accessToken = user.token;
+        token.userId = user.user_id;
         token.user = user;
       }
       return token;
     },
-    async session({ session, token}) {
+    async session({ session, token }) {
       session.accessToken = token.accessToken;
+      session.userId = token.userId;
       session.user.userDetails = token.user;
       return session;
     },

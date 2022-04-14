@@ -1,8 +1,9 @@
-import { useRef, useState, useMemo} from "react";
+import { useRef, useState, useMemo } from "react";
 import RangeSlider from "./RangeSlider";
 import { FaCheckCircle } from "react-icons/fa";
 import { MdLocationOn, MdImage } from "react-icons/md";
 import { BsFillEyeFill } from "react-icons/bs";
+import { BiCaretDown } from "react-icons/bi";
 import Dropdown from "./Dropdown";
 
 const FilterSearch = () => {
@@ -82,11 +83,15 @@ const FilterSearch = () => {
       <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 items-center justify-center  mt-4 lg:space-x-3">
         <div className="search-filter-dropdown ">
           <MdLocationOn className="absolute m-0 w-4 h-4 align-middle overflow-hidden left-2 top-2 text-lightPlayRed" />
+          <BiCaretDown
+            className="w-4 h-4 m-0 top-2 right-[15px] lg:right-2 absolute"
+            aria-hidden="true"
+          />
           <select
             defaultValue={0}
             name="country"
             id="country"
-            className="w-full lg:w-[125px] h-[32px] text-xs outline-none focus:outline-none focus:ring-0 lg:pr-[25px] lg:pl-[5px] border-0 ring-0 rounded-full cursor-pointer indent-[27px] bg-transparent font-medium"
+            className="w-[98.5%] pr-5  appearance-none form-select lg:w-[125px] h-[32px] text-xs outline-none focus:outline-none focus:ring-0 border-0 lg:pr-[25px] lg:pl-[5px]  ring-0 rounded-full cursor-pointer indent-[27px] bg-transparent font-medium "
           >
             <option value="all">All Country</option>
             <option value="0">Select Country</option>

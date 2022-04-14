@@ -23,12 +23,12 @@ const CreatorCard = ({ username, image, main }) => {
   }
   return (
     <div className="bg-white rounded-lg shadow-sm border flex flex-col items-center justify-center cursor-pointer">
-      <div className="px-1 pt-1 w-24 h-24 relative rounded-lg">
+      <div className="px-1 pt-1 w-20 h-20 relative rounded-lg">
         <Image
           src={image}
           layout="fill"
           alt="username"
-          objectFit="contain"
+          objectFit="cover"
           className="rounded-lg"
         />
       </div>
