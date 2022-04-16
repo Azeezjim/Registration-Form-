@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ProfileNavBar from "../../components/ProfileNavBar.jsx";
 import { MdOutlineAutoDelete } from "react-icons/md";
 import { BsCreditCard2Front } from "react-icons/bs";
@@ -32,7 +33,7 @@ function CardPayment() {
           <div className="grid grid-cols-3 gap-y-4 gap-x-6">
             {cardDetails.map((card, index) => (
               <div
-                className="w-[335px] h-32 shadow-md shadow-gray-200  border border-gray-300 space-y-2.5 rounded-lg p-3 "
+                className="w-[335px] h-32 shadow-md shadow-gray-200  border border-gray-300 space-y-3 rounded-lg p-3 "
                 key={index}
               >
                 <p className="text-[16px] font-bold ">{card.cardNumber}</p>
@@ -50,8 +51,17 @@ function CardPayment() {
                 </div>
               </div>
             ))}
-            <div className="w-80 h-30 shadow-md shadow-gray-200  border border-gray-300 space-y-2 rounded-lg p-2 ">
-
+              <div className="w-[335px] h-30 shadow-md shadow-gray-200  border border-gray-300 rounded-lg p-2 ">
+                  <div className="flex flex-col justify-center items-center space-y-2 ">
+                <Image
+                  src="/images/Illustration/add a card.jpg"
+                  alt="Picture of the author"
+                  className=""
+                  width={70}
+                  height={80}
+                />
+                <p className="font-bold text-gray-400">Add Card</p>
+              </div>
             </div>
           </div>
         </div>
