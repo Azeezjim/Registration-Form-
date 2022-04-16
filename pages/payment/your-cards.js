@@ -26,10 +26,11 @@ function CardPayment() {
     <div>
       <div className="flex p-2 rounded shadow">
         <ProfileNavBar className="w-24 mb-8" />
-        <div className=" w-full px-1 mx-auto pt-3 mr-24  mt-12 bg-white ">
+        <div className=" w-full px-1 mx-auto pt-3 mr-24  mt-12 bg-white space-y-4">
           <p className=" ml-10 mt-4 font-bold flex justify-center ">
             Your Card
           </p>
+          <hr />
           <div className="grid grid-cols-3 gap-y-4 gap-x-6">
             {cardDetails.map((card, index) => (
               <div

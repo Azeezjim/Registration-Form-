@@ -1,4 +1,3 @@
-
 import ProfileNavBar from "../../components/ProfileNavBar.jsx";
 import PaymentBody from "../../components/PaymentBody.jsx";
 
