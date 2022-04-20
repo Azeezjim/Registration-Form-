@@ -50,13 +50,34 @@ const Register = () => {
   useEffect(() => {
     setValidPwd(PWD_REGEX.test(pwd));
     setValidMatch(pwd === matchPwd);
-}, [pwd, matchPwd])
+  }, [pwd, matchPwd]);
 
   useEffect(() => {
     setErrMeg("");
   }, [user, pwd, matchPwd]);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const v1 = USER_REGEX.test(user);
+    const v2 = PWD_REGEX.test(pwd);
+    if(v1 || v2) {
+      setErrMeg("Invalid username or password");
+      return;
+    }
+
+  }
+
   return (
+    <>
+    {success ? (
+      <section>
+        <h1>Success</h1>
+        <p>
+          <a href="#">Sign In</a>
+        </p>
+      </section>
+    ) : (
+
     <section>
       <p
         ref={errRef}
@@ -66,7 +87,7 @@ const Register = () => {
         {errMeg}
       </p>
       <h1>Register</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="username">
           Username!
           <span className={validName ? "valid" : "hide"}>
@@ -103,8 +124,14 @@ const Register = () => {
 
         <label htmlFor="password">
           Password:
-          <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
+          <FontAwesomeIcon
+            icon={faCheck}
+            className={validPwd ? "valid" : "hide"}
+          />
+          <FontAwesomeIcon
+            icon={faTimes}
+            className={validPwd || !pwd ? "hide" : "invalid"}
+          />
         </label>
         <input
           type="password"
@@ -119,7 +146,7 @@ const Register = () => {
         />
         <p
           id="pwdnote"
-          className={pwdFocus && !validPwd ? "instructions"  : "offscreen"}
+          className={pwdFocus && !validPwd ? "instructions" : "offscreen"}
         >
           <FontAwesomeIcon icon={faInfoCircle} />8 to 21 characters:{" "}
           <span aria-label="exclamation mark">!</span>
@@ -173,6 +200,8 @@ const Register = () => {
         </p>
       </form>
     </section>
+    )}
+    </>
   );
 };
 
