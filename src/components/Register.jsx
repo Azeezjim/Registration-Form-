@@ -19,7 +19,7 @@ const Register = () => {
 
   const [pwd, setPwd] = useState("");
   const [validPwd, setValidPwd] = useState(false);
-  const [pwdFocuse, setPwdFocuse] = useState(false);
+  const [pwdFocus, setPwdFocus] = useState(false);
 
   const [matchPwd, setMatchPwd] = useState("");
   const [validMatch, setValidMatch] = useState(false);
@@ -84,7 +84,7 @@ const Register = () => {
           onChange={(e) => setUser(e.target.value)}
           value={user}
           required
-          aria-invalid={validName ? "flase" : "true"}
+          aria-invalid={validName ? "false" : "true"}
           ariad-describedby="uidnote"
           onFocus={() => setUserFocus(true)}
           onBlur={() => setUserFocus(false)}
@@ -103,12 +103,8 @@ const Register = () => {
 
         <label htmlFor="password">
           Password:
-          <span className={validPwd ? "valid" : "hide"}>
-            <FontAwesomeIcon icon={faCheck} />
-          </span>
-          <span className={validPwd || !pwd ? "hide" : "invalid"}>
-            <FontAwesomeIcon icon={faTimes} />
-          </span>
+          <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
+                            <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
         </label>
         <input
           type="password"
@@ -116,14 +112,14 @@ const Register = () => {
           onChange={(e) => setPwd(e.target.value)}
           // value={pwd}
           required
-          aria-invalid={validPwd ? "flase" : "true"}
+          aria-invalid={validPwd ? "false" : "true"}
           ariad-describedby="pwdnote"
-          onFocus={() => setPwdFocuse(true)}
-          onBlur={() => setPwdFocuse(false)}
+          onFocus={() => setPwdFocus(true)}
+          onBlur={() => setPwdFocus(false)}
         />
         <p
           id="pwdnote"
-          className={pwdFocuse && !validPwd ? "instructions" : "offscreen"}
+          className={pwdFocus && !validPwd ? "instructions"  : "offscreen"}
         >
           <FontAwesomeIcon icon={faInfoCircle} />8 to 21 characters:{" "}
           <span aria-label="exclamation mark">!</span>
@@ -150,7 +146,7 @@ const Register = () => {
           onChange={(e) => setMatchPwd(e.target.value)}
           // value={matchPwd}
           required
-          aria-invalid={validMatch ? "flase" : "true"}
+          aria-invalid={validMatch ? "false" : "true"}
           ariad-describedby="confirmnote"
           onFocus={() => setMatchFocus(true)}
           onBlur={() => setMatchFocus(false)}
