@@ -60,11 +60,13 @@ const Register = () => {
     e.preventDefault();
     const v1 = USER_REGEX.test(user);
     const v2 = PWD_REGEX.test(pwd);
-    if(v1 || v2) {
+    if(!v1 || !v2) {
       setErrMeg("Invalid username or password");
       return;
     }
 
+    console.log("signin",  user, pwd, matchPwd);
+    setSuccess(true)
   }
 
   return (
