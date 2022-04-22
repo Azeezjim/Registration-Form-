@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useRef, useState, useEffect } from "react";
 import {
   faCheck,
@@ -5,9 +6,11 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "./api/axios";
 
 const USER_REGEX = /^[a-zA-Z0-9]{3,20}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+const REGISTER_URL = "/register";
 
 const Register = () => {
   const userRef = useRef();
@@ -62,11 +65,17 @@ const Register = () => {
     const v2 = PWD_REGEX.test(pwd);
     if(!v1 || !v2) {
       setErrMeg("Invalid username or password");
-      return;
+      return; 
     }
 
-    console.log("signin",  user, pwd, matchPwd);
-    setSuccess(true)
+    try{
+    const response = await axios.post(REGISTER_URL, 
+    JSON.stringify({user, pwd}), {
+    hearders: {'content-type': 'application/json'},
+    withCredentials: true });
+  } catch (err) {
+    }
+
   }
 
   return (
